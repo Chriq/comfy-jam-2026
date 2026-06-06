@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dfrcexf10ha86"]
+
+[ext_resource type="Script" uid="uid://bgslilek52k2c" path="res://NewScript.cs" id="1_wtcfe"]
+
+[node name="Node2D" type="Node2D" unique_id=1487925448 node_paths=PackedStringArray("FmodNode")]
+script = ExtResource("1_wtcfe")
+FmodNode = NodePath("FmodEventEmitter2D")
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=101205879]
+bank_paths = ["res://FmodBank/Desktop/Master.bank", "res://FmodBank/Desktop/Music.bank"]
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=1037290373]
+event_name = "event:/Music/Level 01"
+event_guid = "{74bbba7c-76e8-488c-9cf9-67f000df1ffd}"
+attached = false
+fmod_parameters/Stinger/id = 398520047090374475
+fmod_parameters/Stinger = 0.0
+fmod_parameters/Stinger/variant_type = 3
+fmod_parameters/Progression/id = -5292116695896296994
+fmod_parameters/Progression = "Intro"
+fmod_parameters/Progression/labels = PackedStringArray("Intro", "Main")
+fmod_parameters/Progression/variant_type = 4
+
+[node name="FmodListener2D" type="FmodListener2D" parent="." unique_id=1630802672]
