@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Drink" format=3 uid="uid://cpujajrjrtugp"]
+
+[ext_resource type="Resource" uid="uid://ccm2nsv83wcnr" path="res://Data/Ingredients/OrangeJuice.tres" id="1_83p6v"]
+[ext_resource type="Resource" uid="uid://2r4tauorfu2j" path="res://Data/Ingredients/Vodka.tres" id="2_60g4b"]
+[ext_resource type="Resource" uid="uid://cnt3o6om3y60f" path="res://Data/Ingredients/Cherry.tres" id="3_olkoy"]
+[ext_resource type="Script" uid="uid://jmfp1x53ksts" path="res://Data/Drinks/Drink.cs" id="4_7c8x6"]
+
+[resource]
+script = ExtResource("4_7c8x6")
+displayName = "Screwdriver"
+recipe = Dictionary[Object, int]({
+ExtResource("1_83p6v"): 8,
+ExtResource("2_60g4b"): 4,
+ExtResource("3_olkoy"): 1
+})
+metadata/_custom_type_script = "uid://jmfp1x53ksts"

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cn2lrotryslda"]
+
+[ext_resource type="Script" uid="uid://c6xwuy838ccf3" path="res://Prefabs/IngredientPanel/IngredientSelect.cs" id="1_hd3nw"]
+
+[node name="IngredientSelect" type="VBoxContainer" unique_id=1701945985 node_paths=PackedStringArray("nameLabel", "ingredientDisplay", "amountInput")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hd3nw")
+nameLabel = NodePath("Name")
+ingredientDisplay = NodePath("Ingredient Display")
+amountInput = NodePath("Amt Input")
+
+[node name="Name" type="RichTextLabel" parent="." unique_id=1996179906]
+layout_mode = 2
+fit_content = true
+
+[node name="Ingredient Display" type="TextureRect" parent="." unique_id=2017558053]
+layout_mode = 2
+
+[node name="Amt Input" type="SpinBox" parent="." unique_id=1364022364]
+layout_mode = 2

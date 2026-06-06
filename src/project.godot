@@ -14,7 +14,7 @@ General/banks_path="res://FmodBank/Desktop"
 
 [application]
 
-config/name="comfyJam2026 (4.6)"
+config/name="comfyJam2026"
 run/main_scene="uid://bk81258lvu14c"
 config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
