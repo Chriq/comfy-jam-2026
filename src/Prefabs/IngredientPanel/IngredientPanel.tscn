@@ -2,18 +2,21 @@
 
 [ext_resource type="Script" uid="uid://62c7fcyx5d6m" path="res://Prefabs/IngredientPanel/IngredientPanel.cs" id="1_mjqdk"]
 [ext_resource type="PackedScene" uid="uid://cn2lrotryslda" path="res://Prefabs/IngredientPanel/IngredientSelect.tscn" id="2_n0ojg"]
+[ext_resource type="PackedScene" uid="uid://dsbblq2ww22ky" path="res://UI/Button/UIButton.tscn" id="3_n0ojg"]
 
-[node name="IngredientPanel" type="VBoxContainer" unique_id=252251641 node_paths=PackedStringArray("liquorsTab", "juicesTab", "garnishesTab")]
+[node name="IngredientPanel" type="VBoxContainer" unique_id=252251641 node_paths=PackedStringArray("liquorsTab", "juicesTab", "garnishesTab", "serveButton")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 16
 script = ExtResource("1_mjqdk")
 ingredientSelectPrefab = ExtResource("2_n0ojg")
 liquorsTab = NodePath("IngredientPanel/Liquors")
 juicesTab = NodePath("IngredientPanel/Juices")
 garnishesTab = NodePath("IngredientPanel/Garnishes")
+serveButton = NodePath("Serve")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=874798392]
 layout_mode = 2
@@ -45,3 +48,7 @@ metadata/_tab_index = 1
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2
+
+[node name="Serve" parent="." unique_id=756673400 instance=ExtResource("3_n0ojg")]
+layout_mode = 2
+text = "Serve Drink"

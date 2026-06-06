@@ -10,8 +10,14 @@ public partial class IngredientPanel : Control {
     [Export] private GridContainer juicesTab;
     [Export] private GridContainer garnishesTab;
 
+    [Export] private Button serveButton;
+
+    [Signal] public delegate void IngredientSelectedEventHandler(Ingredient ingredient, int amount);
+    [Signal] public delegate void DrinkServedEventHandler();
+
     public override void _Ready() {
         InitPanelDisplay();
+        serveButton.Pressed += ServeDrink;
     }
 
     private void InitPanelDisplay() {
@@ -23,10 +29,25 @@ public partial class IngredientPanel : Control {
             select.ingredientDisplay.Texture = liquor.texture;
             select.amountInput.Suffix = liquor.units;
 
+            select.amountInput.ValueChanged += (double amt) => SelectionChanged(liquor, (int)amt);
+
             liquorsTab.AddChild(select);
         }
 
         // TODO: repeat structure for other tabs
+    }
+
+    public void SelectionChanged(Ingredient ingredient, int amount) {
+        EmitSignal(SignalName.IngredientSelected, ingredient, amount);
+    }
+
+    public void ServeDrink() {
+        EmitSignal(SignalName.DrinkServed);
+        Clear();
+    }
+
+    public void Clear() {
+        // TODO: clear out all amout input values
     }
 
     public List<Ingredient> GetAllIngredients() {
