@@ -10,7 +10,7 @@ config_version=5
 
 [Fmod]
 
-General/banks_path="res://FmodBank/Desktop"
+General/banks_path="res://Audio/FmodBank/Desktop"
 
 [application]
 
@@ -18,6 +18,10 @@ config/name="comfyJam2026"
 run/main_scene="uid://bk81258lvu14c"
 config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+FmodManager="*uid://cds10pm7hwn3p"
 
 [display]
 
@@ -30,7 +34,7 @@ project/assembly_name="comfyJam2026"
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/fmod/plugin.cfg")
 
 [physics]
 

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://i1ir2iwbdoqv"]
+
+[node name="FmodTest" type="Node2D" unique_id=621454561]
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=1287945083]
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=783410450]
+event_guid = "{00000032-0030-0000-3200-000036000000}"
+
+[node name="FmodListener2D" type="FmodListener2D" parent="FmodEventEmitter2D" unique_id=1244892729]
