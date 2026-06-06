@@ -15,13 +15,14 @@ General/banks_path="res://FmodBank/Desktop"
 [application]
 
 config/name="comfyJam2026 (4.6)"
+run/main_scene="uid://bk81258lvu14c"
 config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[autoload]
+[display]
 
-FmodManager="*uid://cds10pm7hwn3p"
-FmodServerWrapper="*uid://cns5o7p2pytsp"
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [dotnet]
 
@@ -29,7 +30,7 @@ project/assembly_name="comfyJam2026"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/csharp_gdextension_bindgen/plugin.cfg", "res://addons/fmod-sharp/plugin.cfg", "res://addons/fmod/plugin.cfg")
+enabled=PackedStringArray()
 
 [physics]
 

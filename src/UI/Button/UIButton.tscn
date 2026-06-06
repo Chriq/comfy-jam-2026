@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dsbblq2ww22ky"]
+
+[ext_resource type="Theme" uid="uid://2mclrl68o78m" path="res://Components/Button/Button.tres" id="1_2k5e2"]
+
+[node name="UiButton" type="Button" unique_id=756673400]
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("1_2k5e2")
+theme_override_font_sizes/font_size = 64

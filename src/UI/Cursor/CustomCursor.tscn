@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://e6aa4vbw2vbh"]
+
+[ext_resource type="Script" uid="uid://5vyowenns5tm" path="res://Components/Cursor/CustomCursor.cs" id="1_qmc5t"]
+
+[node name="CustomCursor" type="Node2D" unique_id=2075044607]
+script = ExtResource("1_qmc5t")

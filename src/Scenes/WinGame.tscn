@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://0e2bb7qpuhcx"]
+
+[ext_resource type="Script" uid="uid://c1xmk20n7x6yx" path="res://Menus/MainMenu/MainMenu.cs" id="1_1wr27"]
+[ext_resource type="Theme" uid="uid://2mclrl68o78m" path="res://Components/Button/Button.tres" id="5_lcf5r"]
+
+[sub_resource type="Resource" id="Resource_w8mip"]
+metadata/__load_path__ = "res://Systems/Cockpit/Cockpit.tscn"
+
+[node name="MainMenu" type="Control" unique_id=197827329]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_1wr27")
+toScene = SubResource("Resource_w8mip")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1807536778]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+
+[node name="Buttons" type="VBoxContainer" parent="." unique_id=1159114227]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -754.0
+offset_top = -572.0
+offset_right = -304.0
+offset_bottom = -91.0
+grow_horizontal = 0
+grow_vertical = 0
+alignment = 2
+
+[node name="Start" type="Button" parent="Buttons" unique_id=999784873]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("5_lcf5r")
+theme_override_font_sizes/font_size = 64
+text = "Play Again"
+
+[node name="Quit" type="Button" parent="Buttons" unique_id=118292197]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("5_lcf5r")
+theme_override_font_sizes/font_size = 64
+text = "Quit"
+
+[connection signal="pressed" from="Buttons/Start" to="." method="StartGame"]
+[connection signal="pressed" from="Buttons/Quit" to="." method="QuitGame"]

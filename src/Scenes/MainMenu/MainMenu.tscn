@@ -1,0 +1,336 @@
+[gd_scene format=3 uid="uid://bjtjgqi5f0tgr"]
+
+[ext_resource type="Script" uid="uid://c1xmk20n7x6yx" path="res://Scenes/MainMenu/MainMenu.cs" id="1_b37jj"]
+[ext_resource type="PackedScene" uid="uid://bk81258lvu14c" path="res://Scenes/Bar.tscn" id="2_flrug"]
+[ext_resource type="Theme" uid="uid://2mclrl68o78m" path="res://UI/Button/Button.tres" id="4_k3ndf"]
+[ext_resource type="Texture2D" uid="uid://0wysc8xaxt3j" path="res://UI/NineSliceDefault.png" id="6_ng4bt"]
+
+[node name="MainMenu" type="Control" unique_id=376464063 node_paths=PackedStringArray("creditsContainer", "howContainer", "cutsceneContainer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_b37jj")
+toScene = ExtResource("2_flrug")
+creditsContainer = NodePath("Credits")
+howContainer = NodePath("HowToPlay")
+cutsceneContainer = NodePath("ColorRect")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1794612763]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+
+[node name="Title" type="TextureRect" parent="." unique_id=2145748417]
+layout_mode = 1
+offset_left = 644.0
+offset_top = 170.0
+offset_right = 1237.8605
+offset_bottom = 564.0
+expand_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="." unique_id=1458622073]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -470.5
+offset_top = -200.0
+offset_right = 470.5
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 9
+alignment = 1
+
+[node name="Start" type="Button" parent="Buttons" unique_id=1643606357]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = ExtResource("4_k3ndf")
+theme_override_font_sizes/font_size = 64
+text = "Start"
+
+[node name="How" type="Button" parent="Buttons" unique_id=1629073465]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = ExtResource("4_k3ndf")
+theme_override_font_sizes/font_size = 64
+text = "How to Play"
+
+[node name="Credits" type="Button" parent="Buttons" unique_id=465749959]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = ExtResource("4_k3ndf")
+theme_override_font_sizes/font_size = 64
+text = "Credits"
+
+[node name="Quit" type="Button" parent="Buttons" unique_id=972085003]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = ExtResource("4_k3ndf")
+theme_override_font_sizes/font_size = 64
+text = "Quit"
+
+[node name="Credits" type="NinePatchRect" parent="." unique_id=1848546622]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -524.0
+offset_top = -453.0
+offset_right = 503.0
+offset_bottom = 294.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("6_ng4bt")
+region_rect = Rect2(0, 0, 315, 315)
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="Credits" unique_id=22861659]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Hint display" type="VBoxContainer" parent="Credits/MarginContainer" unique_id=73528988]
+layout_mode = 2
+
+[node name="Header" type="RichTextLabel" parent="Credits/MarginContainer/Hint display" unique_id=188779448]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_font_sizes/normal_font_size = 80
+text = "Credits"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Grid" type="GridContainer" parent="Credits/MarginContainer/Hint display" unique_id=302889654]
+layout_mode = 2
+theme_override_constants/v_separation = 42
+columns = 2
+
+[node name="Name" type="RichTextLabel" parent="Credits/MarginContainer/Hint display/Grid" unique_id=1838082525]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_font_sizes/normal_font_size = 40
+text = "Scaredy Cat
+(Christian Cook)"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Role" type="RichTextLabel" parent="Credits/MarginContainer/Hint display/Grid" unique_id=1676257734]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_font_sizes/normal_font_size = 40
+text = "Project Lead,
+Programmer"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Name3" type="RichTextLabel" parent="Credits/MarginContainer/Hint display/Grid" unique_id=1067049019]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_font_sizes/normal_font_size = 40
+text = "Rocketfrank
+(Franco Reviglio)"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Role3" type="RichTextLabel" parent="Credits/MarginContainer/Hint display/Grid" unique_id=896515783]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_font_sizes/normal_font_size = 40
+text = "Artist"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Name2" type="RichTextLabel" parent="Credits/MarginContainer/Hint display/Grid" unique_id=442906938]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_font_sizes/normal_font_size = 40
+text = "The Rogue Composer
+(Jonathan Davies)"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Role2" type="RichTextLabel" parent="Credits/MarginContainer/Hint display/Grid" unique_id=201741972]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_font_sizes/normal_font_size = 40
+text = "Composer - Garden Music,
+Sound Designer"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Name4" type="RichTextLabel" parent="Credits/MarginContainer/Hint display/Grid" unique_id=102860247]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_font_sizes/normal_font_size = 40
+text = "Tom Duffy"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Role4" type="RichTextLabel" parent="Credits/MarginContainer/Hint display/Grid" unique_id=958837154]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_font_sizes/normal_font_size = 40
+text = "Composer - Intro & 
+Season Review Music"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Name5" type="RichTextLabel" parent="Credits/MarginContainer/Hint display/Grid" unique_id=937843543]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_font_sizes/normal_font_size = 40
+text = "Kalibri"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Role5" type="RichTextLabel" parent="Credits/MarginContainer/Hint display/Grid" unique_id=1957532825]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_font_sizes/normal_font_size = 40
+text = "Vocalist, Flora Specialist"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="HowToPlay" type="NinePatchRect" parent="." unique_id=1847051436]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -524.0
+offset_top = -453.0
+offset_right = 503.0
+offset_bottom = 294.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("6_ng4bt")
+region_rect = Rect2(0, 0, 315, 315)
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="HowToPlay" unique_id=547399020]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Hint display" type="VBoxContainer" parent="HowToPlay/MarginContainer" unique_id=780707230]
+layout_mode = 2
+
+[node name="Header" type="RichTextLabel" parent="HowToPlay/MarginContainer/Hint display" unique_id=2142765483]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_font_sizes/normal_font_size = 80
+text = "How To Play"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1052778026]
+modulate = Color(1, 1, 1, 0)
+z_index = 999
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect" unique_id=1605014002]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 80
+text = "So you think you have what it takes to be a gardener in this town? It's a craft that takes years to master!
+
+We'll see about that, rookie."
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Buttons/Start" to="." method="StartGame"]
+[connection signal="pressed" from="Buttons/How" to="." method="ToggleControls"]
+[connection signal="pressed" from="Buttons/Credits" to="." method="ToggleCredits"]
+[connection signal="pressed" from="Buttons/Quit" to="." method="QuitGame"]

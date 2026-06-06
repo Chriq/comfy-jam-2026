@@ -1,0 +1,25 @@
+[gd_resource type="Theme" format=3 uid="uid://2mclrl68o78m"]
+
+[ext_resource type="Texture2D" uid="uid://dtmh0ny06olum" path="res://UI/NineSliceHover.png" id="1_00fns"]
+[ext_resource type="Texture2D" uid="uid://0wysc8xaxt3j" path="res://UI/NineSliceDefault.png" id="1_dc534"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l7c5k"]
+texture = ExtResource("1_00fns")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xcntn"]
+texture = ExtResource("1_dc534")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[resource]
+Button/colors/font_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+Button/colors/font_hover_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+Button/styles/hover = SubResource("StyleBoxTexture_l7c5k")
+Button/styles/normal = SubResource("StyleBoxTexture_xcntn")
+Button/styles/pressed = SubResource("StyleBoxTexture_xcntn")
