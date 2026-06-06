@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://djsvigsgm7mrh"]
+
+[ext_resource type="Script" uid="uid://cw23jtvlk82sa" path="res://Data/Characters/Character.cs" id="1_so360"]
+[ext_resource type="Texture2D" uid="uid://bevieo1cfad58" path="res://Data/Characters/generic_character.png" id="2_wabt1"]
+
+[resource]
+script = ExtResource("1_so360")
+displayName = "Test Character"
+texture = ExtResource("2_wabt1")
+metadata/_custom_type_script = "uid://cw23jtvlk82sa"

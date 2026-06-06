@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://bk81258lvu14c"]
 
+[ext_resource type="Texture2D" uid="uid://cif14s3cma5r3" path="res://Scenes/bar_background.png" id="1_acx3c"]
 [ext_resource type="PackedScene" uid="uid://dqbyf0um01k76" path="res://Prefabs/IngredientPanel/IngredientPanel.tscn" id="1_op7jc"]
 [ext_resource type="Script" uid="uid://csq16ttdctm5i" path="res://Systems/DrinkBuilder/DrinkBuilder.cs" id="2_2vt6c"]
+[ext_resource type="Texture2D" uid="uid://cw08f2dsj76nc" path="res://Scenes/bar.png" id="2_juds8"]
 [ext_resource type="PackedScene" uid="uid://baeaoxg5wln2m" path="res://Prefabs/RecipeBook/RecipeBook.tscn" id="3_24mt1"]
 [ext_resource type="PackedScene" uid="uid://dsbblq2ww22ky" path="res://UI/Button/UIButton.tscn" id="4_xmicy"]
+[ext_resource type="Script" uid="uid://e5yewaqta57v" path="res://Systems/GameManager.cs" id="6_e3qa5"]
+[ext_resource type="Script" uid="uid://cpue5a5k26vhg" path="res://Systems/CharacterSpawner/CharacterSpawner.cs" id="7_n62g1"]
 
 [node name="Bar" type="Control" unique_id=1706286663]
 layout_mode = 3
@@ -13,16 +17,35 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Background" type="TextureRect" parent="." unique_id=354442030]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_acx3c")
+
+[node name="CharacterTexture" type="TextureRect" parent="." unique_id=132668442]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BarTexture" type="TextureRect" parent="." unique_id=851347825]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_juds8")
+
 [node name="IngredientPanel" parent="." unique_id=252251641 instance=ExtResource("1_op7jc")]
 layout_mode = 1
 offset_left = 1435.0
 offset_top = 37.0
 offset_right = -31.0
 offset_bottom = -27.0
-
-[node name="DrinkBuilder" type="Node" parent="." unique_id=826935736 node_paths=PackedStringArray("ingredientPanel")]
-script = ExtResource("2_2vt6c")
-ingredientPanel = NodePath("../IngredientPanel")
 
 [node name="RecipeBook" parent="." unique_id=1724478955 node_paths=PackedStringArray("toggle") instance=ExtResource("3_24mt1")]
 visible = false
@@ -41,3 +64,15 @@ offset_right = 177.0
 offset_bottom = 106.0
 theme_override_font_sizes/font_size = 32
 text = "Recipes"
+
+[node name="GameManager" type="Node" parent="." unique_id=1250725934 node_paths=PackedStringArray("drinkBuilder", "characterSpawner")]
+script = ExtResource("6_e3qa5")
+drinkBuilder = NodePath("DrinkBuilder")
+characterSpawner = NodePath("CharacterSpawner")
+
+[node name="DrinkBuilder" type="Node" parent="GameManager" unique_id=826935736 node_paths=PackedStringArray("ingredientPanel")]
+script = ExtResource("2_2vt6c")
+ingredientPanel = NodePath("../../IngredientPanel")
+
+[node name="CharacterSpawner" type="Node" parent="GameManager" unique_id=1175466338]
+script = ExtResource("7_n62g1")

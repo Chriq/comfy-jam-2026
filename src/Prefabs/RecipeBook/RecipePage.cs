@@ -17,7 +17,7 @@ public partial class RecipePage : Control {
     public void InitPage(Drink drink) {
         if (drink != null) {
             header.Text = drink.displayName;
-            description.Text = "[i]" + drink.description + "[/i]";
+            description.Text = $"[i] {drink.description} [/i]";
             img.Texture = drink.texture;
             recipe.Text = GetRecipeString(drink);
         } else {
@@ -28,6 +28,7 @@ public partial class RecipePage : Control {
         }
     }
 
+    // TODO: refactor to make recipe amounts editable and start on random values. Let's cap at 8
     private string GetRecipeString(Drink drink) {
         string recipeStringBuilder = "Recipe:\n";
 

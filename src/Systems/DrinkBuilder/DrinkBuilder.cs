@@ -5,7 +5,7 @@ using System;
 public partial class DrinkBuilder : Node {
     [Export] public IngredientPanel ingredientPanel;
 
-    private Dictionary<Ingredient, int> currentDrink = new();
+    public Dictionary<Ingredient, int> currentDrink { get; private set; } = new();
 
     public override void _Ready() {
         ingredientPanel.IngredientSelected += UpdateCurrentDrink;
