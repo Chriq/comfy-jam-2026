@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxxor0iw2cgmw"]
+
+[ext_resource type="Theme" uid="uid://b7q6trvw5l1aa" path="res://Components/OptionSelect/OptionSelect.tres" id="1_64jf6"]
+[ext_resource type="PackedScene" uid="uid://dum7jqcojuusw" path="res://Components/Clickable/Clickable.tscn" id="2_lvj4d"]
+
+[node name="OptionSelect" type="ItemList"]
+z_index = 4096
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("1_64jf6")
+theme_override_font_sizes/font_size = 10
+auto_height = true
+text_overrun_behavior = 0
+
+[node name="Clickable" parent="." instance=ExtResource("2_lvj4d")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1.1)
+mouse_filter = 1
+button_mask = 0

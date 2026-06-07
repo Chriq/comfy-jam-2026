@@ -1,0 +1,14 @@
+[gd_resource type="Theme" format=3 uid="uid://b7q6trvw5l1aa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bc2kf"]
+bg_color = Color(0.478431, 0.113725, 0.113725, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lnfjm"]
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[resource]
+ItemList/styles/hovered = SubResource("StyleBoxFlat_bc2kf")
+ItemList/styles/panel = SubResource("StyleBoxTexture_lnfjm")

@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Clickable : Button {
+public partial class Clickable : Control {
 
     private CustomCursor cursor;
 

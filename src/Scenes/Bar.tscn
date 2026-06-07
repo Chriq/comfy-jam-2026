@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dsbblq2ww22ky" path="res://UI/Button/UIButton.tscn" id="4_xmicy"]
 [ext_resource type="Script" uid="uid://e5yewaqta57v" path="res://Systems/GameManager.cs" id="6_e3qa5"]
 [ext_resource type="Script" uid="uid://cpue5a5k26vhg" path="res://Systems/CharacterSpawner/CharacterSpawner.cs" id="7_n62g1"]
+[ext_resource type="Texture2D" uid="uid://bevieo1cfad58" path="res://Data/Characters/generic_character.png" id="9_2ibdx"]
+[ext_resource type="PackedScene" uid="uid://c3anmntpmcur1" path="res://UI/DialogManager/DialogManager.tscn" id="9_dnf0m"]
 
 [node name="Bar" type="Control" unique_id=1706286663]
 layout_mode = 3
@@ -65,14 +67,29 @@ offset_bottom = 106.0
 theme_override_font_sizes/font_size = 32
 text = "Recipes"
 
-[node name="GameManager" type="Node" parent="." unique_id=1250725934 node_paths=PackedStringArray("drinkBuilder", "characterSpawner")]
+[node name="GameManager" type="Node" parent="." unique_id=1250725934 node_paths=PackedStringArray("drinkBuilder", "characterSpawner", "dm")]
 script = ExtResource("6_e3qa5")
 drinkBuilder = NodePath("DrinkBuilder")
 characterSpawner = NodePath("CharacterSpawner")
+dm = NodePath("../DialogManager")
 
 [node name="DrinkBuilder" type="Node" parent="GameManager" unique_id=826935736 node_paths=PackedStringArray("ingredientPanel")]
 script = ExtResource("2_2vt6c")
 ingredientPanel = NodePath("../../IngredientPanel")
 
-[node name="CharacterSpawner" type="Node" parent="GameManager" unique_id=1175466338]
+[node name="CharacterSpawner" type="Node" parent="GameManager" unique_id=1175466338 node_paths=PackedStringArray("characterRect")]
 script = ExtResource("7_n62g1")
+characterRect = NodePath("../../CharacterTexture")
+genericCharacterTexture = ExtResource("9_2ibdx")
+
+[node name="DialogManager" parent="." unique_id=2084443820 instance=ExtResource("9_dnf0m")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 35.0
+offset_top = 855.0
+offset_right = 1376.0
+offset_bottom = 1053.0
+grow_horizontal = 1
+grow_vertical = 1

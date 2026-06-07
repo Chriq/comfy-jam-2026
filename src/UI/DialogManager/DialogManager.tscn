@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://c3anmntpmcur1"]
+
+[ext_resource type="Script" uid="uid://degantb2ukxc6" path="res://UI/DialogManager/DialogManager.cs" id="1_bkimo"]
+[ext_resource type="PackedScene" uid="uid://bxxor0iw2cgmw" path="res://UI/OptionSelect/OptionSelect.tscn" id="2_b0ifc"]
+[ext_resource type="Script" uid="uid://de2q0n5ydpc1a" path="res://UI/OptionSelect/OptionSelect.cs" id="3_35ltj"]
+[ext_resource type="Texture2D" uid="uid://0wysc8xaxt3j" path="res://UI/NineSliceDefault.png" id="4_lx8y3"]
+
+[node name="DialogManager" type="Control" unique_id=2084443820 node_paths=PackedStringArray("dialog", "optionSelect", "portrait")]
+z_index = 999
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bkimo")
+dialog = NodePath("DialogBox/HBoxContainer/DialogText")
+optionSelect = NodePath("OptionSelect")
+portrait = NodePath("DialogBox/HBoxContainer/Portrait")
+
+[node name="OptionSelect" parent="." unique_id=836121514 instance=ExtResource("2_b0ifc")]
+custom_minimum_size = Vector2(30, 10)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 380.0
+offset_top = -4.0
+offset_right = 423.0
+offset_bottom = 6.0
+script = ExtResource("3_35ltj")
+
+[node name="DialogBox" type="NinePatchRect" parent="." unique_id=560806568]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_lx8y3")
+region_rect = Rect2(0, 0, 315, 315)
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DialogBox" unique_id=193623669]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -3.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Portrait" type="TextureRect" parent="DialogBox/HBoxContainer" unique_id=708455193]
+layout_mode = 2
+
+[node name="DialogText" type="RichTextLabel" parent="DialogBox/HBoxContainer" unique_id=507381443]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/bold_italics_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/mono_font_size = 32
+bbcode_enabled = true

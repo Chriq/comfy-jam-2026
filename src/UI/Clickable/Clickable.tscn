@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dum7jqcojuusw"]
+[gd_scene format=3 uid="uid://dum7jqcojuusw"]
 
-[ext_resource type="Script" path="res://Components/Clickable/Clickable.cs" id="1_j7rqi"]
+[ext_resource type="Script" uid="uid://bgcgcijc6y4v8" path="res://UI/Clickable/Clickable.cs" id="1_j7rqi"]
 
 [node name="Clickable" type="Control"]
 layout_mode = 3
