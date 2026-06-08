@@ -4,10 +4,12 @@
 [ext_resource type="Resource" uid="uid://2r4tauorfu2j" path="res://Data/Ingredients/Vodka.tres" id="2_60g4b"]
 [ext_resource type="Resource" uid="uid://cnt3o6om3y60f" path="res://Data/Ingredients/Cherry.tres" id="3_olkoy"]
 [ext_resource type="Script" uid="uid://jmfp1x53ksts" path="res://Data/Drinks/Drink.cs" id="4_7c8x6"]
+[ext_resource type="Texture2D" uid="uid://c5x24exooi8on" path="res://Data/Drinks/test_drink.PNG" id="5_60g4b"]
 
 [resource]
 script = ExtResource("4_7c8x6")
 displayName = "Screwdriver"
+texture = ExtResource("5_60g4b")
 recipe = Dictionary[Object, int]({
 ExtResource("1_83p6v"): 8,
 ExtResource("2_60g4b"): 4,

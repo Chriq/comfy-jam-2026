@@ -33,7 +33,7 @@ public partial class RecipePage : Control {
         string recipeStringBuilder = "Recipe:\n";
 
         foreach (Ingredient i in drink.recipe.Keys) {
-            recipeStringBuilder += $"- {i.displayName} {drink.recipe[i]} {i.units}";
+            recipeStringBuilder += $"- {i.displayName} {drink.recipe[i]} {i.units}\n";
         }
 
         return recipeStringBuilder;
