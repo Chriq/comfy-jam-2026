@@ -10,6 +10,7 @@ public partial class CharacterSpawner : Node {
 
 	public Character currentCustomer { get; private set; }
 	public Drink currentOrder { get; private set; }
+	public bool isUniqueCharacter = false;
 
 	private RandomNumberGenerator rng = new RandomNumberGenerator();
 
@@ -22,6 +23,7 @@ public partial class CharacterSpawner : Node {
 		float val = 0.3f;
 		if (val < specialCharacterProbability) {
 			// get special character
+			isUniqueCharacter = true;
 			currentCustomer = new Array<Character>(NodeUtil.LoadResourcesFromFolder("res://Data/Characters").OfType<Character>().ToArray()).PickRandom();
 			GD.Print(currentCustomer.displayName);
 		
@@ -44,6 +46,7 @@ public partial class CharacterSpawner : Node {
 		characterRect.Texture = null;
 		currentCustomer = null;
 		currentOrder = null;
+		isUniqueCharacter = false;
 	}
 
 	public string GenerateRandomName() {
