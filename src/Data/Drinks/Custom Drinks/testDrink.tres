@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Drink" format=3 uid="uid://cymu6ql6jx1lh"]
+
+[ext_resource type="Script" uid="uid://jmfp1x53ksts" path="res://Data/Drinks/Drink.cs" id="1_ru7dw"]
+
+[resource]
+script = ExtResource("1_ru7dw")
+displayName = "CustomDrink1"
+recipe = Dictionary[Object, int]({})
+metadata/_custom_type_script = "uid://jmfp1x53ksts"
