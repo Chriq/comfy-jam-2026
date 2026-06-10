@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://djsvigsgm7mrh"]
+
+[ext_resource type="Resource" uid="uid://cymu6ql6jx1lh" path="res://Data/Drinks/Custom Drinks/testDrink.tres" id="1_am6cj"]
+[ext_resource type="Resource" uid="uid://cpujajrjrtugp" path="res://Data/Drinks/Screwdriver.tres" id="2_dbcih"]
+[ext_resource type="Script" uid="uid://cw23jtvlk82sa" path="res://Data/Characters/Character.cs" id="3_rqq2j"]
+[ext_resource type="Texture2D" uid="uid://d0pc3a11k2tgm" path="res://Data/Characters/Unique Character.png" id="4_21qcn"]
+
+[resource]
+script = ExtResource("3_rqq2j")
+displayName = "Johnathan Davis"
+texture = ExtResource("4_21qcn")
+drinkList = Array[Object]([ExtResource("1_am6cj"), ExtResource("2_dbcih"), ExtResource("1_am6cj")])
+metadata/_custom_type_script = "uid://cw23jtvlk82sa"

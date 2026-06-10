@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bk81258lvu14c"]
 
-[ext_resource type="Texture2D" uid="uid://cif14s3cma5r3" path="res://Scenes/bar_background.png" id="1_acx3c"]
+[ext_resource type="Texture2D" uid="uid://cif14s3cma5r3" path="res://Scenes/background_afternoon.png" id="1_acx3c"]
 [ext_resource type="PackedScene" uid="uid://dqbyf0um01k76" path="res://Prefabs/IngredientPanel/IngredientPanel.tscn" id="1_op7jc"]
 [ext_resource type="Script" uid="uid://csq16ttdctm5i" path="res://Systems/DrinkBuilder/DrinkBuilder.cs" id="2_2vt6c"]
 [ext_resource type="Texture2D" uid="uid://cw08f2dsj76nc" path="res://Scenes/bar.png" id="2_juds8"]
@@ -111,25 +111,8 @@ offset_bottom = 106.0
 theme_override_font_sizes/font_size = 32
 text = "Recipes"
 
-[node name="GameManager" type="Node" parent="." unique_id=1250725934 node_paths=PackedStringArray("drinkBuilder", "characterSpawner", "dm", "panelContainer", "drinksContainer")]
-script = ExtResource("6_e3qa5")
-drinkBuilder = NodePath("DrinkBuilder")
-characterSpawner = NodePath("CharacterSpawner")
-dm = NodePath("../DialogManager")
-panelContainer = NodePath("../RightPanel")
-drinksContainer = NodePath("../DrinkSprites")
-
-[node name="DrinkBuilder" type="Node" parent="GameManager" unique_id=826935736 node_paths=PackedStringArray("ingredientPanel", "currentOrderDisplay")]
-script = ExtResource("2_2vt6c")
-ingredientPanel = NodePath("../../RightPanel/IngredientPanel")
-currentOrderDisplay = NodePath("../../RightPanel/CurrentOrderPanel/CurrentOrder")
-
-[node name="CharacterSpawner" type="Node" parent="GameManager" unique_id=1175466338 node_paths=PackedStringArray("characterRect")]
-script = ExtResource("7_n62g1")
-characterRect = NodePath("../../CharacterTexture")
-genericCharacterTexture = ExtResource("9_2ibdx")
-
 [node name="DialogManager" parent="." unique_id=2084443820 instance=ExtResource("9_dnf0m")]
+visible = false
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
@@ -140,3 +123,22 @@ offset_right = 1376.0
 offset_bottom = 1053.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="GameManager" type="Node" parent="." unique_id=1250725934 node_paths=PackedStringArray("drinkBuilder", "characterSpawner", "dm", "panelContainer", "drinksContainer", "background")]
+script = ExtResource("6_e3qa5")
+drinkBuilder = NodePath("DrinkBuilder")
+characterSpawner = NodePath("CharacterSpawner")
+dm = NodePath("../DialogManager")
+panelContainer = NodePath("../RightPanel")
+drinksContainer = NodePath("../DrinkSprites")
+background = NodePath("../Background")
+
+[node name="DrinkBuilder" type="Node" parent="GameManager" unique_id=826935736 node_paths=PackedStringArray("ingredientPanel", "currentOrderDisplay")]
+script = ExtResource("2_2vt6c")
+ingredientPanel = NodePath("../../RightPanel/IngredientPanel")
+currentOrderDisplay = NodePath("../../RightPanel/CurrentOrderPanel/CurrentOrder")
+
+[node name="CharacterSpawner" type="Node" parent="GameManager" unique_id=1175466338 node_paths=PackedStringArray("characterRect")]
+script = ExtResource("7_n62g1")
+characterRect = NodePath("../../CharacterTexture")
+genericCharacterTexture = ExtResource("9_2ibdx")

@@ -15,13 +15,14 @@ General/banks_path="res://Audio/FmodBank/Desktop"
 [application]
 
 config/name="comfyJam2026"
-run/main_scene="uid://bk81258lvu14c"
+run/main_scene="uid://bjtjgqi5f0tgr"
 config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 FmodManager="*uid://cds10pm7hwn3p"
+AudioManager="*uid://bxpr2w6un444c"
 
 [display]
 
