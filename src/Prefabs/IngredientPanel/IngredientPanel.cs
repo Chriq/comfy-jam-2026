@@ -29,7 +29,7 @@ public partial class IngredientPanel : Control {
 			select.ingredientDisplay.Texture = liquor.texture;
 			select.amountInput.Suffix = liquor.units;
 
-			select.amountInput.ValueChanged += (double amt) => SelectionChanged(liquor, (int)amt); //ASK Why is this a double? //ANSWER 
+			select.amountInput.ValueChanged += (double amt) => SelectionChanged(liquor, (int)amt);
 
 			liquorsTab.AddChild(select);
 		}
