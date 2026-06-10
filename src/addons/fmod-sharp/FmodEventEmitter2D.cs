@@ -3,24 +3,19 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using Godot;
 
-namespace GDExtensionBindgen;
+namespace FmodSharp;
 
-public class FmodEventEmitter2D
-{
+public class FmodEventEmitter2D {
     // Engine object used for calling engine methods
     protected Node2D _object;
 
-    public FmodEventEmitter2D() : this(NativeName)
-    {
+    public FmodEventEmitter2D() : this(NativeName) {
     }
-    protected FmodEventEmitter2D(StringName @class) : this(ClassDB.Instantiate(@class))
-    {
+    protected FmodEventEmitter2D(StringName @class) : this(ClassDB.Instantiate(@class)) {
     }
-    protected FmodEventEmitter2D(Variant variant) : this((Node2D)variant)
-    {
+    protected FmodEventEmitter2D(Variant variant) : this((Node2D)variant) {
     }
-    protected FmodEventEmitter2D([NotNull] Node2D @object)
-    {
+    public FmodEventEmitter2D([NotNull] Node2D @object) {
         _object = @object;
     }
 
@@ -28,8 +23,7 @@ public class FmodEventEmitter2D
     public static implicit operator Variant(FmodEventEmitter2D self) => self?._object;
     public static explicit operator FmodEventEmitter2D(Variant variant) => variant.AsGodotObject() != null ? new(variant) : null;
 
-    public class PropertyName : Node2D.PropertyName
-    {
+    public class PropertyName : Node2D.PropertyName {
         public static readonly StringName EventName = "event_name";
         public static readonly StringName EventGuid = "event_guid";
         public static readonly StringName Attached = "attached";
@@ -41,8 +35,7 @@ public class FmodEventEmitter2D
         public static readonly StringName Paused = "paused";
     }
 
-    public class MethodName : Node2D.MethodName
-    {
+    public class MethodName : Node2D.MethodName {
         public static readonly StringName Play = "play";
         public static readonly StringName PlayOneShot = "play_one_shot";
         public static readonly StringName Stop = "stop";
@@ -73,8 +66,7 @@ public class FmodEventEmitter2D
         public static readonly StringName ToolRemoveParameter = "tool_remove_parameter";
     }
 
-    public class SignalName : Node2D.SignalName
-    {
+    public class SignalName : Node2D.SignalName {
         public static readonly StringName TimelineBeat = "timeline_beat";
         public static readonly StringName TimelineMarker = "timeline_marker";
         public static readonly StringName StartFailed = "start_failed";
@@ -87,56 +79,47 @@ public class FmodEventEmitter2D
 
     #region Properties
 
-    public string EventName
-    {
+    public string EventName {
         get => (string)_object.Get(PropertyName.EventName);
         set => _object.Set(PropertyName.EventName, value);
     }
 
-    public string EventGuid
-    {
+    public string EventGuid {
         get => (string)_object.Get(PropertyName.EventGuid);
         set => _object.Set(PropertyName.EventGuid, value);
     }
 
-    public bool Attached
-    {
+    public bool Attached {
         get => (bool)_object.Get(PropertyName.Attached);
         set => _object.Set(PropertyName.Attached, value);
     }
 
-    public bool Autoplay
-    {
+    public bool Autoplay {
         get => (bool)_object.Get(PropertyName.Autoplay);
         set => _object.Set(PropertyName.Autoplay, value);
     }
 
-    public bool AutoRelease
-    {
+    public bool AutoRelease {
         get => (bool)_object.Get(PropertyName.AutoRelease);
         set => _object.Set(PropertyName.AutoRelease, value);
     }
 
-    public bool AllowFadeout
-    {
+    public bool AllowFadeout {
         get => (bool)_object.Get(PropertyName.AllowFadeout);
         set => _object.Set(PropertyName.AllowFadeout, value);
     }
 
-    public bool PreloadEvent
-    {
+    public bool PreloadEvent {
         get => (bool)_object.Get(PropertyName.PreloadEvent);
         set => _object.Set(PropertyName.PreloadEvent, value);
     }
 
-    public float Volume
-    {
+    public float Volume {
         get => (float)_object.Get(PropertyName.Volume);
         set => _object.Set(PropertyName.Volume, value);
     }
 
-    public float Paused
-    {
+    public float Paused {
         get => (float)_object.Get(PropertyName.Paused);
         set => _object.Set(PropertyName.Paused, value);
     }
@@ -145,247 +128,206 @@ public class FmodEventEmitter2D
 
     #region Inherited Properties
 
-    public Godot.Vector2 Position
-    {
+    public Godot.Vector2 Position {
         get => _object.Position;
         set => _object.Position = value;
     }
 
-    public float Rotation
-    {
+    public float Rotation {
         get => _object.Rotation;
         set => _object.Rotation = value;
     }
 
-    public float RotationDegrees
-    {
+    public float RotationDegrees {
         get => _object.RotationDegrees;
         set => _object.RotationDegrees = value;
     }
 
-    public Godot.Vector2 Scale
-    {
+    public Godot.Vector2 Scale {
         get => _object.Scale;
         set => _object.Scale = value;
     }
 
-    public float Skew
-    {
+    public float Skew {
         get => _object.Skew;
         set => _object.Skew = value;
     }
 
-    public Godot.Transform2D Transform
-    {
+    public Godot.Transform2D Transform {
         get => _object.Transform;
         set => _object.Transform = value;
     }
 
-    public Godot.Vector2 GlobalPosition
-    {
+    public Godot.Vector2 GlobalPosition {
         get => _object.GlobalPosition;
         set => _object.GlobalPosition = value;
     }
 
-    public float GlobalRotation
-    {
+    public float GlobalRotation {
         get => _object.GlobalRotation;
         set => _object.GlobalRotation = value;
     }
 
-    public float GlobalRotationDegrees
-    {
+    public float GlobalRotationDegrees {
         get => _object.GlobalRotationDegrees;
         set => _object.GlobalRotationDegrees = value;
     }
 
-    public Godot.Vector2 GlobalScale
-    {
+    public Godot.Vector2 GlobalScale {
         get => _object.GlobalScale;
         set => _object.GlobalScale = value;
     }
 
-    public float GlobalSkew
-    {
+    public float GlobalSkew {
         get => _object.GlobalSkew;
         set => _object.GlobalSkew = value;
     }
 
-    public Godot.Transform2D GlobalTransform
-    {
+    public Godot.Transform2D GlobalTransform {
         get => _object.GlobalTransform;
         set => _object.GlobalTransform = value;
     }
 
-    public bool Visible
-    {
+    public bool Visible {
         get => _object.Visible;
         set => _object.Visible = value;
     }
 
-    public Godot.Color Modulate
-    {
+    public Godot.Color Modulate {
         get => _object.Modulate;
         set => _object.Modulate = value;
     }
 
-    public Godot.Color SelfModulate
-    {
+    public Godot.Color SelfModulate {
         get => _object.SelfModulate;
         set => _object.SelfModulate = value;
     }
 
-    public bool ShowBehindParent
-    {
+    public bool ShowBehindParent {
         get => _object.ShowBehindParent;
         set => _object.ShowBehindParent = value;
     }
 
-    public bool TopLevel
-    {
+    public bool TopLevel {
         get => _object.TopLevel;
         set => _object.TopLevel = value;
     }
 
-    public int ClipChildren
-    {
+    public int ClipChildren {
         get => (int)_object.ClipChildren;
         set => _object.ClipChildren = (CanvasItem.ClipChildrenMode)value;
     }
 
-    public int LightMask
-    {
+    public int LightMask {
         get => _object.LightMask;
         set => _object.LightMask = value;
     }
 
-    public int VisibilityLayer
-    {
+    public int VisibilityLayer {
         get => (int)_object.VisibilityLayer;
         set => _object.VisibilityLayer = (uint)value;
     }
 
-    public int ZIndex
-    {
+    public int ZIndex {
         get => _object.ZIndex;
         set => _object.ZIndex = value;
     }
 
-    public bool ZAsRelative
-    {
+    public bool ZAsRelative {
         get => _object.ZAsRelative;
         set => _object.ZAsRelative = value;
     }
 
-    public bool YSortEnabled
-    {
+    public bool YSortEnabled {
         get => _object.YSortEnabled;
         set => _object.YSortEnabled = value;
     }
 
-    public int TextureFilter
-    {
+    public int TextureFilter {
         get => (int)_object.TextureFilter;
         set => _object.TextureFilter = (CanvasItem.TextureFilterEnum)value;
     }
 
-    public int TextureRepeat
-    {
+    public int TextureRepeat {
         get => (int)_object.TextureRepeat;
         set => _object.TextureRepeat = (CanvasItem.TextureRepeatEnum)value;
     }
 
-    public Material Material
-    {
+    public Material Material {
         get => _object.Material;
         set => _object.Material = value;
     }
 
-    public bool UseParentMaterial
-    {
+    public bool UseParentMaterial {
         get => _object.UseParentMaterial;
         set => _object.UseParentMaterial = value;
     }
 
-    public Godot.StringName Name
-    {
+    public Godot.StringName Name {
         get => _object.Name;
         set => _object.Name = value;
     }
 
-    public bool UniqueNameInOwner
-    {
+    public bool UniqueNameInOwner {
         get => _object.UniqueNameInOwner;
         set => _object.UniqueNameInOwner = value;
     }
 
-    public string SceneFilePath
-    {
+    public string SceneFilePath {
         get => _object.SceneFilePath;
         set => _object.SceneFilePath = value;
     }
 
-    public Node Owner
-    {
+    public Node Owner {
         get => _object.Owner;
         set => _object.Owner = value;
     }
 
-    public MultiplayerApi Multiplayer
-    {
+    public MultiplayerApi Multiplayer {
         get => _object.Multiplayer;
     }
 
-    public int ProcessMode
-    {
+    public int ProcessMode {
         get => (int)_object.ProcessMode;
         set => _object.ProcessMode = (Node.ProcessModeEnum)value;
     }
 
-    public int ProcessPriority
-    {
+    public int ProcessPriority {
         get => _object.ProcessPriority;
         set => _object.ProcessPriority = value;
     }
 
-    public int ProcessPhysicsPriority
-    {
+    public int ProcessPhysicsPriority {
         get => _object.ProcessPhysicsPriority;
         set => _object.ProcessPhysicsPriority = value;
     }
 
-    public int ProcessThreadGroup
-    {
+    public int ProcessThreadGroup {
         get => (int)_object.ProcessThreadGroup;
         set => _object.ProcessThreadGroup = (Node.ProcessThreadGroupEnum)value;
     }
 
-    public int ProcessThreadGroupOrder
-    {
+    public int ProcessThreadGroupOrder {
         get => _object.ProcessThreadGroupOrder;
         set => _object.ProcessThreadGroupOrder = value;
     }
 
-    public int ProcessThreadMessages
-    {
+    public int ProcessThreadMessages {
         get => (int)_object.ProcessThreadMessages;
         set => _object.ProcessThreadMessages = (Node.ProcessThreadMessagesEnum)value;
     }
 
-    public int PhysicsInterpolationMode
-    {
+    public int PhysicsInterpolationMode {
         get => (int)_object.PhysicsInterpolationMode;
         set => _object.PhysicsInterpolationMode = (Node.PhysicsInterpolationModeEnum)value;
     }
 
-    public int AutoTranslateMode
-    {
+    public int AutoTranslateMode {
         get => (int)_object.AutoTranslateMode;
         set => _object.AutoTranslateMode = (Node.AutoTranslateModeEnum)value;
     }
 
-    public string EditorDescription
-    {
+    public string EditorDescription {
         get => _object.EditorDescription;
         set => _object.EditorDescription = value;
     }
@@ -394,143 +336,115 @@ public class FmodEventEmitter2D
 
     #region Methods
 
-    public void Play(bool @restart_if_playing = true)
-    {
+    public void Play(bool @restart_if_playing = true) {
         _object.Call(MethodName.Play, @restart_if_playing);
     }
 
-    public void PlayOneShot()
-    {
+    public void PlayOneShot() {
         _object.Call(MethodName.PlayOneShot);
     }
 
-    public void Stop()
-    {
+    public void Stop() {
         _object.Call(MethodName.Stop);
     }
 
-    public void SetParameter(string @name, Variant @value)
-    {
+    public void SetParameter(string @name, Variant @value) {
         _object.Call(MethodName.SetParameter, @name, @value);
     }
 
-    public Variant GetParameter(string @name)
-    {
+    public Variant GetParameter(string @name) {
         return (Variant)_object.Call(MethodName.GetParameter, @name);
     }
 
-    public void SetParameterById(int @id, Variant @value)
-    {
+    public void SetParameterById(int @id, Variant @value) {
         _object.Call(MethodName.SetParameterById, @id, @value);
     }
 
-    public Variant GetParameterById(int @id)
-    {
+    public Variant GetParameterById(int @id) {
         return (Variant)_object.Call(MethodName.GetParameterById, @id);
     }
 
-    public bool IsPaused()
-    {
+    public bool IsPaused() {
         return (bool)_object.Call(MethodName.IsPaused);
     }
 
-    public void SetPaused(bool @p_is_paused)
-    {
+    public void SetPaused(bool @p_is_paused) {
         _object.Call(MethodName.SetPaused, @p_is_paused);
     }
 
-    public void SetEventName(string @event_name)
-    {
+    public void SetEventName(string @event_name) {
         _object.Call(MethodName.SetEventName, @event_name);
     }
 
-    public string GetEventName()
-    {
+    public string GetEventName() {
         return (string)_object.Call(MethodName.GetEventName);
     }
 
-    public void SetEventGuid(string @event_guid)
-    {
+    public void SetEventGuid(string @event_guid) {
         _object.Call(MethodName.SetEventGuid, @event_guid);
     }
 
-    public string GetEventGuid()
-    {
+    public string GetEventGuid() {
         return (string)_object.Call(MethodName.GetEventGuid);
     }
 
-    public void SetAttached(bool @attached)
-    {
+    public void SetAttached(bool @attached) {
         _object.Call(MethodName.SetAttached, @attached);
     }
 
-    public bool IsAttached()
-    {
+    public bool IsAttached() {
         return (bool)_object.Call(MethodName.IsAttached);
     }
 
-    public void SetAutoplay(bool @_autoplay)
-    {
+    public void SetAutoplay(bool @_autoplay) {
         _object.Call(MethodName.SetAutoplay, @_autoplay);
     }
 
-    public bool IsAutoplay()
-    {
+    public bool IsAutoplay() {
         return (bool)_object.Call(MethodName.IsAutoplay);
     }
 
-    public void SetAutoRelease(bool @_autoplay)
-    {
+    public void SetAutoRelease(bool @_autoplay) {
         _object.Call(MethodName.SetAutoRelease, @_autoplay);
     }
 
-    public bool IsAutoRelease()
-    {
+    public bool IsAutoRelease() {
         return (bool)_object.Call(MethodName.IsAutoRelease);
     }
 
-    public void SetAllowFadeout(bool @allow_fadeout)
-    {
+    public void SetAllowFadeout(bool @allow_fadeout) {
         _object.Call(MethodName.SetAllowFadeout, @allow_fadeout);
     }
 
-    public bool IsAllowFadeout()
-    {
+    public bool IsAllowFadeout() {
         return (bool)_object.Call(MethodName.IsAllowFadeout);
     }
 
-    public void SetPreloadEvent(bool @preload_event)
-    {
+    public void SetPreloadEvent(bool @preload_event) {
         _object.Call(MethodName.SetPreloadEvent, @preload_event);
     }
 
-    public bool IsPreloadEvent()
-    {
+    public bool IsPreloadEvent() {
         return (bool)_object.Call(MethodName.IsPreloadEvent);
     }
 
-    public float GetVolume()
-    {
+    public float GetVolume() {
         return (float)_object.Call(MethodName.GetVolume);
     }
 
-    public void SetVolume(float @p_volume)
-    {
+    public void SetVolume(float @p_volume) {
         _object.Call(MethodName.SetVolume, @p_volume);
     }
 
-    public void SetProgrammerCallback(string @p_programmers_callback_sound_key)
-    {
+    public void SetProgrammerCallback(string @p_programmers_callback_sound_key) {
         _object.Call(MethodName.SetProgrammerCallback, @p_programmers_callback_sound_key);
     }
 
-    public void ToolRemoveAllParameters()
-    {
+    public void ToolRemoveAllParameters() {
         _object.Call(MethodName.ToolRemoveAllParameters);
     }
 
-    public void ToolRemoveParameter(int @parameter_id)
-    {
+    public void ToolRemoveParameter(int @parameter_id) {
         _object.Call(MethodName.ToolRemoveParameter, @parameter_id);
     }
 
@@ -538,1500 +452,1205 @@ public class FmodEventEmitter2D
 
     #region Inherited Methods
 
-    public void SetPosition(Godot.Vector2 @position)
-    {
+    public void SetPosition(Godot.Vector2 @position) {
         _object.SetPosition(@position);
     }
 
-    public void SetRotation(float @radians)
-    {
+    public void SetRotation(float @radians) {
         _object.SetRotation(@radians);
     }
 
-    public void SetRotationDegrees(float @degrees)
-    {
+    public void SetRotationDegrees(float @degrees) {
         _object.SetRotationDegrees(@degrees);
     }
 
-    public void SetSkew(float @radians)
-    {
+    public void SetSkew(float @radians) {
         _object.SetSkew(@radians);
     }
 
-    public void SetScale(Godot.Vector2 @scale)
-    {
+    public void SetScale(Godot.Vector2 @scale) {
         _object.SetScale(@scale);
     }
 
-    public Godot.Vector2 GetPosition()
-    {
+    public Godot.Vector2 GetPosition() {
         return _object.GetPosition();
     }
 
-    public float GetRotation()
-    {
+    public float GetRotation() {
         return _object.GetRotation();
     }
 
-    public float GetRotationDegrees()
-    {
+    public float GetRotationDegrees() {
         return _object.GetRotationDegrees();
     }
 
-    public float GetSkew()
-    {
+    public float GetSkew() {
         return _object.GetSkew();
     }
 
-    public Godot.Vector2 GetScale()
-    {
+    public Godot.Vector2 GetScale() {
         return _object.GetScale();
     }
 
-    public void Rotate(float @radians)
-    {
+    public void Rotate(float @radians) {
         _object.Rotate(@radians);
     }
 
-    public void MoveLocalX(float @delta, bool @scaled = false)
-    {
+    public void MoveLocalX(float @delta, bool @scaled = false) {
         _object.MoveLocalX(@delta, @scaled);
     }
 
-    public void MoveLocalY(float @delta, bool @scaled = false)
-    {
+    public void MoveLocalY(float @delta, bool @scaled = false) {
         _object.MoveLocalY(@delta, @scaled);
     }
 
-    public void Translate(Godot.Vector2 @offset)
-    {
+    public void Translate(Godot.Vector2 @offset) {
         _object.Translate(@offset);
     }
 
-    public void GlobalTranslate(Godot.Vector2 @offset)
-    {
+    public void GlobalTranslate(Godot.Vector2 @offset) {
         _object.GlobalTranslate(@offset);
     }
 
-    public void ApplyScale(Godot.Vector2 @ratio)
-    {
+    public void ApplyScale(Godot.Vector2 @ratio) {
         _object.ApplyScale(@ratio);
     }
 
-    public void SetGlobalPosition(Godot.Vector2 @position)
-    {
+    public void SetGlobalPosition(Godot.Vector2 @position) {
         _object.SetGlobalPosition(@position);
     }
 
-    public Godot.Vector2 GetGlobalPosition()
-    {
+    public Godot.Vector2 GetGlobalPosition() {
         return _object.GetGlobalPosition();
     }
 
-    public void SetGlobalRotation(float @radians)
-    {
+    public void SetGlobalRotation(float @radians) {
         _object.SetGlobalRotation(@radians);
     }
 
-    public void SetGlobalRotationDegrees(float @degrees)
-    {
+    public void SetGlobalRotationDegrees(float @degrees) {
         _object.SetGlobalRotationDegrees(@degrees);
     }
 
-    public float GetGlobalRotation()
-    {
+    public float GetGlobalRotation() {
         return _object.GetGlobalRotation();
     }
 
-    public float GetGlobalRotationDegrees()
-    {
+    public float GetGlobalRotationDegrees() {
         return _object.GetGlobalRotationDegrees();
     }
 
-    public void SetGlobalSkew(float @radians)
-    {
+    public void SetGlobalSkew(float @radians) {
         _object.SetGlobalSkew(@radians);
     }
 
-    public float GetGlobalSkew()
-    {
+    public float GetGlobalSkew() {
         return _object.GetGlobalSkew();
     }
 
-    public void SetGlobalScale(Godot.Vector2 @scale)
-    {
+    public void SetGlobalScale(Godot.Vector2 @scale) {
         _object.SetGlobalScale(@scale);
     }
 
-    public Godot.Vector2 GetGlobalScale()
-    {
+    public Godot.Vector2 GetGlobalScale() {
         return _object.GetGlobalScale();
     }
 
-    public void SetTransform(Godot.Transform2D @xform)
-    {
+    public void SetTransform(Godot.Transform2D @xform) {
         _object.SetTransform(@xform);
     }
 
-    public void SetGlobalTransform(Godot.Transform2D @xform)
-    {
+    public void SetGlobalTransform(Godot.Transform2D @xform) {
         _object.SetGlobalTransform(@xform);
     }
 
-    public void LookAt(Godot.Vector2 @point)
-    {
+    public void LookAt(Godot.Vector2 @point) {
         _object.LookAt(@point);
     }
 
-    public float GetAngleTo(Godot.Vector2 @point)
-    {
+    public float GetAngleTo(Godot.Vector2 @point) {
         return _object.GetAngleTo(@point);
     }
 
-    public Godot.Vector2 ToLocal(Godot.Vector2 @global_point)
-    {
+    public Godot.Vector2 ToLocal(Godot.Vector2 @global_point) {
         return _object.ToLocal(@global_point);
     }
 
-    public Godot.Vector2 ToGlobal(Godot.Vector2 @local_point)
-    {
+    public Godot.Vector2 ToGlobal(Godot.Vector2 @local_point) {
         return _object.ToGlobal(@local_point);
     }
 
-    public Godot.Transform2D GetRelativeTransformToParent(Node @parent)
-    {
+    public Godot.Transform2D GetRelativeTransformToParent(Node @parent) {
         return _object.GetRelativeTransformToParent(@parent);
     }
 
-    public Godot.Rid GetCanvasItem()
-    {
+    public Godot.Rid GetCanvasItem() {
         return _object.GetCanvasItem();
     }
 
-    public void SetVisible(bool @visible)
-    {
+    public void SetVisible(bool @visible) {
         _object.SetVisible(@visible);
     }
 
-    public bool IsVisible()
-    {
+    public bool IsVisible() {
         return _object.IsVisible();
     }
 
-    public bool IsVisibleInTree()
-    {
+    public bool IsVisibleInTree() {
         return _object.IsVisibleInTree();
     }
 
-    public void Show()
-    {
+    public void Show() {
         _object.Show();
     }
 
-    public void Hide()
-    {
+    public void Hide() {
         _object.Hide();
     }
 
-    public void QueueRedraw()
-    {
+    public void QueueRedraw() {
         _object.QueueRedraw();
     }
 
-    public void MoveToFront()
-    {
+    public void MoveToFront() {
         _object.MoveToFront();
     }
 
-    public void SetAsTopLevel(bool @enable)
-    {
+    public void SetAsTopLevel(bool @enable) {
         _object.SetAsTopLevel(@enable);
     }
 
-    public bool IsSetAsTopLevel()
-    {
+    public bool IsSetAsTopLevel() {
         return _object.IsSetAsTopLevel();
     }
 
-    public void SetLightMask(int @light_mask)
-    {
+    public void SetLightMask(int @light_mask) {
         _object.SetLightMask(@light_mask);
     }
 
-    public int GetLightMask()
-    {
+    public int GetLightMask() {
         return _object.GetLightMask();
     }
 
-    public void SetModulate(Godot.Color @modulate)
-    {
+    public void SetModulate(Godot.Color @modulate) {
         _object.SetModulate(@modulate);
     }
 
-    public Godot.Color GetModulate()
-    {
+    public Godot.Color GetModulate() {
         return _object.GetModulate();
     }
 
-    public void SetSelfModulate(Godot.Color @self_modulate)
-    {
+    public void SetSelfModulate(Godot.Color @self_modulate) {
         _object.SetSelfModulate(@self_modulate);
     }
 
-    public Godot.Color GetSelfModulate()
-    {
+    public Godot.Color GetSelfModulate() {
         return _object.GetSelfModulate();
     }
 
-    public void SetZIndex(int @z_index)
-    {
+    public void SetZIndex(int @z_index) {
         _object.SetZIndex(@z_index);
     }
 
-    public int GetZIndex()
-    {
+    public int GetZIndex() {
         return _object.GetZIndex();
     }
 
-    public void SetZAsRelative(bool @enable)
-    {
+    public void SetZAsRelative(bool @enable) {
         _object.SetZAsRelative(@enable);
     }
 
-    public bool IsZRelative()
-    {
+    public bool IsZRelative() {
         return _object.IsZRelative();
     }
 
-    public void SetYSortEnabled(bool @enabled)
-    {
+    public void SetYSortEnabled(bool @enabled) {
         _object.SetYSortEnabled(@enabled);
     }
 
-    public bool IsYSortEnabled()
-    {
+    public bool IsYSortEnabled() {
         return _object.IsYSortEnabled();
     }
 
-    public void SetDrawBehindParent(bool @enable)
-    {
+    public void SetDrawBehindParent(bool @enable) {
         _object.SetDrawBehindParent(@enable);
     }
 
-    public bool IsDrawBehindParentEnabled()
-    {
+    public bool IsDrawBehindParentEnabled() {
         return _object.IsDrawBehindParentEnabled();
     }
 
-    public void DrawLine(Godot.Vector2 @from, Godot.Vector2 @to, Godot.Color @color, float @width = -1.0f, bool @antialiased = false)
-    {
+    public void DrawLine(Godot.Vector2 @from, Godot.Vector2 @to, Godot.Color @color, float @width = -1.0f, bool @antialiased = false) {
         _object.DrawLine(@from, @to, @color, @width, @antialiased);
     }
 
-    public void DrawDashedLine(Godot.Vector2 @from, Godot.Vector2 @to, Godot.Color @color, float @width = -1.0f, float @dash = 2.0f, bool @aligned = true, bool @antialiased = false)
-    {
+    public void DrawDashedLine(Godot.Vector2 @from, Godot.Vector2 @to, Godot.Color @color, float @width = -1.0f, float @dash = 2.0f, bool @aligned = true, bool @antialiased = false) {
         _object.DrawDashedLine(@from, @to, @color, @width, @dash, @aligned, @antialiased);
     }
 
-    public void DrawPolyline(Godot.Vector2[] @points, Godot.Color @color, float @width = -1.0f, bool @antialiased = false)
-    {
+    public void DrawPolyline(Godot.Vector2[] @points, Godot.Color @color, float @width = -1.0f, bool @antialiased = false) {
         _object.DrawPolyline(@points, @color, @width, @antialiased);
     }
 
-    public void DrawPolylineColors(Godot.Vector2[] @points, Godot.Color[] @colors, float @width = -1.0f, bool @antialiased = false)
-    {
+    public void DrawPolylineColors(Godot.Vector2[] @points, Godot.Color[] @colors, float @width = -1.0f, bool @antialiased = false) {
         _object.DrawPolylineColors(@points, @colors, @width, @antialiased);
     }
 
-    public void DrawEllipseArc(Godot.Vector2 @center, float @major, float @minor, float @start_angle, float @end_angle, int @point_count, Godot.Color @color, float @width = -1.0f, bool @antialiased = false)
-    {
+    public void DrawEllipseArc(Godot.Vector2 @center, float @major, float @minor, float @start_angle, float @end_angle, int @point_count, Godot.Color @color, float @width = -1.0f, bool @antialiased = false) {
         _object.DrawEllipseArc(@center, @major, @minor, @start_angle, @end_angle, @point_count, @color, @width, @antialiased);
     }
 
-    public void DrawArc(Godot.Vector2 @center, float @radius, float @start_angle, float @end_angle, int @point_count, Godot.Color @color, float @width = -1.0f, bool @antialiased = false)
-    {
+    public void DrawArc(Godot.Vector2 @center, float @radius, float @start_angle, float @end_angle, int @point_count, Godot.Color @color, float @width = -1.0f, bool @antialiased = false) {
         _object.DrawArc(@center, @radius, @start_angle, @end_angle, @point_count, @color, @width, @antialiased);
     }
 
-    public void DrawMultiline(Godot.Vector2[] @points, Godot.Color @color, float @width = -1.0f, bool @antialiased = false)
-    {
+    public void DrawMultiline(Godot.Vector2[] @points, Godot.Color @color, float @width = -1.0f, bool @antialiased = false) {
         _object.DrawMultiline(@points, @color, @width, @antialiased);
     }
 
-    public void DrawMultilineColors(Godot.Vector2[] @points, Godot.Color[] @colors, float @width = -1.0f, bool @antialiased = false)
-    {
+    public void DrawMultilineColors(Godot.Vector2[] @points, Godot.Color[] @colors, float @width = -1.0f, bool @antialiased = false) {
         _object.DrawMultilineColors(@points, @colors, @width, @antialiased);
     }
 
-    public void DrawRect(Godot.Rect2 @rect, Godot.Color @color, bool @filled = true, float @width = -1.0f, bool @antialiased = false)
-    {
+    public void DrawRect(Godot.Rect2 @rect, Godot.Color @color, bool @filled = true, float @width = -1.0f, bool @antialiased = false) {
         _object.DrawRect(@rect, @color, @filled, @width, @antialiased);
     }
 
-    public void DrawCircle(Godot.Vector2 @position, float @radius, Godot.Color @color, bool @filled = true, float @width = -1.0f, bool @antialiased = false)
-    {
+    public void DrawCircle(Godot.Vector2 @position, float @radius, Godot.Color @color, bool @filled = true, float @width = -1.0f, bool @antialiased = false) {
         _object.DrawCircle(@position, @radius, @color, @filled, @width, @antialiased);
     }
 
-    public void DrawEllipse(Godot.Vector2 @position, float @major, float @minor, Godot.Color @color, bool @filled = true, float @width = -1.0f, bool @antialiased = false)
-    {
+    public void DrawEllipse(Godot.Vector2 @position, float @major, float @minor, Godot.Color @color, bool @filled = true, float @width = -1.0f, bool @antialiased = false) {
         _object.DrawEllipse(@position, @major, @minor, @color, @filled, @width, @antialiased);
     }
 
-    public void DrawTexture(Texture2D @texture, Godot.Vector2 @position, Godot.Color? @modulate = null)
-    {
+    public void DrawTexture(Texture2D @texture, Godot.Vector2 @position, Godot.Color? @modulate = null) {
         @modulate ??= new(1.0f, 1.0f, 1.0f, 1.0f);
         _object.DrawTexture(@texture, @position, @modulate);
     }
 
-    public void DrawTextureRect(Texture2D @texture, Godot.Rect2 @rect, bool @tile, Godot.Color? @modulate = null, bool @transpose = false)
-    {
+    public void DrawTextureRect(Texture2D @texture, Godot.Rect2 @rect, bool @tile, Godot.Color? @modulate = null, bool @transpose = false) {
         @modulate ??= new(1.0f, 1.0f, 1.0f, 1.0f);
         _object.DrawTextureRect(@texture, @rect, @tile, @modulate, @transpose);
     }
 
-    public void DrawTextureRectRegion(Texture2D @texture, Godot.Rect2 @rect, Godot.Rect2 @src_rect, Godot.Color? @modulate = null, bool @transpose = false, bool @clip_uv = true)
-    {
+    public void DrawTextureRectRegion(Texture2D @texture, Godot.Rect2 @rect, Godot.Rect2 @src_rect, Godot.Color? @modulate = null, bool @transpose = false, bool @clip_uv = true) {
         @modulate ??= new(1.0f, 1.0f, 1.0f, 1.0f);
         _object.DrawTextureRectRegion(@texture, @rect, @src_rect, @modulate, @transpose, @clip_uv);
     }
 
-    public void DrawMsdfTextureRectRegion(Texture2D @texture, Godot.Rect2 @rect, Godot.Rect2 @src_rect, Godot.Color? @modulate = null, float @outline = 0.0f, float @pixel_range = 4.0f, float @scale = 1.0f)
-    {
+    public void DrawMsdfTextureRectRegion(Texture2D @texture, Godot.Rect2 @rect, Godot.Rect2 @src_rect, Godot.Color? @modulate = null, float @outline = 0.0f, float @pixel_range = 4.0f, float @scale = 1.0f) {
         @modulate ??= new(1.0f, 1.0f, 1.0f, 1.0f);
         _object.DrawMsdfTextureRectRegion(@texture, @rect, @src_rect, @modulate, @outline, @pixel_range, @scale);
     }
 
-    public void DrawLcdTextureRectRegion(Texture2D @texture, Godot.Rect2 @rect, Godot.Rect2 @src_rect, Godot.Color? @modulate = null)
-    {
+    public void DrawLcdTextureRectRegion(Texture2D @texture, Godot.Rect2 @rect, Godot.Rect2 @src_rect, Godot.Color? @modulate = null) {
         @modulate ??= new(1.0f, 1.0f, 1.0f, 1.0f);
         _object.DrawLcdTextureRectRegion(@texture, @rect, @src_rect, @modulate);
     }
 
-    public void DrawStyleBox(StyleBox @style_box, Godot.Rect2 @rect)
-    {
+    public void DrawStyleBox(StyleBox @style_box, Godot.Rect2 @rect) {
         _object.DrawStyleBox(@style_box, @rect);
     }
 
-    public void DrawPrimitive(Godot.Vector2[] @points, Godot.Color[] @colors, Godot.Vector2[] @uvs, Texture2D @texture = default)
-    {
+    public void DrawPrimitive(Godot.Vector2[] @points, Godot.Color[] @colors, Godot.Vector2[] @uvs, Texture2D @texture = default) {
         _object.DrawPrimitive(@points, @colors, @uvs, @texture);
     }
 
-    public void DrawPolygon(Godot.Vector2[] @points, Godot.Color[] @colors, Godot.Vector2[] @uvs = null, Texture2D @texture = default)
-    {
+    public void DrawPolygon(Godot.Vector2[] @points, Godot.Color[] @colors, Godot.Vector2[] @uvs = null, Texture2D @texture = default) {
         @uvs ??= System.Array.Empty<Godot.Vector2>();
         _object.DrawPolygon(@points, @colors, @uvs, @texture);
     }
 
-    public void DrawColoredPolygon(Godot.Vector2[] @points, Godot.Color @color, Godot.Vector2[] @uvs = null, Texture2D @texture = default)
-    {
+    public void DrawColoredPolygon(Godot.Vector2[] @points, Godot.Color @color, Godot.Vector2[] @uvs = null, Texture2D @texture = default) {
         @uvs ??= System.Array.Empty<Godot.Vector2>();
         _object.DrawColoredPolygon(@points, @color, @uvs, @texture);
     }
 
-    public void DrawString(Font @font, Godot.Vector2 @pos, string @text, HorizontalAlignment @alignment = (HorizontalAlignment)0, float @width = (float)-1, int @font_size = 16, Godot.Color? @modulate = null, TextServer.JustificationFlag @justification_flags = (TextServer.JustificationFlag)3, TextServer.Direction @direction = (TextServer.Direction)0, TextServer.Orientation @orientation = (TextServer.Orientation)0, float @oversampling = 0.0f)
-    {
+    public void DrawString(Font @font, Godot.Vector2 @pos, string @text, HorizontalAlignment @alignment = (HorizontalAlignment)0, float @width = (float)-1, int @font_size = 16, Godot.Color? @modulate = null, TextServer.JustificationFlag @justification_flags = (TextServer.JustificationFlag)3, TextServer.Direction @direction = (TextServer.Direction)0, TextServer.Orientation @orientation = (TextServer.Orientation)0, float @oversampling = 0.0f) {
         @modulate ??= new(1.0f, 1.0f, 1.0f, 1.0f);
         _object.DrawString(@font, @pos, @text, @alignment, @width, @font_size, @modulate, @justification_flags, @direction, @orientation, @oversampling);
     }
 
-    public void DrawMultilineString(Font @font, Godot.Vector2 @pos, string @text, HorizontalAlignment @alignment = (HorizontalAlignment)0, float @width = (float)-1, int @font_size = 16, int @max_lines = -1, Godot.Color? @modulate = null, TextServer.LineBreakFlag @brk_flags = (TextServer.LineBreakFlag)3, TextServer.JustificationFlag @justification_flags = (TextServer.JustificationFlag)3, TextServer.Direction @direction = (TextServer.Direction)0, TextServer.Orientation @orientation = (TextServer.Orientation)0, float @oversampling = 0.0f)
-    {
+    public void DrawMultilineString(Font @font, Godot.Vector2 @pos, string @text, HorizontalAlignment @alignment = (HorizontalAlignment)0, float @width = (float)-1, int @font_size = 16, int @max_lines = -1, Godot.Color? @modulate = null, TextServer.LineBreakFlag @brk_flags = (TextServer.LineBreakFlag)3, TextServer.JustificationFlag @justification_flags = (TextServer.JustificationFlag)3, TextServer.Direction @direction = (TextServer.Direction)0, TextServer.Orientation @orientation = (TextServer.Orientation)0, float @oversampling = 0.0f) {
         @modulate ??= new(1.0f, 1.0f, 1.0f, 1.0f);
         _object.DrawMultilineString(@font, @pos, @text, @alignment, @width, @font_size, @max_lines, @modulate, @brk_flags, @justification_flags, @direction, @orientation, @oversampling);
     }
 
-    public void DrawStringOutline(Font @font, Godot.Vector2 @pos, string @text, HorizontalAlignment @alignment = (HorizontalAlignment)0, float @width = (float)-1, int @font_size = 16, int @size = 1, Godot.Color? @modulate = null, TextServer.JustificationFlag @justification_flags = (TextServer.JustificationFlag)3, TextServer.Direction @direction = (TextServer.Direction)0, TextServer.Orientation @orientation = (TextServer.Orientation)0, float @oversampling = 0.0f)
-    {
+    public void DrawStringOutline(Font @font, Godot.Vector2 @pos, string @text, HorizontalAlignment @alignment = (HorizontalAlignment)0, float @width = (float)-1, int @font_size = 16, int @size = 1, Godot.Color? @modulate = null, TextServer.JustificationFlag @justification_flags = (TextServer.JustificationFlag)3, TextServer.Direction @direction = (TextServer.Direction)0, TextServer.Orientation @orientation = (TextServer.Orientation)0, float @oversampling = 0.0f) {
         @modulate ??= new(1.0f, 1.0f, 1.0f, 1.0f);
         _object.DrawStringOutline(@font, @pos, @text, @alignment, @width, @font_size, @size, @modulate, @justification_flags, @direction, @orientation, @oversampling);
     }
 
-    public void DrawMultilineStringOutline(Font @font, Godot.Vector2 @pos, string @text, HorizontalAlignment @alignment = (HorizontalAlignment)0, float @width = (float)-1, int @font_size = 16, int @max_lines = -1, int @size = 1, Godot.Color? @modulate = null, TextServer.LineBreakFlag @brk_flags = (TextServer.LineBreakFlag)3, TextServer.JustificationFlag @justification_flags = (TextServer.JustificationFlag)3, TextServer.Direction @direction = (TextServer.Direction)0, TextServer.Orientation @orientation = (TextServer.Orientation)0, float @oversampling = 0.0f)
-    {
+    public void DrawMultilineStringOutline(Font @font, Godot.Vector2 @pos, string @text, HorizontalAlignment @alignment = (HorizontalAlignment)0, float @width = (float)-1, int @font_size = 16, int @max_lines = -1, int @size = 1, Godot.Color? @modulate = null, TextServer.LineBreakFlag @brk_flags = (TextServer.LineBreakFlag)3, TextServer.JustificationFlag @justification_flags = (TextServer.JustificationFlag)3, TextServer.Direction @direction = (TextServer.Direction)0, TextServer.Orientation @orientation = (TextServer.Orientation)0, float @oversampling = 0.0f) {
         @modulate ??= new(1.0f, 1.0f, 1.0f, 1.0f);
         _object.DrawMultilineStringOutline(@font, @pos, @text, @alignment, @width, @font_size, @max_lines, @size, @modulate, @brk_flags, @justification_flags, @direction, @orientation, @oversampling);
     }
 
-    public void DrawChar(Font @font, Godot.Vector2 @pos, string @char, int @font_size = 16, Godot.Color? @modulate = null, float @oversampling = 0.0f)
-    {
+    public void DrawChar(Font @font, Godot.Vector2 @pos, string @char, int @font_size = 16, Godot.Color? @modulate = null, float @oversampling = 0.0f) {
         @modulate ??= new(1.0f, 1.0f, 1.0f, 1.0f);
         _object.DrawChar(@font, @pos, @char, @font_size, @modulate, @oversampling);
     }
 
-    public void DrawCharOutline(Font @font, Godot.Vector2 @pos, string @char, int @font_size = 16, int @size = -1, Godot.Color? @modulate = null, float @oversampling = 0.0f)
-    {
+    public void DrawCharOutline(Font @font, Godot.Vector2 @pos, string @char, int @font_size = 16, int @size = -1, Godot.Color? @modulate = null, float @oversampling = 0.0f) {
         @modulate ??= new(1.0f, 1.0f, 1.0f, 1.0f);
         _object.DrawCharOutline(@font, @pos, @char, @font_size, @size, @modulate, @oversampling);
     }
 
-    public void DrawMesh(Mesh @mesh, Texture2D @texture, Godot.Transform2D? @transform = null, Godot.Color? @modulate = null)
-    {
+    public void DrawMesh(Mesh @mesh, Texture2D @texture, Godot.Transform2D? @transform = null, Godot.Color? @modulate = null) {
         @transform ??= Godot.Transform2D.Identity;
         @modulate ??= new(1.0f, 1.0f, 1.0f, 1.0f);
         _object.DrawMesh(@mesh, @texture, @transform, @modulate);
     }
 
-    public void DrawMultimesh(MultiMesh @multimesh, Texture2D @texture)
-    {
+    public void DrawMultimesh(MultiMesh @multimesh, Texture2D @texture) {
         _object.DrawMultimesh(@multimesh, @texture);
     }
 
-    public void DrawSetTransform(Godot.Vector2 @position, float @rotation = 0.0f, Godot.Vector2? @scale = null)
-    {
+    public void DrawSetTransform(Godot.Vector2 @position, float @rotation = 0.0f, Godot.Vector2? @scale = null) {
         @scale ??= new(1.0f, 1.0f);
         _object.DrawSetTransform(@position, @rotation, @scale);
     }
 
-    public void DrawSetTransformMatrix(Godot.Transform2D @xform)
-    {
+    public void DrawSetTransformMatrix(Godot.Transform2D @xform) {
         _object.DrawSetTransformMatrix(@xform);
     }
 
-    public void DrawAnimationSlice(float @animation_length, float @slice_begin, float @slice_end, float @offset = 0.0f)
-    {
+    public void DrawAnimationSlice(float @animation_length, float @slice_begin, float @slice_end, float @offset = 0.0f) {
         _object.DrawAnimationSlice(@animation_length, @slice_begin, @slice_end, @offset);
     }
 
-    public void DrawEndAnimation()
-    {
+    public void DrawEndAnimation() {
         _object.DrawEndAnimation();
     }
 
-    public Godot.Transform2D GetTransform()
-    {
+    public Godot.Transform2D GetTransform() {
         return _object.GetTransform();
     }
 
-    public Godot.Transform2D GetGlobalTransform()
-    {
+    public Godot.Transform2D GetGlobalTransform() {
         return _object.GetGlobalTransform();
     }
 
-    public Godot.Transform2D GetGlobalTransformWithCanvas()
-    {
+    public Godot.Transform2D GetGlobalTransformWithCanvas() {
         return _object.GetGlobalTransformWithCanvas();
     }
 
-    public Godot.Transform2D GetViewportTransform()
-    {
+    public Godot.Transform2D GetViewportTransform() {
         return _object.GetViewportTransform();
     }
 
-    public Godot.Rect2 GetViewportRect()
-    {
+    public Godot.Rect2 GetViewportRect() {
         return _object.GetViewportRect();
     }
 
-    public Godot.Transform2D GetCanvasTransform()
-    {
+    public Godot.Transform2D GetCanvasTransform() {
         return _object.GetCanvasTransform();
     }
 
-    public Godot.Transform2D GetScreenTransform()
-    {
+    public Godot.Transform2D GetScreenTransform() {
         return _object.GetScreenTransform();
     }
 
-    public Godot.Vector2 GetLocalMousePosition()
-    {
+    public Godot.Vector2 GetLocalMousePosition() {
         return _object.GetLocalMousePosition();
     }
 
-    public Godot.Vector2 GetGlobalMousePosition()
-    {
+    public Godot.Vector2 GetGlobalMousePosition() {
         return _object.GetGlobalMousePosition();
     }
 
-    public Godot.Rid GetCanvas()
-    {
+    public Godot.Rid GetCanvas() {
         return _object.GetCanvas();
     }
 
-    public CanvasLayer GetCanvasLayerNode()
-    {
+    public CanvasLayer GetCanvasLayerNode() {
         return _object.GetCanvasLayerNode();
     }
 
-    public World2D GetWorld2d()
-    {
+    public World2D GetWorld2d() {
         return _object.GetWorld2D();
     }
 
-    public void SetMaterial(Material @material)
-    {
+    public void SetMaterial(Material @material) {
         _object.SetMaterial(@material);
     }
 
-    public Material GetMaterial()
-    {
+    public Material GetMaterial() {
         return _object.GetMaterial();
     }
 
-    public void SetInstanceShaderParameter(Godot.StringName @name, Variant @value)
-    {
+    public void SetInstanceShaderParameter(Godot.StringName @name, Variant @value) {
         _object.SetInstanceShaderParameter(@name, @value);
     }
 
-    public Variant GetInstanceShaderParameter(Godot.StringName @name)
-    {
+    public Variant GetInstanceShaderParameter(Godot.StringName @name) {
         return _object.GetInstanceShaderParameter(@name);
     }
 
-    public void SetUseParentMaterial(bool @enable)
-    {
+    public void SetUseParentMaterial(bool @enable) {
         _object.SetUseParentMaterial(@enable);
     }
 
-    public bool GetUseParentMaterial()
-    {
+    public bool GetUseParentMaterial() {
         return _object.GetUseParentMaterial();
     }
 
-    public void SetNotifyLocalTransform(bool @enable)
-    {
+    public void SetNotifyLocalTransform(bool @enable) {
         _object.SetNotifyLocalTransform(@enable);
     }
 
-    public bool IsLocalTransformNotificationEnabled()
-    {
+    public bool IsLocalTransformNotificationEnabled() {
         return _object.IsLocalTransformNotificationEnabled();
     }
 
-    public void SetNotifyTransform(bool @enable)
-    {
+    public void SetNotifyTransform(bool @enable) {
         _object.SetNotifyTransform(@enable);
     }
 
-    public bool IsTransformNotificationEnabled()
-    {
+    public bool IsTransformNotificationEnabled() {
         return _object.IsTransformNotificationEnabled();
     }
 
-    public void ForceUpdateTransform()
-    {
+    public void ForceUpdateTransform() {
         _object.ForceUpdateTransform();
     }
 
-    public Godot.Vector2 MakeCanvasPositionLocal(Godot.Vector2 @viewport_point)
-    {
+    public Godot.Vector2 MakeCanvasPositionLocal(Godot.Vector2 @viewport_point) {
         return _object.MakeCanvasPositionLocal(@viewport_point);
     }
 
-    public InputEvent MakeInputLocal(InputEvent @event)
-    {
+    public InputEvent MakeInputLocal(InputEvent @event) {
         return _object.MakeInputLocal(@event);
     }
 
-    public void SetVisibilityLayer(int @layer)
-    {
+    public void SetVisibilityLayer(int @layer) {
         _object.SetVisibilityLayer((uint)@layer);
     }
 
-    public int GetVisibilityLayer()
-    {
+    public int GetVisibilityLayer() {
         return (int)_object.GetVisibilityLayer();
     }
 
-    public void SetVisibilityLayerBit(int @layer, bool @enabled)
-    {
+    public void SetVisibilityLayerBit(int @layer, bool @enabled) {
         _object.SetVisibilityLayerBit((uint)@layer, @enabled);
     }
 
-    public bool GetVisibilityLayerBit(int @layer)
-    {
+    public bool GetVisibilityLayerBit(int @layer) {
         return _object.GetVisibilityLayerBit((uint)@layer);
     }
 
-    public void SetTextureFilter(CanvasItem.TextureFilterEnum @mode)
-    {
+    public void SetTextureFilter(CanvasItem.TextureFilterEnum @mode) {
         _object.SetTextureFilter(@mode);
     }
 
-    public CanvasItem.TextureFilterEnum GetTextureFilter()
-    {
+    public CanvasItem.TextureFilterEnum GetTextureFilter() {
         return _object.GetTextureFilter();
     }
 
-    public void SetTextureRepeat(CanvasItem.TextureRepeatEnum @mode)
-    {
+    public void SetTextureRepeat(CanvasItem.TextureRepeatEnum @mode) {
         _object.SetTextureRepeat(@mode);
     }
 
-    public CanvasItem.TextureRepeatEnum GetTextureRepeat()
-    {
+    public CanvasItem.TextureRepeatEnum GetTextureRepeat() {
         return _object.GetTextureRepeat();
     }
 
-    public void SetClipChildrenMode(CanvasItem.ClipChildrenMode @mode)
-    {
+    public void SetClipChildrenMode(CanvasItem.ClipChildrenMode @mode) {
         _object.SetClipChildrenMode(@mode);
     }
 
-    public CanvasItem.ClipChildrenMode GetClipChildrenMode()
-    {
+    public CanvasItem.ClipChildrenMode GetClipChildrenMode() {
         return _object.GetClipChildrenMode();
     }
 
-    public static void PrintOrphanNodes()
-    {
+    public static void PrintOrphanNodes() {
         Node.PrintOrphanNodes();
     }
 
-    public static Godot.Collections.Array<int> GetOrphanNodeIds()
-    {
+    public static Godot.Collections.Array<int> GetOrphanNodeIds() {
         return Node.GetOrphanNodeIds();
     }
 
-    public void AddSibling(Node @sibling, bool @force_readable_name = false)
-    {
+    public void AddSibling(Node @sibling, bool @force_readable_name = false) {
         _object.AddSibling(@sibling, @force_readable_name);
     }
 
-    public void SetName(Godot.StringName @name)
-    {
+    public void SetName(Godot.StringName @name) {
         _object.SetName(@name);
     }
 
-    public Godot.StringName GetName()
-    {
+    public Godot.StringName GetName() {
         return _object.GetName();
     }
 
-    public void AddChild(Node @node, bool @force_readable_name = false, Node.InternalMode @internal = (Node.InternalMode)0)
-    {
+    public void AddChild(Node @node, bool @force_readable_name = false, Node.InternalMode @internal = (Node.InternalMode)0) {
         _object.AddChild(@node, @force_readable_name, @internal);
     }
 
-    public void RemoveChild(Node @node)
-    {
+    public void RemoveChild(Node @node) {
         _object.RemoveChild(@node);
     }
 
-    public void Reparent(Node @new_parent, bool @keep_global_transform = true)
-    {
+    public void Reparent(Node @new_parent, bool @keep_global_transform = true) {
         _object.Reparent(@new_parent, @keep_global_transform);
     }
 
-    public int GetChildCount(bool @include_internal = false)
-    {
+    public int GetChildCount(bool @include_internal = false) {
         return _object.GetChildCount(@include_internal);
     }
 
-    public Godot.Collections.Array<Godot.Node> GetChildren(bool @include_internal = false)
-    {
+    public Godot.Collections.Array<Godot.Node> GetChildren(bool @include_internal = false) {
         return _object.GetChildren(@include_internal);
     }
 
-    public Node GetChild(int @idx, bool @include_internal = false)
-    {
+    public Node GetChild(int @idx, bool @include_internal = false) {
         return _object.GetChild(@idx, @include_internal);
     }
 
-    public bool HasNode(Godot.NodePath @path)
-    {
+    public bool HasNode(Godot.NodePath @path) {
         return _object.HasNode(@path);
     }
 
-    public Node GetNode(Godot.NodePath @path)
-    {
+    public Node GetNode(Godot.NodePath @path) {
         return _object.GetNode(@path);
     }
 
-    public Node GetNodeOrNull(Godot.NodePath @path)
-    {
+    public Node GetNodeOrNull(Godot.NodePath @path) {
         return _object.GetNodeOrNull(@path);
     }
 
-    public Node GetParent()
-    {
+    public Node GetParent() {
         return _object.GetParent();
     }
 
-    public Node FindChild(string @pattern, bool @recursive = true, bool @owned = true)
-    {
+    public Node FindChild(string @pattern, bool @recursive = true, bool @owned = true) {
         return _object.FindChild(@pattern, @recursive, @owned);
     }
 
-    public Godot.Collections.Array<Godot.Node> FindChildren(string @pattern, string @type = "", bool @recursive = true, bool @owned = true)
-    {
+    public Godot.Collections.Array<Godot.Node> FindChildren(string @pattern, string @type = "", bool @recursive = true, bool @owned = true) {
         return _object.FindChildren(@pattern, @type, @recursive, @owned);
     }
 
-    public Node FindParent(string @pattern)
-    {
+    public Node FindParent(string @pattern) {
         return _object.FindParent(@pattern);
     }
 
-    public bool HasNodeAndResource(Godot.NodePath @path)
-    {
+    public bool HasNodeAndResource(Godot.NodePath @path) {
         return _object.HasNodeAndResource(@path);
     }
 
-    public Godot.Collections.Array GetNodeAndResource(Godot.NodePath @path)
-    {
+    public Godot.Collections.Array GetNodeAndResource(Godot.NodePath @path) {
         return _object.GetNodeAndResource(@path);
     }
 
-    public bool IsInsideTree()
-    {
+    public bool IsInsideTree() {
         return _object.IsInsideTree();
     }
 
-    public bool IsPartOfEditedScene()
-    {
+    public bool IsPartOfEditedScene() {
         return _object.IsPartOfEditedScene();
     }
 
-    public bool IsAncestorOf(Node @node)
-    {
+    public bool IsAncestorOf(Node @node) {
         return _object.IsAncestorOf(@node);
     }
 
-    public bool IsGreaterThan(Node @node)
-    {
+    public bool IsGreaterThan(Node @node) {
         return _object.IsGreaterThan(@node);
     }
 
-    public Godot.NodePath GetPath()
-    {
+    public Godot.NodePath GetPath() {
         return _object.GetPath();
     }
 
-    public Godot.NodePath GetPathTo(Node @node, bool @use_unique_path = false)
-    {
+    public Godot.NodePath GetPathTo(Node @node, bool @use_unique_path = false) {
         return _object.GetPathTo(@node, @use_unique_path);
     }
 
-    public void AddToGroup(Godot.StringName @group, bool @persistent = false)
-    {
+    public void AddToGroup(Godot.StringName @group, bool @persistent = false) {
         _object.AddToGroup(@group, @persistent);
     }
 
-    public void RemoveFromGroup(Godot.StringName @group)
-    {
+    public void RemoveFromGroup(Godot.StringName @group) {
         _object.RemoveFromGroup(@group);
     }
 
-    public bool IsInGroup(Godot.StringName @group)
-    {
+    public bool IsInGroup(Godot.StringName @group) {
         return _object.IsInGroup(@group);
     }
 
-    public void MoveChild(Node @child_node, int @to_index)
-    {
+    public void MoveChild(Node @child_node, int @to_index) {
         _object.MoveChild(@child_node, @to_index);
     }
 
-    public Godot.Collections.Array<StringName> GetGroups()
-    {
+    public Godot.Collections.Array<StringName> GetGroups() {
         return _object.GetGroups();
     }
 
-    public void SetOwner(Node @owner)
-    {
+    public void SetOwner(Node @owner) {
         _object.SetOwner(@owner);
     }
 
-    public Node GetOwner()
-    {
+    public Node GetOwner() {
         return _object.GetOwner();
     }
 
-    public int GetIndex(bool @include_internal = false)
-    {
+    public int GetIndex(bool @include_internal = false) {
         return _object.GetIndex(@include_internal);
     }
 
-    public void PrintTree()
-    {
+    public void PrintTree() {
         _object.PrintTree();
     }
 
-    public void PrintTreePretty()
-    {
+    public void PrintTreePretty() {
         _object.PrintTreePretty();
     }
 
-    public string GetTreeString()
-    {
+    public string GetTreeString() {
         return _object.GetTreeString();
     }
 
-    public string GetTreeStringPretty()
-    {
+    public string GetTreeStringPretty() {
         return _object.GetTreeStringPretty();
     }
 
-    public void SetSceneFilePath(string @scene_file_path)
-    {
+    public void SetSceneFilePath(string @scene_file_path) {
         _object.SetSceneFilePath(@scene_file_path);
     }
 
-    public string GetSceneFilePath()
-    {
+    public string GetSceneFilePath() {
         return _object.GetSceneFilePath();
     }
 
-    public void PropagateNotification(int @what)
-    {
+    public void PropagateNotification(int @what) {
         _object.PropagateNotification(@what);
     }
 
-    public void PropagateCall(Godot.StringName @method, Godot.Collections.Array @args = null, bool @parent_first = false)
-    {
+    public void PropagateCall(Godot.StringName @method, Godot.Collections.Array @args = null, bool @parent_first = false) {
         @args ??= new();
         _object.PropagateCall(@method, @args, @parent_first);
     }
 
-    public void SetPhysicsProcess(bool @enable)
-    {
+    public void SetPhysicsProcess(bool @enable) {
         _object.SetPhysicsProcess(@enable);
     }
 
-    public float GetPhysicsProcessDeltaTime()
-    {
+    public float GetPhysicsProcessDeltaTime() {
         return (float)_object.GetPhysicsProcessDeltaTime();
     }
 
-    public bool IsPhysicsProcessing()
-    {
+    public bool IsPhysicsProcessing() {
         return _object.IsPhysicsProcessing();
     }
 
-    public float GetProcessDeltaTime()
-    {
+    public float GetProcessDeltaTime() {
         return (float)_object.GetProcessDeltaTime();
     }
 
-    public void SetProcess(bool @enable)
-    {
+    public void SetProcess(bool @enable) {
         _object.SetProcess(@enable);
     }
 
-    public void SetProcessPriority(int @priority)
-    {
+    public void SetProcessPriority(int @priority) {
         _object.SetProcessPriority(@priority);
     }
 
-    public int GetProcessPriority()
-    {
+    public int GetProcessPriority() {
         return _object.GetProcessPriority();
     }
 
-    public void SetPhysicsProcessPriority(int @priority)
-    {
+    public void SetPhysicsProcessPriority(int @priority) {
         _object.SetPhysicsProcessPriority(@priority);
     }
 
-    public int GetPhysicsProcessPriority()
-    {
+    public int GetPhysicsProcessPriority() {
         return _object.GetPhysicsProcessPriority();
     }
 
-    public bool IsProcessing()
-    {
+    public bool IsProcessing() {
         return _object.IsProcessing();
     }
 
-    public void SetProcessInput(bool @enable)
-    {
+    public void SetProcessInput(bool @enable) {
         _object.SetProcessInput(@enable);
     }
 
-    public bool IsProcessingInput()
-    {
+    public bool IsProcessingInput() {
         return _object.IsProcessingInput();
     }
 
-    public void SetProcessShortcutInput(bool @enable)
-    {
+    public void SetProcessShortcutInput(bool @enable) {
         _object.SetProcessShortcutInput(@enable);
     }
 
-    public bool IsProcessingShortcutInput()
-    {
+    public bool IsProcessingShortcutInput() {
         return _object.IsProcessingShortcutInput();
     }
 
-    public void SetProcessUnhandledInput(bool @enable)
-    {
+    public void SetProcessUnhandledInput(bool @enable) {
         _object.SetProcessUnhandledInput(@enable);
     }
 
-    public bool IsProcessingUnhandledInput()
-    {
+    public bool IsProcessingUnhandledInput() {
         return _object.IsProcessingUnhandledInput();
     }
 
-    public void SetProcessUnhandledKeyInput(bool @enable)
-    {
+    public void SetProcessUnhandledKeyInput(bool @enable) {
         _object.SetProcessUnhandledKeyInput(@enable);
     }
 
-    public bool IsProcessingUnhandledKeyInput()
-    {
+    public bool IsProcessingUnhandledKeyInput() {
         return _object.IsProcessingUnhandledKeyInput();
     }
 
-    public void SetProcessMode(Node.ProcessModeEnum @mode)
-    {
+    public void SetProcessMode(Node.ProcessModeEnum @mode) {
         _object.SetProcessMode(@mode);
     }
 
-    public Node.ProcessModeEnum GetProcessMode()
-    {
+    public Node.ProcessModeEnum GetProcessMode() {
         return _object.GetProcessMode();
     }
 
-    public bool CanProcess()
-    {
+    public bool CanProcess() {
         return _object.CanProcess();
     }
 
-    public void SetProcessThreadGroup(Node.ProcessThreadGroupEnum @mode)
-    {
+    public void SetProcessThreadGroup(Node.ProcessThreadGroupEnum @mode) {
         _object.SetProcessThreadGroup(@mode);
     }
 
-    public Node.ProcessThreadGroupEnum GetProcessThreadGroup()
-    {
+    public Node.ProcessThreadGroupEnum GetProcessThreadGroup() {
         return _object.GetProcessThreadGroup();
     }
 
-    public void SetProcessThreadMessages(Node.ProcessThreadMessagesEnum @flags)
-    {
+    public void SetProcessThreadMessages(Node.ProcessThreadMessagesEnum @flags) {
         _object.SetProcessThreadMessages(@flags);
     }
 
-    public Node.ProcessThreadMessagesEnum GetProcessThreadMessages()
-    {
+    public Node.ProcessThreadMessagesEnum GetProcessThreadMessages() {
         return _object.GetProcessThreadMessages();
     }
 
-    public void SetProcessThreadGroupOrder(int @order)
-    {
+    public void SetProcessThreadGroupOrder(int @order) {
         _object.SetProcessThreadGroupOrder(@order);
     }
 
-    public int GetProcessThreadGroupOrder()
-    {
+    public int GetProcessThreadGroupOrder() {
         return _object.GetProcessThreadGroupOrder();
     }
 
-    public void QueueAccessibilityUpdate()
-    {
+    public void QueueAccessibilityUpdate() {
         _object.QueueAccessibilityUpdate();
     }
 
-    public Godot.Rid GetAccessibilityElement()
-    {
+    public Godot.Rid GetAccessibilityElement() {
         return _object.GetAccessibilityElement();
     }
 
-    public void SetDisplayFolded(bool @fold)
-    {
+    public void SetDisplayFolded(bool @fold) {
         _object.SetDisplayFolded(@fold);
     }
 
-    public bool IsDisplayedFolded()
-    {
+    public bool IsDisplayedFolded() {
         return _object.IsDisplayedFolded();
     }
 
-    public void SetProcessInternal(bool @enable)
-    {
+    public void SetProcessInternal(bool @enable) {
         _object.SetProcessInternal(@enable);
     }
 
-    public bool IsProcessingInternal()
-    {
+    public bool IsProcessingInternal() {
         return _object.IsProcessingInternal();
     }
 
-    public void SetPhysicsProcessInternal(bool @enable)
-    {
+    public void SetPhysicsProcessInternal(bool @enable) {
         _object.SetPhysicsProcessInternal(@enable);
     }
 
-    public bool IsPhysicsProcessingInternal()
-    {
+    public bool IsPhysicsProcessingInternal() {
         return _object.IsPhysicsProcessingInternal();
     }
 
-    public void SetPhysicsInterpolationMode(Node.PhysicsInterpolationModeEnum @mode)
-    {
+    public void SetPhysicsInterpolationMode(Node.PhysicsInterpolationModeEnum @mode) {
         _object.SetPhysicsInterpolationMode(@mode);
     }
 
-    public Node.PhysicsInterpolationModeEnum GetPhysicsInterpolationMode()
-    {
+    public Node.PhysicsInterpolationModeEnum GetPhysicsInterpolationMode() {
         return _object.GetPhysicsInterpolationMode();
     }
 
-    public bool IsPhysicsInterpolated()
-    {
+    public bool IsPhysicsInterpolated() {
         return _object.IsPhysicsInterpolated();
     }
 
-    public bool IsPhysicsInterpolatedAndEnabled()
-    {
+    public bool IsPhysicsInterpolatedAndEnabled() {
         return _object.IsPhysicsInterpolatedAndEnabled();
     }
 
-    public void ResetPhysicsInterpolation()
-    {
+    public void ResetPhysicsInterpolation() {
         _object.ResetPhysicsInterpolation();
     }
 
-    public void SetAutoTranslateMode(Node.AutoTranslateModeEnum @mode)
-    {
+    public void SetAutoTranslateMode(Node.AutoTranslateModeEnum @mode) {
         _object.SetAutoTranslateMode(@mode);
     }
 
-    public Node.AutoTranslateModeEnum GetAutoTranslateMode()
-    {
+    public Node.AutoTranslateModeEnum GetAutoTranslateMode() {
         return _object.GetAutoTranslateMode();
     }
 
-    public bool CanAutoTranslate()
-    {
+    public bool CanAutoTranslate() {
         return _object.CanAutoTranslate();
     }
 
-    public void SetTranslationDomainInherited()
-    {
+    public void SetTranslationDomainInherited() {
         _object.SetTranslationDomainInherited();
     }
 
-    public Window GetWindow()
-    {
+    public Window GetWindow() {
         return _object.GetWindow();
     }
 
-    public Window GetLastExclusiveWindow()
-    {
+    public Window GetLastExclusiveWindow() {
         return _object.GetLastExclusiveWindow();
     }
 
-    public SceneTree GetTree()
-    {
+    public SceneTree GetTree() {
         return _object.GetTree();
     }
 
-    public Tween CreateTween()
-    {
+    public Tween CreateTween() {
         return _object.CreateTween();
     }
 
-    public Node Duplicate(int @flags = 15)
-    {
+    public Node Duplicate(int @flags = 15) {
         return _object.Duplicate(@flags);
     }
 
-    public void ReplaceBy(Node @node, bool @keep_groups = false)
-    {
+    public void ReplaceBy(Node @node, bool @keep_groups = false) {
         _object.ReplaceBy(@node, @keep_groups);
     }
 
-    public void SetSceneInstanceLoadPlaceholder(bool @load_placeholder)
-    {
+    public void SetSceneInstanceLoadPlaceholder(bool @load_placeholder) {
         _object.SetSceneInstanceLoadPlaceholder(@load_placeholder);
     }
 
-    public bool GetSceneInstanceLoadPlaceholder()
-    {
+    public bool GetSceneInstanceLoadPlaceholder() {
         return _object.GetSceneInstanceLoadPlaceholder();
     }
 
-    public void SetEditableInstance(Node @node, bool @is_editable)
-    {
+    public void SetEditableInstance(Node @node, bool @is_editable) {
         _object.SetEditableInstance(@node, @is_editable);
     }
 
-    public bool IsEditableInstance(Node @node)
-    {
+    public bool IsEditableInstance(Node @node) {
         return _object.IsEditableInstance(@node);
     }
 
-    public Viewport GetViewport()
-    {
+    public Viewport GetViewport() {
         return _object.GetViewport();
     }
 
-    public void QueueFree()
-    {
+    public void QueueFree() {
         _object.QueueFree();
     }
 
-    public void RequestReady()
-    {
+    public void RequestReady() {
         _object.RequestReady();
     }
 
-    public bool IsNodeReady()
-    {
+    public bool IsNodeReady() {
         return _object.IsNodeReady();
     }
 
-    public void SetMultiplayerAuthority(int @id, bool @recursive = true)
-    {
+    public void SetMultiplayerAuthority(int @id, bool @recursive = true) {
         _object.SetMultiplayerAuthority(@id, @recursive);
     }
 
-    public int GetMultiplayerAuthority()
-    {
+    public int GetMultiplayerAuthority() {
         return _object.GetMultiplayerAuthority();
     }
 
-    public bool IsMultiplayerAuthority()
-    {
+    public bool IsMultiplayerAuthority() {
         return _object.IsMultiplayerAuthority();
     }
 
-    public MultiplayerApi GetMultiplayer()
-    {
+    public MultiplayerApi GetMultiplayer() {
         return _object.GetMultiplayer();
     }
 
-    public void RpcConfig(Godot.StringName @method, Variant @config)
-    {
+    public void RpcConfig(Godot.StringName @method, Variant @config) {
         _object.RpcConfig(@method, @config);
     }
 
-    public Variant GetNodeRpcConfig()
-    {
+    public Variant GetNodeRpcConfig() {
         return _object.GetNodeRpcConfig();
     }
 
-    public void SetEditorDescription(string @editor_description)
-    {
+    public void SetEditorDescription(string @editor_description) {
         _object.SetEditorDescription(@editor_description);
     }
 
-    public string GetEditorDescription()
-    {
+    public string GetEditorDescription() {
         return _object.GetEditorDescription();
     }
 
-    public void SetUniqueNameInOwner(bool @enable)
-    {
+    public void SetUniqueNameInOwner(bool @enable) {
         _object.SetUniqueNameInOwner(@enable);
     }
 
-    public bool IsUniqueNameInOwner()
-    {
+    public bool IsUniqueNameInOwner() {
         return _object.IsUniqueNameInOwner();
     }
 
-    public string Atr(string @message, Godot.StringName @context = null)
-    {
+    public string Atr(string @message, Godot.StringName @context = null) {
         @context ??= "";
         return _object.Atr(@message, @context);
     }
 
-    public string AtrN(string @message, Godot.StringName @plural_message, int @n, Godot.StringName @context = null)
-    {
+    public string AtrN(string @message, Godot.StringName @plural_message, int @n, Godot.StringName @context = null) {
         @context ??= "";
         return _object.AtrN(@message, @plural_message, @n, @context);
     }
 
-    public Godot.Error Rpc(Godot.StringName @method, params Variant[] varargs)
-    {
+    public Godot.Error Rpc(Godot.StringName @method, params Variant[] varargs) {
         return _object.Rpc(@method, varargs);
     }
 
-    public Godot.Error RpcId(int @peer_id, Godot.StringName @method, params Variant[] varargs)
-    {
+    public Godot.Error RpcId(int @peer_id, Godot.StringName @method, params Variant[] varargs) {
         return _object.RpcId(@peer_id, @method, varargs);
     }
 
-    public void UpdateConfigurationWarnings()
-    {
+    public void UpdateConfigurationWarnings() {
         _object.UpdateConfigurationWarnings();
     }
 
-    public Variant CallDeferredThreadGroup(Godot.StringName @method, params Variant[] varargs)
-    {
+    public Variant CallDeferredThreadGroup(Godot.StringName @method, params Variant[] varargs) {
         return _object.CallDeferredThreadGroup(@method, varargs);
     }
 
-    public void SetDeferredThreadGroup(Godot.StringName @property, Variant @value)
-    {
+    public void SetDeferredThreadGroup(Godot.StringName @property, Variant @value) {
         _object.SetDeferredThreadGroup(@property, @value);
     }
 
-    public void NotifyDeferredThreadGroup(int @what)
-    {
+    public void NotifyDeferredThreadGroup(int @what) {
         _object.NotifyDeferredThreadGroup(@what);
     }
 
-    public Variant CallThreadSafe(Godot.StringName @method, params Variant[] varargs)
-    {
+    public Variant CallThreadSafe(Godot.StringName @method, params Variant[] varargs) {
         return _object.CallThreadSafe(@method, varargs);
     }
 
-    public void SetThreadSafe(Godot.StringName @property, Variant @value)
-    {
+    public void SetThreadSafe(Godot.StringName @property, Variant @value) {
         _object.SetThreadSafe(@property, @value);
     }
 
-    public void NotifyThreadSafe(int @what)
-    {
+    public void NotifyThreadSafe(int @what) {
         _object.NotifyThreadSafe(@what);
     }
 
-    public void Free()
-    {
+    public void Free() {
         _object.Free();
     }
 
-    public string GetClass()
-    {
+    public string GetClass() {
         return _object.GetClass();
     }
 
-    public bool IsClass(string @class)
-    {
+    public bool IsClass(string @class) {
         return _object.IsClass(@class);
     }
 
-    public void Set(Godot.StringName @property, Variant @value)
-    {
+    public void Set(Godot.StringName @property, Variant @value) {
         _object.Set(@property, @value);
     }
 
-    public Variant Get(Godot.StringName @property)
-    {
+    public Variant Get(Godot.StringName @property) {
         return _object.Get(@property);
     }
 
-    public void SetIndexed(Godot.NodePath @property_path, Variant @value)
-    {
+    public void SetIndexed(Godot.NodePath @property_path, Variant @value) {
         _object.SetIndexed(@property_path, @value);
     }
 
-    public Variant GetIndexed(Godot.NodePath @property_path)
-    {
+    public Variant GetIndexed(Godot.NodePath @property_path) {
         return _object.GetIndexed(@property_path);
     }
 
-    public Godot.Collections.Array<Godot.Collections.Dictionary> GetPropertyList()
-    {
+    public Godot.Collections.Array<Godot.Collections.Dictionary> GetPropertyList() {
         return _object.GetPropertyList();
     }
 
-    public Godot.Collections.Array<Godot.Collections.Dictionary> GetMethodList()
-    {
+    public Godot.Collections.Array<Godot.Collections.Dictionary> GetMethodList() {
         return _object.GetMethodList();
     }
 
-    public bool PropertyCanRevert(Godot.StringName @property)
-    {
+    public bool PropertyCanRevert(Godot.StringName @property) {
         return _object.PropertyCanRevert(@property);
     }
 
-    public Variant PropertyGetRevert(Godot.StringName @property)
-    {
+    public Variant PropertyGetRevert(Godot.StringName @property) {
         return _object.PropertyGetRevert(@property);
     }
 
-    public void Notification(int @what, bool @reversed = false)
-    {
+    public void Notification(int @what, bool @reversed = false) {
         _object.Notification(@what, @reversed);
     }
 
-    public override string ToString()
-    {
+    public override string ToString() {
         return _object.ToString();
     }
 
-    public ulong GetInstanceId()
-    {
+    public ulong GetInstanceId() {
         return _object.GetInstanceId();
     }
 
-    public void SetScript(Variant @script)
-    {
+    public void SetScript(Variant @script) {
         _object.SetScript(@script);
     }
 
-    public Variant GetScript()
-    {
+    public Variant GetScript() {
         return _object.GetScript();
     }
 
-    public void SetMeta(Godot.StringName @name, Variant @value)
-    {
+    public void SetMeta(Godot.StringName @name, Variant @value) {
         _object.SetMeta(@name, @value);
     }
 
-    public void RemoveMeta(Godot.StringName @name)
-    {
+    public void RemoveMeta(Godot.StringName @name) {
         _object.RemoveMeta(@name);
     }
 
-    public Variant GetMeta(Godot.StringName @name, Variant @default = default)
-    {
+    public Variant GetMeta(Godot.StringName @name, Variant @default = default) {
         return _object.GetMeta(@name, @default);
     }
 
-    public bool HasMeta(Godot.StringName @name)
-    {
+    public bool HasMeta(Godot.StringName @name) {
         return _object.HasMeta(@name);
     }
 
-    public Godot.Collections.Array<StringName> GetMetaList()
-    {
+    public Godot.Collections.Array<StringName> GetMetaList() {
         return _object.GetMetaList();
     }
 
-    public void AddUserSignal(string @signal, Godot.Collections.Array @arguments = null)
-    {
+    public void AddUserSignal(string @signal, Godot.Collections.Array @arguments = null) {
         @arguments ??= new();
         _object.AddUserSignal(@signal, @arguments);
     }
 
-    public bool HasUserSignal(Godot.StringName @signal)
-    {
+    public bool HasUserSignal(Godot.StringName @signal) {
         return _object.HasUserSignal(@signal);
     }
 
-    public void RemoveUserSignal(Godot.StringName @signal)
-    {
+    public void RemoveUserSignal(Godot.StringName @signal) {
         _object.RemoveUserSignal(@signal);
     }
 
-    public Godot.Error EmitSignal(Godot.StringName @signal, params Variant[] varargs)
-    {
+    public Godot.Error EmitSignal(Godot.StringName @signal, params Variant[] varargs) {
         return _object.EmitSignal(@signal, varargs);
     }
 
-    public Variant Call(Godot.StringName @method, params Variant[] varargs)
-    {
+    public Variant Call(Godot.StringName @method, params Variant[] varargs) {
         return _object.Call(@method, varargs);
     }
 
-    public Variant CallDeferred(Godot.StringName @method, params Variant[] varargs)
-    {
+    public Variant CallDeferred(Godot.StringName @method, params Variant[] varargs) {
         return _object.CallDeferred(@method, varargs);
     }
 
-    public void SetDeferred(Godot.StringName @property, Variant @value)
-    {
+    public void SetDeferred(Godot.StringName @property, Variant @value) {
         _object.SetDeferred(@property, @value);
     }
 
-    public Variant Callv(Godot.StringName @method, Godot.Collections.Array @arg_array)
-    {
+    public Variant Callv(Godot.StringName @method, Godot.Collections.Array @arg_array) {
         return _object.Callv(@method, @arg_array);
     }
 
-    public bool HasMethod(Godot.StringName @method)
-    {
+    public bool HasMethod(Godot.StringName @method) {
         return _object.HasMethod(@method);
     }
 
-    public int GetMethodArgumentCount(Godot.StringName @method)
-    {
+    public int GetMethodArgumentCount(Godot.StringName @method) {
         return _object.GetMethodArgumentCount(@method);
     }
 
-    public bool HasSignal(Godot.StringName @signal)
-    {
+    public bool HasSignal(Godot.StringName @signal) {
         return _object.HasSignal(@signal);
     }
 
-    public Godot.Collections.Array<Godot.Collections.Dictionary> GetSignalList()
-    {
+    public Godot.Collections.Array<Godot.Collections.Dictionary> GetSignalList() {
         return _object.GetSignalList();
     }
 
-    public Godot.Collections.Array<Godot.Collections.Dictionary> GetSignalConnectionList(Godot.StringName @signal)
-    {
+    public Godot.Collections.Array<Godot.Collections.Dictionary> GetSignalConnectionList(Godot.StringName @signal) {
         return _object.GetSignalConnectionList(@signal);
     }
 
-    public Godot.Collections.Array<Godot.Collections.Dictionary> GetIncomingConnections()
-    {
+    public Godot.Collections.Array<Godot.Collections.Dictionary> GetIncomingConnections() {
         return _object.GetIncomingConnections();
     }
 
-    public Godot.Error Connect(Godot.StringName @signal, Godot.Callable @callable, uint @flags = (uint)0)
-    {
+    public Godot.Error Connect(Godot.StringName @signal, Godot.Callable @callable, uint @flags = (uint)0) {
         return _object.Connect(@signal, @callable, @flags);
     }
 
-    public void Disconnect(Godot.StringName @signal, Godot.Callable @callable)
-    {
+    public void Disconnect(Godot.StringName @signal, Godot.Callable @callable) {
         _object.Disconnect(@signal, @callable);
     }
 
-    public bool IsConnected(Godot.StringName @signal, Godot.Callable @callable)
-    {
+    public bool IsConnected(Godot.StringName @signal, Godot.Callable @callable) {
         return _object.IsConnected(@signal, @callable);
     }
 
-    public bool HasConnections(Godot.StringName @signal)
-    {
+    public bool HasConnections(Godot.StringName @signal) {
         return _object.HasConnections(@signal);
     }
 
-    public void SetBlockSignals(bool @enable)
-    {
+    public void SetBlockSignals(bool @enable) {
         _object.SetBlockSignals(@enable);
     }
 
-    public bool IsBlockingSignals()
-    {
+    public bool IsBlockingSignals() {
         return _object.IsBlockingSignals();
     }
 
-    public void NotifyPropertyListChanged()
-    {
+    public void NotifyPropertyListChanged() {
         _object.NotifyPropertyListChanged();
     }
 
-    public void SetMessageTranslation(bool @enable)
-    {
+    public void SetMessageTranslation(bool @enable) {
         _object.SetMessageTranslation(@enable);
     }
 
-    public bool CanTranslateMessages()
-    {
+    public bool CanTranslateMessages() {
         return _object.CanTranslateMessages();
     }
 
-    public string Tr(Godot.StringName @message, Godot.StringName @context = null)
-    {
+    public string Tr(Godot.StringName @message, Godot.StringName @context = null) {
         @context ??= "";
         return _object.Tr(@message, @context);
     }
 
-    public string TrN(Godot.StringName @message, Godot.StringName @plural_message, int @n, Godot.StringName @context = null)
-    {
+    public string TrN(Godot.StringName @message, Godot.StringName @plural_message, int @n, Godot.StringName @context = null) {
         @context ??= "";
         return _object.TrN(@message, @plural_message, @n, @context);
     }
 
-    public Godot.StringName GetTranslationDomain()
-    {
+    public Godot.StringName GetTranslationDomain() {
         return _object.GetTranslationDomain();
     }
 
-    public void SetTranslationDomain(Godot.StringName @domain)
-    {
+    public void SetTranslationDomain(Godot.StringName @domain) {
         _object.SetTranslationDomain(@domain);
     }
 
-    public bool IsQueuedForDeletion()
-    {
+    public bool IsQueuedForDeletion() {
         return _object.IsQueuedForDeletion();
     }
 
-    public void CancelFree()
-    {
+    public void CancelFree() {
         _object.CancelFree();
     }
 
@@ -2039,74 +1658,56 @@ public class FmodEventEmitter2D
 
     #region Signals
 
-    public event Action<Godot.Collections.Dictionary> TimelineBeat
-    {
-        add
-        {
+    public event Action<Godot.Collections.Dictionary> TimelineBeat {
+        add {
             Connect(SignalName.TimelineBeat, Callable.From(value));
         }
-        remove
-        {
+        remove {
             Disconnect(SignalName.TimelineBeat, Callable.From(value));
         }
     }
 
-    public event Action<Godot.Collections.Dictionary> TimelineMarker
-    {
-        add
-        {
+    public event Action<Godot.Collections.Dictionary> TimelineMarker {
+        add {
             Connect(SignalName.TimelineMarker, Callable.From(value));
         }
-        remove
-        {
+        remove {
             Disconnect(SignalName.TimelineMarker, Callable.From(value));
         }
     }
 
-    public event Action StartFailed
-    {
-        add
-        {
+    public event Action StartFailed {
+        add {
             Connect(SignalName.StartFailed, Callable.From(value));
         }
-        remove
-        {
+        remove {
             Disconnect(SignalName.StartFailed, Callable.From(value));
         }
     }
 
-    public event Action Started
-    {
-        add
-        {
+    public event Action Started {
+        add {
             Connect(SignalName.Started, Callable.From(value));
         }
-        remove
-        {
+        remove {
             Disconnect(SignalName.Started, Callable.From(value));
         }
     }
 
-    public event Action Restarted
-    {
-        add
-        {
+    public event Action Restarted {
+        add {
             Connect(SignalName.Restarted, Callable.From(value));
         }
-        remove
-        {
+        remove {
             Disconnect(SignalName.Restarted, Callable.From(value));
         }
     }
 
-    public event Action Stopped
-    {
-        add
-        {
+    public event Action Stopped {
+        add {
             Connect(SignalName.Stopped, Callable.From(value));
         }
-        remove
-        {
+        remove {
             Disconnect(SignalName.Stopped, Callable.From(value));
         }
     }
@@ -2115,206 +1716,155 @@ public class FmodEventEmitter2D
 
     #region Inherited Signals
 
-    public event Action Draw
-    {
-        add
-        {
+    public event Action Draw {
+        add {
             Connect(SignalName.Draw, Callable.From(value));
         }
-        remove
-        {
+        remove {
             Disconnect(SignalName.Draw, Callable.From(value));
         }
     }
 
-    public event Action VisibilityChanged
-    {
-        add
-        {
+    public event Action VisibilityChanged {
+        add {
             Connect(SignalName.VisibilityChanged, Callable.From(value));
         }
-        remove
-        {
+        remove {
             Disconnect(SignalName.VisibilityChanged, Callable.From(value));
         }
     }
 
-    public event Action Hidden
-    {
-        add
-        {
+    public event Action Hidden {
+        add {
             Connect(SignalName.Hidden, Callable.From(value));
         }
-        remove
-        {
+        remove {
             Disconnect(SignalName.Hidden, Callable.From(value));
         }
     }
 
-    public event Action ItemRectChanged
-    {
-        add
-        {
+    public event Action ItemRectChanged {
+        add {
             Connect(SignalName.ItemRectChanged, Callable.From(value));
         }
-        remove
-        {
+        remove {
             Disconnect(SignalName.ItemRectChanged, Callable.From(value));
         }
     }
 
-    public event Action Ready
-    {
-        add
-        {
+    public event Action Ready {
+        add {
             Connect(SignalName.Ready, Callable.From(value));
         }
-        remove
-        {
+        remove {
             Disconnect(SignalName.Ready, Callable.From(value));
         }
     }
 
-    public event Action Renamed
-    {
-        add
-        {
+    public event Action Renamed {
+        add {
             Connect(SignalName.Renamed, Callable.From(value));
         }
-        remove
-        {
+        remove {
             Disconnect(SignalName.Renamed, Callable.From(value));
         }
     }
 
-    public event Action TreeEntered
-    {
-        add
-        {
+    public event Action TreeEntered {
+        add {
             Connect(SignalName.TreeEntered, Callable.From(value));
         }
-        remove
-        {
+        remove {
             Disconnect(SignalName.TreeEntered, Callable.From(value));
         }
     }
 
-    public event Action TreeExiting
-    {
-        add
-        {
+    public event Action TreeExiting {
+        add {
             Connect(SignalName.TreeExiting, Callable.From(value));
         }
-        remove
-        {
+        remove {
             Disconnect(SignalName.TreeExiting, Callable.From(value));
         }
     }
 
-    public event Action TreeExited
-    {
-        add
-        {
+    public event Action TreeExited {
+        add {
             Connect(SignalName.TreeExited, Callable.From(value));
         }
-        remove
-        {
+        remove {
             Disconnect(SignalName.TreeExited, Callable.From(value));
         }
     }
 
-    public event Action<Node> ChildEnteredTree
-    {
-        add
-        {
+    public event Action<Node> ChildEnteredTree {
+        add {
             Connect(SignalName.ChildEnteredTree, Callable.From(value));
         }
-        remove
-        {
+        remove {
             Disconnect(SignalName.ChildEnteredTree, Callable.From(value));
         }
     }
 
-    public event Action<Node> ChildExitingTree
-    {
-        add
-        {
+    public event Action<Node> ChildExitingTree {
+        add {
             Connect(SignalName.ChildExitingTree, Callable.From(value));
         }
-        remove
-        {
+        remove {
             Disconnect(SignalName.ChildExitingTree, Callable.From(value));
         }
     }
 
-    public event Action ChildOrderChanged
-    {
-        add
-        {
+    public event Action ChildOrderChanged {
+        add {
             Connect(SignalName.ChildOrderChanged, Callable.From(value));
         }
-        remove
-        {
+        remove {
             Disconnect(SignalName.ChildOrderChanged, Callable.From(value));
         }
     }
 
-    public event Action<Node> ReplacingBy
-    {
-        add
-        {
+    public event Action<Node> ReplacingBy {
+        add {
             Connect(SignalName.ReplacingBy, Callable.From(value));
         }
-        remove
-        {
+        remove {
             Disconnect(SignalName.ReplacingBy, Callable.From(value));
         }
     }
 
-    public event Action<Node> EditorDescriptionChanged
-    {
-        add
-        {
+    public event Action<Node> EditorDescriptionChanged {
+        add {
             Connect(SignalName.EditorDescriptionChanged, Callable.From(value));
         }
-        remove
-        {
+        remove {
             Disconnect(SignalName.EditorDescriptionChanged, Callable.From(value));
         }
     }
 
-    public event Action EditorStateChanged
-    {
-        add
-        {
+    public event Action EditorStateChanged {
+        add {
             Connect(SignalName.EditorStateChanged, Callable.From(value));
         }
-        remove
-        {
+        remove {
             Disconnect(SignalName.EditorStateChanged, Callable.From(value));
         }
     }
 
-    public event Action ScriptChanged
-    {
-        add
-        {
+    public event Action ScriptChanged {
+        add {
             Connect(SignalName.ScriptChanged, Callable.From(value));
         }
-        remove
-        {
+        remove {
             Disconnect(SignalName.ScriptChanged, Callable.From(value));
         }
     }
 
-    public event Action PropertyListChanged
-    {
-        add
-        {
+    public event Action PropertyListChanged {
+        add {
             Connect(SignalName.PropertyListChanged, Callable.From(value));
         }
-        remove
-        {
+        remove {
             Disconnect(SignalName.PropertyListChanged, Callable.From(value));
         }
     }

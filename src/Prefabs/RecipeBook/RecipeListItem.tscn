@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cfk7uckuuwaxr"]
+
+[node name="RecipeListItem" type="GridContainer" unique_id=2090808298]
+offset_right = 90.0
+offset_bottom = 35.0
+size_flags_horizontal = 4
+columns = 2
+
+[node name="SpinBox" type="SpinBox" parent="." unique_id=514479280]
+layout_mode = 2
+min_value = 1.0
+max_value = 8.0
+value = 1.0
+rounded = true
+prefix = "x"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=880202454]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+fit_content = true
+autowrap_mode = 0

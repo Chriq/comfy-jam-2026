@@ -1,10 +1,23 @@
 [gd_scene format=3 uid="uid://i1ir2iwbdoqv"]
 
+[ext_resource type="Script" uid="uid://ds37ioq8kfkho" path="res://Audio/AudioManager.cs" id="1_5jvuk"]
+
 [node name="FmodTest" type="Node2D" unique_id=621454561]
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=1287945083]
+bank_paths = ["res://Audio/FmodBank/Desktop/Master.strings.bank", "res://Audio/FmodBank/Desktop/Master.bank", "res://Audio/FmodBank/Desktop/Music.bank", "res://Audio/FmodBank/Desktop/SFX.bank", "res://Audio/FmodBank/Desktop/UI.bank"]
 
-[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=783410450]
-event_guid = "{00000032-0030-0000-3200-000036000000}"
+[node name="FmodListener2D" type="FmodListener2D" parent="." unique_id=1244892729]
 
-[node name="FmodListener2D" type="FmodListener2D" parent="FmodEventEmitter2D" unique_id=1244892729]
+[node name="EventEmitters" type="Node" parent="." unique_id=372765001]
+script = ExtResource("1_5jvuk")
+
+[node name="MusicEventEmitter2D" type="FmodEventEmitter2D" parent="EventEmitters" unique_id=1591964728]
+event_name = "event:/MUSIC/bartending_music_01"
+event_guid = "{da6981d7-77c8-40a5-8c5b-66cca5811441}"
+attached = false
+
+[node name="AmbianceEventEmitter2D2" type="FmodEventEmitter2D" parent="EventEmitters" unique_id=233604450]
+event_name = "event:/AMBIENCE/beach_loop"
+event_guid = "{41159f7b-3798-40f6-bdfb-68cf9fb6aaac}"
+attached = false

@@ -82,14 +82,9 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Desc" type="RichTextLabel" parent="HBoxContainer/MarginContainer/Page1" unique_id=1522651806]
+[node name="Desc" type="GridContainer" parent="HBoxContainer/MarginContainer/Page1" unique_id=208768658]
 layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 32
-text = "Body"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
+columns = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer" unique_id=141995029]
 layout_mode = 2
@@ -136,14 +131,9 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Desc" type="RichTextLabel" parent="HBoxContainer/VBoxContainer2/MarginContainer/Page2" unique_id=262267844]
+[node name="Desc" type="GridContainer" parent="HBoxContainer/VBoxContainer2/MarginContainer/Page2" unique_id=189196946]
 layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 32
-text = "Body"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
+columns = 2
 
 [node name="Right" type="Button" parent="HBoxContainer" unique_id=765341686]
 custom_minimum_size = Vector2(50, 50)

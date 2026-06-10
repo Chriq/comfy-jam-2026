@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1xmk20n7x6yx" path="res://Scenes/MainMenu/MainMenu.cs" id="1_b37jj"]
 [ext_resource type="PackedScene" uid="uid://bk81258lvu14c" path="res://Scenes/Bar.tscn" id="2_flrug"]
-[ext_resource type="Theme" uid="uid://2mclrl68o78m" path="res://UI/Button/Button.tres" id="4_k3ndf"]
+[ext_resource type="PackedScene" uid="uid://dsbblq2ww22ky" path="res://UI/Button/UIButton.tscn" id="4_ua038"]
 [ext_resource type="Texture2D" uid="uid://0wysc8xaxt3j" path="res://UI/NineSliceDefault.png" id="6_ng4bt"]
 
 [node name="MainMenu" type="Control" unique_id=376464063 node_paths=PackedStringArray("creditsContainer", "howContainer", "cutsceneContainer")]
@@ -52,36 +52,28 @@ grow_vertical = 0
 theme_override_constants/separation = 9
 alignment = 1
 
-[node name="Start" type="Button" parent="Buttons" unique_id=1643606357]
+[node name="Start" parent="Buttons" unique_id=1643606357 instance=ExtResource("4_ua038")]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("4_k3ndf")
-theme_override_font_sizes/font_size = 64
 text = "Start"
 
-[node name="How" type="Button" parent="Buttons" unique_id=1629073465]
+[node name="How" parent="Buttons" unique_id=1629073465 instance=ExtResource("4_ua038")]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("4_k3ndf")
-theme_override_font_sizes/font_size = 64
 text = "How to Play"
 
-[node name="Credits" type="Button" parent="Buttons" unique_id=465749959]
+[node name="Credits" parent="Buttons" unique_id=465749959 instance=ExtResource("4_ua038")]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("4_k3ndf")
-theme_override_font_sizes/font_size = 64
 text = "Credits"
 
-[node name="Quit" type="Button" parent="Buttons" unique_id=972085003]
+[node name="Quit" parent="Buttons" unique_id=972085003 instance=ExtResource("4_ua038")]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme = ExtResource("4_k3ndf")
-theme_override_font_sizes/font_size = 64
 text = "Quit"
 
 [node name="Credits" type="NinePatchRect" parent="." unique_id=1848546622]

@@ -6,79 +6,114 @@ using System.Threading.Tasks;
 
 // TODO: sequencing of game events; random delay, spawn character + order, serve drink, get feedback, new customer
 public partial class GameManager : Node {
-	[Export] DrinkBuilder drinkBuilder;
-	[Export] CharacterSpawner characterSpawner;
+    [Export] DrinkBuilder drinkBuilder;
+    [Export] CharacterSpawner characterSpawner;
 
-	[Export] DialogManager dm;
-	[Export] public Control panelContainer;
-	[Export] Node2D drinksContainer;
+    [Export] DialogManager dm;
+    [Export] public Control panelContainer;
+    [Export] Node2D drinksContainer;
+    [Export] TextureRect background;
 
-	private RandomNumberGenerator rng = new RandomNumberGenerator();
+    private TimeOfDay timeOfDay = TimeOfDay.MORNING;
 
-	public override void _Ready() {
-		panelContainer.Hide();
-		rng.Randomize();
-		drinkBuilder.DrinkServed += ServeDrink;
-		StartRound();
-	}
+    private RandomNumberGenerator rng = new RandomNumberGenerator();
 
-	private async Task StartRound() {
-		characterSpawner.SetNewCustomer();
-		await dm.DisplayText($"Hey! I'm {characterSpawner.currentCustomer.displayName}");
-		await ToSignal(dm, "Finished");
-		await dm.DisplayText($"Can I get a {characterSpawner.currentOrder.displayName}?");
-		await ToSignal(dm, "Finished");
-		panelContainer.Show();
-	}
+    public override void _Ready() {
+        panelContainer.Hide();
+        rng.Randomize();
+        drinkBuilder.DrinkServed += ServeDrink;
+        SetBackground();
 
-	public async void ServeDrink(Dictionary<Ingredient, int> drinkServed) {
-		panelContainer.Hide();
+        StartRound();
+    }
 
-		Sprite2D shaker = drinksContainer.GetChild<Sprite2D>(0);
-		Sprite2D drink = drinksContainer.GetChild<Sprite2D>(1);
-		drink.Texture = characterSpawner.currentOrder.texture;
+    private async Task StartRound() {
+        characterSpawner.SetNewCustomer();
+        await dm.DisplayText($"Hey! I'm {characterSpawner.currentCustomer.displayName}");
+        await ToSignal(dm, "Finished");
+        await dm.DisplayText($"Can I get a {characterSpawner.currentOrder.displayName}?");
+        await ToSignal(dm, "Finished");
+        panelContainer.Show();
+    }
 
-		shaker.Show();
-		await ToSignal(GetTree().CreateTimer(1f), "timeout");
-		shaker.Hide();
-		drink.Show();
+    public async void ServeDrink(Dictionary<Ingredient, int> drinkServed) {
+        panelContainer.Hide();
 
-		bool correct = ValidateDrink(drinkServed);
-		if (correct) {
-			await dm.DisplayText("Looks great!");
-			await ToSignal(dm, "Finished");
-			drink.Hide();
+        Sprite2D shaker = drinksContainer.GetChild<Sprite2D>(0);
+        Sprite2D drink = drinksContainer.GetChild<Sprite2D>(1);
+        drink.Texture = characterSpawner.currentOrder.texture;
 
-			await dm.DisplayText($"Thanks for the {characterSpawner.currentOrder.displayName}");
-			if(characterSpawner.isUniqueCharacter){
-					characterSpawner.currentCustomer.increaseReputation();
-			}
-		} else {
-			await dm.DisplayText("Looks...interesting...");
-			await ToSignal(dm, "Finished");
-			drink.Hide();
+        shaker.Show();
+        await ToSignal(GetTree().CreateTimer(1f), "timeout");
+        shaker.Hide();
+        drink.Show();
 
-			await dm.DisplayText("This isn't right...");
-		}
+        bool correct = ValidateDrink(drinkServed);
+        if (correct) {
+            characterSpawner.CustomerSatisfied();
+            await dm.DisplayText("Looks great!");
+            await ToSignal(dm, "Finished");
+            drink.Hide();
 
-		await ToSignal(dm, "Finished");
-		EndRound();
-	}
+            await dm.DisplayText($"Thanks for the {characterSpawner.currentOrder.displayName}");
+            if (characterSpawner.isUniqueCharacter) {
+                characterSpawner.currentCustomer.increaseReputation();
+            }
+        } else {
+            await dm.DisplayText("Looks...interesting...");
+            await ToSignal(dm, "Finished");
+            drink.Hide();
 
-	private async Task EndRound() {
-		characterSpawner.Clear();
-		await ToSignal(GetTree().CreateTimer(rng.RandfRange(1f, 3f)), "timeout");
-		StartRound();
-	}
+            await dm.DisplayText("This isn't right...");
+        }
 
-	public bool ValidateDrink(Dictionary<Ingredient, int> drinkServed) {
-		Dictionary<Ingredient, int> drinkOrdered = characterSpawner.currentOrder.recipe;
+        await ToSignal(dm, "Finished");
+        EndRound();
+    }
 
-		return drinkServed.Count == drinkOrdered.Count &&
-			drinkServed.All(
-				kvp =>
-				drinkOrdered.TryGetValue(kvp.Key, out int value) &&
-				value == kvp.Value
-			);
-	}
+    private async Task EndRound() {
+        characterSpawner.Clear();
+        await ToSignal(GetTree().CreateTimer(rng.RandfRange(1f, 3f)), "timeout");
+
+        bool allServed = characterSpawner.AllCharactersServed();
+        if (allServed) {
+            AdvanceTimeOfDay();
+            await ToSignal(GetTree().CreateTimer(rng.RandfRange(1f, 3f)), "timeout");
+        }
+
+        StartRound();
+    }
+
+    public bool ValidateDrink(Dictionary<Ingredient, int> drinkServed) {
+        Dictionary<Ingredient, int> drinkOrdered = characterSpawner.currentOrder.recipe;
+
+        return drinkServed.Count == drinkOrdered.Count &&
+            drinkServed.All(
+                kvp =>
+                drinkOrdered.TryGetValue(kvp.Key, out int value) &&
+                value == kvp.Value
+            );
+    }
+
+    private void AdvanceTimeOfDay() {
+        timeOfDay++;
+        characterSpawner.ResetCharacterMap();
+
+        if (timeOfDay > Enum.GetValues<TimeOfDay>().Max()) {
+            GetTree().ChangeSceneToFile("res://Scenes/WinGame.tscn");
+        } else {
+            SetBackground();
+        }
+    }
+
+    private void SetBackground() {
+        string backgroundPath = "res://Scenes/background_" + timeOfDay.ToString().ToLower() + ".png";
+        background.Texture = GD.Load<Texture2D>(backgroundPath);
+    }
+}
+
+public enum TimeOfDay {
+    MORNING,
+    AFTERNOON,
+    EVENING
 }
