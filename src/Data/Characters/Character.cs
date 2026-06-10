@@ -9,7 +9,7 @@ public partial class Character : Resource {
 	[Export] public string[] morningResponse;
 	[Export] public string[] afternoonResponse;
 	[Export] public string[] eveningResponse;
-	public int reputation = 1;
+	public int reputation = 0;
 	public void increaseReputation() {
 		if(reputation < drinkList.Count-1) {
 			reputation++;
