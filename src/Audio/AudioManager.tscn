@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bxpr2w6un444c"]
+
+[ext_resource type="Script" uid="uid://ds37ioq8kfkho" path="res://Audio/AudioManager.cs" id="1_l0aok"]
+
+[node name="AudioManager" type="Node" unique_id=2096006064]
+script = ExtResource("1_l0aok")
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=2012739408]
+bank_paths = ["res://Audio/FmodBank/Desktop/Master.strings.bank", "res://Audio/FmodBank/Desktop/Master.bank", "res://Audio/FmodBank/Desktop/Music.bank", "res://Audio/FmodBank/Desktop/SFX.bank", "res://Audio/FmodBank/Desktop/UI.bank"]
+
+[node name="FmodListener2D" type="FmodListener2D" parent="." unique_id=98031095]
