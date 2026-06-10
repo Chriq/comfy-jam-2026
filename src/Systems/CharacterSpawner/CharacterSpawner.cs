@@ -31,7 +31,7 @@ public partial class CharacterSpawner : Node {
 			Array<Character> availableCharacters = [.. characterServedMap.Where(entry => !entry.Value).Select(entry => entry.Key)];
 			if (availableCharacters.Count > 0) {
 				currentCustomer = availableCharacters.PickRandom();
-				currentOrder = currentCustomer.drinkList[Math.Clamp(currentCustomer.reputation, 0, currentCustomer.drinkList.Count)];
+				currentOrder = currentCustomer.drinkList[Math.Clamp(currentCustomer.reputation, 0, currentCustomer.drinkList.Count)]; //TODO If only 1 drink per person per time, can run this off time of day
 			}
 		} else {
 			// use silhouette texture and generate random name

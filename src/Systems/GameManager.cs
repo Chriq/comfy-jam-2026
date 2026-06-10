@@ -51,6 +51,19 @@ public partial class GameManager : Node {
 		bool correct = ValidateDrink(drinkServed);
 		if (correct) {
 			characterSpawner.CustomerSatisfied();
+			if(characterSpawner.isUniqueCharacter) {
+				switch (timeOfDay) {
+					case TimeOfDay.MORNING:
+						await dm.DisplayText(characterSpawner.currentCustomer.morningResponse);
+						break;
+					case TimeOfDay.AFTERNOON:
+						await dm.DisplayText(characterSpawner.currentCustomer.afternoonResponse);
+						break;
+					case TimeOfDay.EVENING:
+						await dm.DisplayText(characterSpawner.currentCustomer.eveningResponse);
+						break;
+					}
+			}
 			await dm.DisplayText("Looks great!");
 			await ToSignal(dm, "Finished");
 			drink.Hide();

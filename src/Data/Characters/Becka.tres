@@ -9,4 +9,7 @@ script = ExtResource("1_dk8pk")
 displayName = "Becka Brown"
 texture = ExtResource("2_h8l2d")
 drinkList = Array[Object]([ExtResource("1_c0bxq")])
+morningResponse = PackedStringArray("Lorum Ipsum Test Text")
+afternoonResponse = PackedStringArray("IT IS NOW AFTERNOON")
+eveningResponse = PackedStringArray("EVENING RESPONSE")
 metadata/_custom_type_script = "uid://cw23jtvlk82sa"
