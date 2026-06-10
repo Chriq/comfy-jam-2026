@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://0e2bb7qpuhcx"]
 
-[ext_resource type="Script" uid="uid://c1xmk20n7x6yx" path="res://Menus/MainMenu/MainMenu.cs" id="1_1wr27"]
-[ext_resource type="Theme" uid="uid://2mclrl68o78m" path="res://Components/Button/Button.tres" id="5_lcf5r"]
-
-[sub_resource type="Resource" id="Resource_w8mip"]
-metadata/__load_path__ = "res://Systems/Cockpit/Cockpit.tscn"
+[ext_resource type="Script" uid="uid://c1xmk20n7x6yx" path="res://Scenes/MainMenu/MainMenu.cs" id="1_1wr27"]
+[ext_resource type="PackedScene" uid="uid://bk81258lvu14c" path="res://Scenes/Bar.tscn" id="2_qqjlh"]
+[ext_resource type="Theme" uid="uid://2mclrl68o78m" path="res://UI/Button/Button.tres" id="5_lcf5r"]
 
 [node name="MainMenu" type="Control" unique_id=197827329]
 layout_mode = 3
@@ -15,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_1wr27")
-toScene = SubResource("Resource_w8mip")
+toScene = ExtResource("2_qqjlh")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1807536778]
 layout_mode = 1

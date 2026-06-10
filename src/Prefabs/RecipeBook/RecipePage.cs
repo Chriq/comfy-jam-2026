@@ -49,6 +49,7 @@ public partial class RecipePage : Control {
             Node item = listItemPrefab.Instantiate();
             SpinBox s = item.GetChild<SpinBox>(0);
             s.Suffix = i.units;
+            // TODO: make +/- 1 difference from correct version
             s.Value = GD.RandRange(1, 8);
 
             RichTextLabel l = item.GetChild<RichTextLabel>(1);

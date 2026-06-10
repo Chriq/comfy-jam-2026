@@ -55,29 +55,10 @@ public partial class DialogManager : Control {
     }
 
     public async Task DisplayText(string[] lines, bool showPrompt = true, DialogOptions dialogOptions = null) {
-        if (dialogOptions != null && dialogOptions.portrait != null) {
-            portrait.Texture = dialogOptions.portrait;
-        } else {
-            portrait.Texture = null;
-        }
-
-        dialog.VisibleCharacters = 0;
         foreach (string line in lines) {
-            Show();
-            dialog.Text = line;
-
-            for (int i = 0; i < line.Length; i += increment) {
-                dialog.VisibleCharacters = i;
-                await ToSignal(GetTree().CreateTimer(characterSpeed), "timeout");
-            }
-
-            dialog.VisibleCharacters = -1;
-
+            await DisplayText(line);
             await ToSignal(this, "Finished");
         }
-
-        dialog.VisibleCharacters = -1;
-        //Finished += Close;
     }
 
     public void DisplayTextInstantaneous(string text, bool showPrompt = true, DialogOptions dialogOptions = null) {
