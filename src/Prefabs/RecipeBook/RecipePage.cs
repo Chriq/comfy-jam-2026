@@ -5,13 +5,17 @@ public partial class RecipePage : Control {
     RichTextLabel header;
     TextureRect img;
     RichTextLabel description;
-    RichTextLabel recipe;
+    Control recipe;
+
+    PackedScene listItemPrefab;
 
     public override void _Ready() {
         header = GetChild<RichTextLabel>(0);
         img = GetChild<TextureRect>(1);
         description = GetChild<RichTextLabel>(2);
-        recipe = GetChild<RichTextLabel>(3);
+        recipe = GetChild<Control>(3);
+
+        listItemPrefab = GD.Load<PackedScene>("res://Prefabs/RecipeBook/RecipeListItem.tscn");
     }
 
     public void InitPage(Drink drink) {
@@ -19,12 +23,13 @@ public partial class RecipePage : Control {
             header.Text = drink.displayName;
             description.Text = $"[i] {drink.description} [/i]";
             img.Texture = drink.texture;
-            recipe.Text = GetRecipeString(drink);
+            // recipe.Text = GetRecipeString(drink);
+            InitRecipeItems(drink);
         } else {
             header.Text = "";
             img.Texture = null;
             description.Text = "";
-            recipe.Text = "";
+            foreach (Node n in recipe.GetChildren()) recipe.RemoveChild(n);
         }
     }
 
@@ -37,5 +42,25 @@ public partial class RecipePage : Control {
         }
 
         return recipeStringBuilder;
+    }
+
+    private void InitRecipeItems(Drink drink) {
+        foreach (Ingredient i in drink.recipe.Keys) {
+            Node item = listItemPrefab.Instantiate();
+            SpinBox s = item.GetChild<SpinBox>(0);
+            s.Suffix = i.units;
+            s.Value = GD.RandRange(1, 8);
+
+            RichTextLabel l = item.GetChild<RichTextLabel>(1);
+            l.Text = i.displayName;
+
+            item.RemoveChild(s);
+            recipe.AddChild(s);
+
+            item.RemoveChild(l);
+            recipe.AddChild(l);
+
+            item.QueueFree();
+        }
     }
 }
