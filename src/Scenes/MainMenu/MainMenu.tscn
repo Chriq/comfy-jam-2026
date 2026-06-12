@@ -4,9 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://bk81258lvu14c" path="res://Scenes/Bar.tscn" id="2_flrug"]
 [ext_resource type="Texture2D" uid="uid://cif14s3cma5r3" path="res://Scenes/background_afternoon.png" id="3_ua038"]
 [ext_resource type="PackedScene" uid="uid://dsbblq2ww22ky" path="res://UI/Button/UIButton.tscn" id="4_ua038"]
+[ext_resource type="Script" uid="uid://degantb2ukxc6" path="res://UI/DialogManager/DialogManager.cs" id="6_0hjx5"]
 [ext_resource type="Texture2D" uid="uid://0wysc8xaxt3j" path="res://UI/NineSliceDefault.png" id="6_ng4bt"]
+[ext_resource type="PackedScene" uid="uid://bxxor0iw2cgmw" path="res://UI/OptionSelect/OptionSelect.tscn" id="7_fv0xt"]
+[ext_resource type="Script" uid="uid://de2q0n5ydpc1a" path="res://UI/OptionSelect/OptionSelect.cs" id="8_sng02"]
 
-[node name="MainMenu" type="Control" unique_id=376464063 node_paths=PackedStringArray("creditsContainer", "howContainer", "cutsceneContainer")]
+[node name="MainMenu" type="Control" unique_id=376464063 node_paths=PackedStringArray("creditsContainer", "howContainer", "cutsceneContainer", "dm")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,6 +22,7 @@ toScene = ExtResource("2_flrug")
 creditsContainer = NodePath("Credits")
 howContainer = NodePath("HowToPlay")
 cutsceneContainer = NodePath("ColorRect")
+dm = NodePath("ColorRect/DialogManager")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1794612763]
 layout_mode = 1
@@ -306,21 +310,72 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect" unique_id=1605014002]
-modulate = Color(1, 1, 1, 0)
+[node name="DialogManager" type="Control" parent="ColorRect" unique_id=2084443820 node_paths=PackedStringArray("dialog", "optionSelect", "portrait")]
+z_index = 999
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 80
-text = "So you think you have what it takes to be a gardener in this town? It's a craft that takes years to master!
+script = ExtResource("6_0hjx5")
+dialog = NodePath("DialogBox/HBoxContainer/DialogText")
+optionSelect = NodePath("OptionSelect")
+portrait = NodePath("DialogBox/HBoxContainer/Portrait")
 
-We'll see about that, rookie."
-fit_content = true
+[node name="OptionSelect" parent="ColorRect/DialogManager" unique_id=836121514 instance=ExtResource("7_fv0xt")]
+visible = false
+custom_minimum_size = Vector2(30, 10)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 380.0
+offset_top = -4.0
+offset_right = 423.0
+offset_bottom = 6.0
+script = ExtResource("8_sng02")
+
+[node name="DialogBox" type="NinePatchRect" parent="ColorRect/DialogManager" unique_id=560806568]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+region_rect = Rect2(0, 0, 315, 315)
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/DialogManager/DialogBox" unique_id=193623669]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 358.0
+offset_right = -396.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Portrait" type="TextureRect" parent="ColorRect/DialogManager/DialogBox/HBoxContainer" unique_id=708455193]
+visible = false
+layout_mode = 2
+
+[node name="DialogText" type="RichTextLabel" parent="ColorRect/DialogManager/DialogBox/HBoxContainer" unique_id=507381443]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 4
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/bold_italics_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/mono_font_size = 32
+bbcode_enabled = true
 horizontal_alignment = 1
 vertical_alignment = 1
 

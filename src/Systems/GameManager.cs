@@ -18,12 +18,14 @@ public partial class GameManager : Node {
     private RandomNumberGenerator rng = new RandomNumberGenerator();
     private FadeController fade = new();
 
-    public override void _Ready() {
+    public override async void _Ready() {
         panelContainer.Hide();
         rng.Randomize();
         drinkBuilder.DrinkServed += ServeDrink;
         AddChild(fade);
         SetBackground();
+ 
+        await ToSignal(GetTree().CreateTimer(1f), "timeout");
 
         StartRound();
     }
