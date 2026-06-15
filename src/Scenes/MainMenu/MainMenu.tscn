@@ -21,8 +21,8 @@ script = ExtResource("1_b37jj")
 toScene = ExtResource("2_flrug")
 creditsContainer = NodePath("Credits")
 howContainer = NodePath("HowToPlay")
-cutsceneContainer = NodePath("ColorRect")
-dm = NodePath("ColorRect/DialogManager")
+cutsceneContainer = NodePath("IntroCutscene")
+dm = NodePath("IntroCutscene/DialogManager")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1794612763]
 layout_mode = 1
@@ -91,10 +91,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -524.0
-offset_top = -453.0
-offset_right = 503.0
-offset_bottom = 294.0
+offset_left = -467.0
+offset_top = -506.0
+offset_right = 469.0
+offset_bottom = 317.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -132,7 +132,7 @@ horizontal_alignment = 1
 
 [node name="Grid" type="GridContainer" parent="Credits/MarginContainer/Hint display" unique_id=302889654]
 layout_mode = 2
-theme_override_constants/v_separation = 42
+theme_override_constants/v_separation = 30
 columns = 2
 
 [node name="Name" type="RichTextLabel" parent="Credits/MarginContainer/Hint display/Grid" unique_id=1838082525]
@@ -152,12 +152,37 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
-theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/normal_font_size = 32
 text = "Project Lead,
 Programmer"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name6" type="RichTextLabel" parent="Credits/MarginContainer/Hint display/Grid" unique_id=480674393]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_font_sizes/normal_font_size = 40
+text = "theLazyDog
+(Calvin)"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Role6" type="RichTextLabel" parent="Credits/MarginContainer/Hint display/Grid" unique_id=1604019419]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_font_sizes/normal_font_size = 32
+text = "Programmer"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Name3" type="RichTextLabel" parent="Credits/MarginContainer/Hint display/Grid" unique_id=1067049019]
 layout_mode = 2
@@ -176,11 +201,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
-theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/normal_font_size = 32
 text = "Artist"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Name2" type="RichTextLabel" parent="Credits/MarginContainer/Hint display/Grid" unique_id=442906938]
 layout_mode = 2
@@ -199,35 +225,37 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
-theme_override_font_sizes/normal_font_size = 40
-text = "Composer - Garden Music,
-Sound Designer"
+theme_override_font_sizes/normal_font_size = 32
+text = "Composer, Sound Designer"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Name4" type="RichTextLabel" parent="Credits/MarginContainer/Hint display/Grid" unique_id=102860247]
+[node name="Name4" type="RichTextLabel" parent="Credits/MarginContainer/Hint display/Grid" unique_id=110256915]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
 theme_override_font_sizes/normal_font_size = 40
-text = "Tom Duffy"
+text = "JaimiePMusic
+(Jaimie Pangan)"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="Role4" type="RichTextLabel" parent="Credits/MarginContainer/Hint display/Grid" unique_id=958837154]
+[node name="Role4" type="RichTextLabel" parent="Credits/MarginContainer/Hint display/Grid" unique_id=1177166057]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
-theme_override_font_sizes/normal_font_size = 40
-text = "Composer - Intro & 
-Season Review Music"
+theme_override_font_sizes/normal_font_size = 32
+text = "Audio Engineer,
+FMOD Implementation"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Name5" type="RichTextLabel" parent="Credits/MarginContainer/Hint display/Grid" unique_id=937843543]
 layout_mode = 2
@@ -245,11 +273,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
-theme_override_font_sizes/normal_font_size = 40
-text = "Vocalist, Flora Specialist"
+theme_override_font_sizes/normal_font_size = 32
+text = "Writer, Mixologist"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HowToPlay" type="NinePatchRect" parent="." unique_id=1847051436]
 visible = false
@@ -299,7 +328,7 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1052778026]
+[node name="IntroCutscene" type="ColorRect" parent="." unique_id=1052778026]
 modulate = Color(1, 1, 1, 0)
 z_index = 999
 layout_mode = 1
@@ -310,7 +339,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="DialogManager" type="Control" parent="ColorRect" unique_id=2084443820 node_paths=PackedStringArray("dialog", "optionSelect", "portrait")]
+[node name="DialogManager" type="Control" parent="IntroCutscene" unique_id=2084443820 node_paths=PackedStringArray("dialog", "optionSelect", "portrait")]
 z_index = 999
 layout_mode = 1
 anchors_preset = 15
@@ -323,7 +352,7 @@ dialog = NodePath("DialogBox/HBoxContainer/DialogText")
 optionSelect = NodePath("OptionSelect")
 portrait = NodePath("DialogBox/HBoxContainer/Portrait")
 
-[node name="OptionSelect" parent="ColorRect/DialogManager" unique_id=836121514 instance=ExtResource("7_fv0xt")]
+[node name="OptionSelect" parent="IntroCutscene/DialogManager" unique_id=836121514 instance=ExtResource("7_fv0xt")]
 visible = false
 custom_minimum_size = Vector2(30, 10)
 layout_mode = 1
@@ -338,7 +367,7 @@ offset_right = 423.0
 offset_bottom = 6.0
 script = ExtResource("8_sng02")
 
-[node name="DialogBox" type="NinePatchRect" parent="ColorRect/DialogManager" unique_id=560806568]
+[node name="DialogBox" type="NinePatchRect" parent="IntroCutscene/DialogManager" unique_id=560806568]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -351,7 +380,7 @@ patch_margin_top = 20
 patch_margin_right = 20
 patch_margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/DialogManager/DialogBox" unique_id=193623669]
+[node name="HBoxContainer" type="HBoxContainer" parent="IntroCutscene/DialogManager/DialogBox" unique_id=193623669]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -361,11 +390,11 @@ offset_right = -396.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Portrait" type="TextureRect" parent="ColorRect/DialogManager/DialogBox/HBoxContainer" unique_id=708455193]
+[node name="Portrait" type="TextureRect" parent="IntroCutscene/DialogManager/DialogBox/HBoxContainer" unique_id=708455193]
 visible = false
 layout_mode = 2
 
-[node name="DialogText" type="RichTextLabel" parent="ColorRect/DialogManager/DialogBox/HBoxContainer" unique_id=507381443]
+[node name="DialogText" type="RichTextLabel" parent="IntroCutscene/DialogManager/DialogBox/HBoxContainer" unique_id=507381443]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -378,6 +407,7 @@ theme_override_font_sizes/mono_font_size = 32
 bbcode_enabled = true
 horizontal_alignment = 1
 vertical_alignment = 1
+visible_characters_behavior = 1
 
 [connection signal="pressed" from="Buttons/Start" to="." method="StartGame"]
 [connection signal="pressed" from="Buttons/How" to="." method="ToggleControls"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bk81258lvu14c"]
 
-[ext_resource type="Texture2D" uid="uid://cif14s3cma5r3" path="res://Scenes/background_afternoon.png" id="1_acx3c"]
+[ext_resource type="Texture2D" uid="uid://dyry12dhc100c" path="res://Scenes/background_morning.png" id="1_03u66"]
 [ext_resource type="PackedScene" uid="uid://dqbyf0um01k76" path="res://Prefabs/IngredientPanel/IngredientPanel.tscn" id="1_op7jc"]
 [ext_resource type="Script" uid="uid://csq16ttdctm5i" path="res://Systems/DrinkBuilder/DrinkBuilder.cs" id="2_2vt6c"]
 [ext_resource type="Texture2D" uid="uid://cw08f2dsj76nc" path="res://Scenes/bar.png" id="2_juds8"]
@@ -28,7 +28,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_acx3c")
+texture = ExtResource("1_03u66")
 
 [node name="CharacterTexture" type="TextureRect" parent="." unique_id=132668442]
 layout_mode = 1
