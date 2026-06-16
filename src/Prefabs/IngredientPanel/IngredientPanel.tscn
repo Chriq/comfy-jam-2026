@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://62c7fcyx5d6m" path="res://Prefabs/IngredientPanel/IngredientPanel.cs" id="1_mjqdk"]
 [ext_resource type="PackedScene" uid="uid://cn2lrotryslda" path="res://Prefabs/IngredientPanel/IngredientSelect.tscn" id="2_n0ojg"]
 
-[node name="IngredientPanel" type="VBoxContainer" unique_id=252251641 node_paths=PackedStringArray("liquorsTab", "juicesTab", "garnishesTab", "serveButton")]
+[node name="IngredientPanel" type="VBoxContainer" unique_id=252251641 node_paths=PackedStringArray("liquorsTab", "juicesTab", "garnishesTab")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -12,10 +12,9 @@ grow_vertical = 2
 theme_override_constants/separation = 16
 script = ExtResource("1_mjqdk")
 ingredientSelectPrefab = ExtResource("2_n0ojg")
-liquorsTab = NodePath("IngredientPanel/Liquors")
-juicesTab = NodePath("IngredientPanel/Juices")
-garnishesTab = NodePath("IngredientPanel/Garnishes")
-serveButton = NodePath("")
+liquorsTab = NodePath("IngredientPanel/Liquors/Liquors")
+juicesTab = NodePath("IngredientPanel/Juices/Juices")
+garnishesTab = NodePath("IngredientPanel/Garnishes/Garnishes")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=874798392]
 layout_mode = 2
@@ -31,19 +30,47 @@ horizontal_alignment = 1
 [node name="IngredientPanel" type="TabContainer" parent="." unique_id=1278742392]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
 current_tab = 0
 
-[node name="Liquors" type="GridContainer" parent="IngredientPanel" unique_id=1659937995]
+[node name="Liquors" type="MarginContainer" parent="IngredientPanel" unique_id=1366230435]
 layout_mode = 2
-columns = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 metadata/_tab_index = 0
 
-[node name="Juices" type="GridContainer" parent="IngredientPanel" unique_id=374977231]
+[node name="Liquors" type="GridContainer" parent="IngredientPanel/Liquors" unique_id=1659937995]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 2
+
+[node name="Juices" type="MarginContainer" parent="IngredientPanel" unique_id=662310510]
 visible = false
 layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 metadata/_tab_index = 1
 
-[node name="Garnishes" type="GridContainer" parent="IngredientPanel" unique_id=313342326]
+[node name="Juices" type="GridContainer" parent="IngredientPanel/Juices" unique_id=374977231]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+
+[node name="Garnishes" type="MarginContainer" parent="IngredientPanel" unique_id=1368851348]
 visible = false
 layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 metadata/_tab_index = 2
+
+[node name="Garnishes" type="GridContainer" parent="IngredientPanel/Garnishes" unique_id=313342326]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16

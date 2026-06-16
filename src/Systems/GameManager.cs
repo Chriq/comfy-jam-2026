@@ -32,10 +32,30 @@ public partial class GameManager : Node {
 
     private async Task StartRound() {
         characterSpawner.SetNewCustomer();
-        await dm.DisplayText($"Hey! I'm {characterSpawner.currentCustomer.displayName}");
-        await ToSignal(dm, "Finished");
-        await dm.DisplayText($"Can I get a {characterSpawner.currentOrder.displayName}?");
-        await ToSignal(dm, "Finished");
+
+        if (characterSpawner.isUniqueCharacter) {
+            string[] greeting = {};
+            switch (timeOfDay) {
+                case TimeOfDay.MORNING:
+                    greeting = characterSpawner.currentCustomer.morningGreeting;
+                    break;
+                case TimeOfDay.AFTERNOON:
+                    greeting = characterSpawner.currentCustomer.afternoonGreeting;
+                    break;
+                case TimeOfDay.EVENING:
+                    greeting = characterSpawner.currentCustomer.eveningGreeting;
+                    break;
+            }
+
+            // greeting will leave off with space for drink name
+            greeting[greeting.Count() - 1] += $" {characterSpawner.currentOrder.displayName}?";
+            await dm.DisplayText(greeting);
+        } else {
+            await dm.DisplayText($"Hey! I'm {characterSpawner.currentCustomer.displayName}");
+            await ToSignal(dm, "Finished");
+            await dm.DisplayText($"Can I get a {characterSpawner.currentOrder.displayName}?");
+            await ToSignal(dm, "Finished");
+        }
         panelContainer.Show();
     }
 

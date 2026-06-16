@@ -28,10 +28,13 @@ public partial class DialogManager : Control {
 
     public override void _Input(InputEvent @event) {
         base._Input(@event);
-        if (@event.IsPressed() && dialog.VisibleCharacters == -1) {
-            Hide();
-            EmitSignal(SignalName.Finished);
-
+        if (@event.IsPressed()) {
+            if(dialog.VisibleCharacters == -1) {
+                Hide();
+                EmitSignal(SignalName.Finished);
+            } else {
+                dialog.VisibleCharacters = dialog.Text.Length;
+            }
         }
     }
 
@@ -46,8 +49,7 @@ public partial class DialogManager : Control {
         dialog.VisibleCharacters = 0;
         dialog.Text = text;
 
-        for (int i = 0; i < text.Length; i += increment) {
-            dialog.VisibleCharacters = i;
+        for (dialog.VisibleCharacters = 0; dialog.VisibleCharacters < text.Length; dialog.VisibleCharacters += increment) {
             await ToSignal(GetTree().CreateTimer(characterSpeed), "timeout");
         }
 
