@@ -1,19 +1,38 @@
 [gd_resource type="Resource" script_class="Character" format=3 uid="uid://djsvigsgm7mrh"]
 
 [ext_resource type="Resource" uid="uid://cymu6ql6jx1lh" path="res://Data/Drinks/Custom Drinks/testDrink.tres" id="1_am6cj"]
-[ext_resource type="Resource" uid="uid://cpujajrjrtugp" path="res://Data/Drinks/Screwdriver.tres" id="2_dbcih"]
+[ext_resource type="Script" uid="uid://dtt4jimifp0tg" path="res://Data/Characters/CharacterTimeInfo.cs" id="2_e8vyf"]
 [ext_resource type="Script" uid="uid://cw23jtvlk82sa" path="res://Data/Characters/Character.cs" id="3_rqq2j"]
 [ext_resource type="Texture2D" uid="uid://d0pc3a11k2tgm" path="res://Data/Characters/Unique Character.png" id="4_21qcn"]
+
+[sub_resource type="Resource" id="Resource_8rrkb"]
+script = ExtResource("2_e8vyf")
+greeting = PackedStringArray("G’day, mate! A fine morning, innit?", "The name’s Johnathan Davis, and I have a special request that’ll knock yer thongs off!", "…No! Not that kind!", "Could you please prepare a")
+response = PackedStringArray("Oi mate, that’s bloody good, innit?", "It’s just what I needed, a good kick in the arse to start the day!", "I’ve got a long day of networking ahead, actually. I’m a musician trying to make it in the games industry.", "I’ll be chatting up all the big shots in town. Wish me luck!")
+drink = ExtResource("1_am6cj")
+metadata/_custom_type_script = "uid://dtt4jimifp0tg"
+
+[sub_resource type="Resource" id="Resource_m5lid"]
+script = ExtResource("2_e8vyf")
+greeting = PackedStringArray("This beach is going off like a frog in a sock! I could use a refresher in this sun.", "I\'ll have a")
+response = PackedStringArray("Noice! It’s a good midday pick-me-up.", "Been having a rough go at it, mate. The suits are rather stiff, aren’t they?", "You’d think they’d lighten up on the beach knocking back a couple of coldie’s, but it’s still pretty brutal.", "I dunno, I’ll keep at it, but I might just enjoy the sights for a while. Thanks for the drink, mate.")
+drink = ExtResource("1_am6cj")
+metadata/_custom_type_script = "uid://dtt4jimifp0tg"
+
+[sub_resource type="Resource" id="Resource_25dnk"]
+script = ExtResource("2_e8vyf")
+greeting = PackedStringArray("Hey, ya c***!", "[i]He does not, in fact, realize that word is wildly inappropriate in this context.[/i]", "Guess who just landed the music composer gig for the next Hitman’s Credo franchise! ", "It’ll be set in Ancient Greece, but I think I’ll actually go for a more upbeat, modern sound, just to spice it up!", "How about we celebrate with a")
+response = PackedStringArray("I appreciate your listening ear today. It\'s tough being a musician out there, but a little support, and a little sass, go a long way!")
+drink = ExtResource("1_am6cj")
+metadata/_custom_type_script = "uid://dtt4jimifp0tg"
 
 [resource]
 script = ExtResource("3_rqq2j")
 displayName = "Johnathan Davis"
 texture = ExtResource("4_21qcn")
-drinkList = Array[Object]([ExtResource("1_am6cj"), ExtResource("2_dbcih"), ExtResource("1_am6cj")])
-morningGreeting = PackedStringArray("G’day, mate! A fine morning, innit?", "The name’s Johnathan Davis, and I have a special request that’ll knock yer thongs off!", "…No! Not that kind!", "Could you please prepare a")
-morningResponse = PackedStringArray("Oi mate, that’s bloody good, innit?", "It’s just what I needed, a good kick in the arse to start the day!", "I’ve got a long day of networking ahead, actually. I’m a musician trying to make it in the games industry.", "I’ll be chatting up all the big shots in town. Wish me luck!")
-afternoonGreeting = PackedStringArray("This beach is going off like a frog in a sock! I could use a refresher in this sun.", "I\'ll have a")
-afternoonResponse = PackedStringArray("Noice! It’s a good midday pick-me-up.", "Been having a rough go at it, mate. The suits are rather stiff, aren’t they?", "You’d think they’d lighten up on the beach knocking back a couple of coldie’s, but it’s still pretty brutal.", "I dunno, I’ll keep at it, but I might just enjoy the sights for a while. Thanks for the drink, mate.")
-eveningGreeting = PackedStringArray("Hey, ya c***!", "[i]He does not, in fact, realize that word is wildly inappropriate in this context.[/i]", "Guess who just landed the music composer gig for the next Hitman’s Credo franchise! ", "It’ll be set in Ancient Greece, but I think I’ll actually go for a more upbeat, modern sound, just to spice it up!", "How about we celebrate with a")
-eveningResponse = PackedStringArray("I appreciate your listening ear today. It\'s tough being a musician out there, but a little support, and a little sass, go a long way!")
+info = Dictionary[int, ExtResource("2_e8vyf")]({
+0: SubResource("Resource_8rrkb"),
+1: SubResource("Resource_m5lid"),
+2: SubResource("Resource_25dnk")
+})
 metadata/_custom_type_script = "uid://cw23jtvlk82sa"

@@ -31,21 +31,10 @@ public partial class GameManager : Node {
     }
 
     private async Task StartRound() {
-        characterSpawner.SetNewCustomer();
+        characterSpawner.SetNewCustomer(timeOfDay);
 
         if (characterSpawner.isUniqueCharacter) {
-            string[] greeting = {};
-            switch (timeOfDay) {
-                case TimeOfDay.MORNING:
-                    greeting = characterSpawner.currentCustomer.morningGreeting;
-                    break;
-                case TimeOfDay.AFTERNOON:
-                    greeting = characterSpawner.currentCustomer.afternoonGreeting;
-                    break;
-                case TimeOfDay.EVENING:
-                    greeting = characterSpawner.currentCustomer.eveningGreeting;
-                    break;
-            }
+            string[] greeting = characterSpawner.currentCustomer.info[timeOfDay].greeting;
 
             // greeting will leave off with space for drink name
             greeting[greeting.Count() - 1] += $" {characterSpawner.currentOrder.displayName}?";
@@ -66,37 +55,26 @@ public partial class GameManager : Node {
         Sprite2D drink = drinksContainer.GetChild<Sprite2D>(1);
         drink.Texture = characterSpawner.currentOrder.texture;
 
+        AudioManager.I.PlaySFX(SFX.SHAKER);
         shaker.Show();
         await ToSignal(GetTree().CreateTimer(1f), "timeout");
         shaker.Hide();
+
+        AudioManager.I.PlaySFX(SFX.BOTTLE_PUT_DOWN);
         drink.Show();
 
         bool correct = ValidateDrink(drinkServed);
         if (correct) {
             characterSpawner.CustomerSatisfied();
             if (characterSpawner.isUniqueCharacter) {
-                switch (timeOfDay) {
-                    case TimeOfDay.MORNING:
-                        await dm.DisplayText(characterSpawner.currentCustomer.morningResponse);
-                        break;
-                    case TimeOfDay.AFTERNOON:
-                        await dm.DisplayText(characterSpawner.currentCustomer.afternoonResponse);
-                        break;
-                    case TimeOfDay.EVENING:
-                        await dm.DisplayText(characterSpawner.currentCustomer.eveningResponse);
-                        break;
-                }
+                await dm.DisplayText(characterSpawner.currentCustomer.info[timeOfDay].response);
             } else {
                 await dm.DisplayText("Looks great!");
             }
 
-            // await ToSignal(dm, "Finished");
             drink.Hide();
 
             await dm.DisplayText($"Thanks for the {characterSpawner.currentOrder.displayName}");
-            if (characterSpawner.isUniqueCharacter) {
-                characterSpawner.currentCustomer.increaseReputation();
-            }
         } else {
             await dm.DisplayText("Looks...interesting...");
             await ToSignal(dm, "Finished");

@@ -9,6 +9,12 @@ public partial class MainMenu : Control {
     [Export] Control cutsceneContainer;
     [Export] DialogManager dm;
 
+    public override void _Ready() {
+        AudioManager.I.PlayMusic(TimeOfDay.MORNING);
+        AudioManager.I.PlayAmbience();
+    }
+
+
     public void StartGame() {
         PlayButtonSFX();
         DoIntroCutscene();
