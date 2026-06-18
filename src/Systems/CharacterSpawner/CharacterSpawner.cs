@@ -8,6 +8,7 @@ public partial class CharacterSpawner : Node {
 	[Export] float specialCharacterProbability = 0.4f;
 	[Export] TextureRect characterRect;
 	[Export] Texture2D genericCharacterTexture;
+	[Export] RichTextLabel currentRequest;
 
 	public Character currentCustomer { get; private set; }
 	public Drink currentOrder { get; private set; }
@@ -23,8 +24,8 @@ public partial class CharacterSpawner : Node {
 	}
 
 	public void SetNewCustomer() {
-		// float val = rng.Randf();
-		float val = 0.3f;
+		float val = rng.Randf();
+		//float val = 0.3f;
 		if (val < specialCharacterProbability) {
 			// get special character
 			isUniqueCharacter = true;
@@ -44,6 +45,7 @@ public partial class CharacterSpawner : Node {
 		}
 
 		characterRect.Texture = currentCustomer.texture;
+		currentRequest.Text = currentOrder.displayName;
 	}
 
 	public void CustomerSatisfied() {
