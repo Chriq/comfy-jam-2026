@@ -68,20 +68,20 @@ public partial class IngredientPanel : Control {
 
 	public void Clear() {
 		for (int i = 0; i < liquorsTab.GetChildCount(); i++) { //iterate through each tab and set their children's values to 0
-            IngredientSelect select = liquorsTab.GetChild<IngredientSelect>(i);
-            select.amountInput.Value = 0;
-        }
-        for (int i = 0; i < juicesTab.GetChildCount(); i++) {
-            IngredientSelect select = juicesTab.GetChild<IngredientSelect>(i);
-            select.amountInput.Value = 0;
-        }
-        for (int i = 0; i < garnishesTab.GetChildCount(); i++) {
-            IngredientSelect select = garnishesTab.GetChild<IngredientSelect>(i);
-            select.amountInput.Value = 0;
-        }
-    }
+			IngredientSelect select = liquorsTab.GetChild<IngredientSelect>(i);
+			select.amountInput.Value = 0;
+		}
+		for (int i = 0; i < juicesTab.GetChildCount(); i++) {
+			IngredientSelect select = juicesTab.GetChild<IngredientSelect>(i);
+			select.amountInput.Value = 0;
+		}
+		for (int i = 0; i < garnishesTab.GetChildCount(); i++) {
+			IngredientSelect select = garnishesTab.GetChild<IngredientSelect>(i);
+			select.amountInput.Value = 0;
+		}
+	}
 
-    public List<Ingredient> GetAllIngredients() {
-        return NodeUtil.LoadResourcesFromFolder("res://Data/Ingredients/").OfType<Ingredient>().ToList();
-    }
+	public List<Ingredient> GetAllIngredients() {
+		return NodeUtil.LoadResourcesFromFolder("res://Data/Ingredients/").OfType<Ingredient>().ToList();
+	}
 }

@@ -138,7 +138,21 @@ script = ExtResource("2_2vt6c")
 ingredientPanel = NodePath("../../RightPanel/IngredientPanel")
 currentOrderDisplay = NodePath("../../RightPanel/CurrentOrderPanel/CurrentOrder")
 
-[node name="CharacterSpawner" type="Node" parent="GameManager" unique_id=1175466338 node_paths=PackedStringArray("characterRect")]
+[node name="CharacterSpawner" type="Node" parent="GameManager" unique_id=1175466338 node_paths=PackedStringArray("characterRect", "currentRequest")]
 script = ExtResource("7_n62g1")
 characterRect = NodePath("../../CharacterTexture")
 genericCharacterTexture = ExtResource("9_2ibdx")
+currentRequest = NodePath("../../CurrentRequestPanel/CurrentRequest")
+
+[node name="CurrentRequestPanel" type="PanelContainer" parent="." unique_id=723983098]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 637.0
+offset_right = 314.0
+offset_bottom = 741.0
+
+[node name="CurrentRequest" type="RichTextLabel" parent="CurrentRequestPanel" unique_id=949151330]
+layout_mode = 2
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
