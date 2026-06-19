@@ -26,17 +26,17 @@ public partial class DialogManager : Control {
 
 	public float characterSpeed = 0.032f;
 
-    public override void _Input(InputEvent @event) {
-        base._Input(@event);
-        if (@event.IsPressed()) {
-            if(dialog.VisibleCharacters == -1) {
-                Hide();
-                EmitSignal(SignalName.Finished);
-            } else {
-                dialog.VisibleCharacters = dialog.Text.Length;
-            }
-        }
-    }
+	public override void _Input(InputEvent @event) {
+		base._Input(@event);
+		if (@event.IsPressed()) {
+			if(dialog.VisibleCharacters == -1) {
+				Hide();
+				EmitSignal(SignalName.Finished);
+			} else {
+				dialog.VisibleCharacters = dialog.Text.Length;
+			}
+		}
+	}
 
 	public async Task DisplayText(string text, bool showPrompt = true, DialogOptions dialogOptions = null) {
 		if (dialogOptions != null && dialogOptions.portrait != null) {
@@ -49,9 +49,9 @@ public partial class DialogManager : Control {
 		dialog.VisibleCharacters = 0;
 		dialog.Text = text;
 
-        for (dialog.VisibleCharacters = 0; dialog.VisibleCharacters < text.Length; dialog.VisibleCharacters += increment) {
-            await ToSignal(GetTree().CreateTimer(characterSpeed), "timeout");
-        }
+		for (dialog.VisibleCharacters = 0; dialog.VisibleCharacters < text.Length; dialog.VisibleCharacters += increment) {
+			await ToSignal(GetTree().CreateTimer(characterSpeed), "timeout");
+		}
 
 		dialog.VisibleCharacters = -1;
 	}

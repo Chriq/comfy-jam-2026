@@ -23,23 +23,23 @@ public partial class CharacterSpawner : Node {
 		rng.Randomize();
 	}
 
-    public void SetNewCustomer(TimeOfDay timeOfDay) {
-        // float val = rng.Randf();
-        float val = 0.3f;
-        if (val < specialCharacterProbability) {
-            // get special character
-            isUniqueCharacter = true;
-            Array<Character> availableCharacters = [.. characterServedMap.Where(entry => !entry.Value).Select(entry => entry.Key)];
-            if (availableCharacters.Count > 0) {
-                currentCustomer = availableCharacters.PickRandom();
-                currentOrder = currentCustomer.info[timeOfDay].drink;
-            }
-        } else {
-            // use silhouette texture and generate random name
-            currentCustomer = new() {
-                displayName = GenerateRandomName(),
-                texture = genericCharacterTexture
-            };
+	public void SetNewCustomer(TimeOfDay timeOfDay) {
+		// float val = rng.Randf();
+		float val = 0.3f;
+		if (val < specialCharacterProbability) {
+			// get special character
+			isUniqueCharacter = true;
+			Array<Character> availableCharacters = [.. characterServedMap.Where(entry => !entry.Value).Select(entry => entry.Key)];
+			if (availableCharacters.Count > 0) {
+				currentCustomer = availableCharacters.PickRandom();
+				currentOrder = currentCustomer.info[timeOfDay].drink;
+			}
+		} else {
+			// use silhouette texture and generate random name
+			currentCustomer = new() {
+				displayName = GenerateRandomName(),
+				texture = genericCharacterTexture
+			};
 
 			currentOrder = new Array<Drink>(NodeUtil.LoadResourcesFromFolder("res://Data/Drinks/").OfType<Drink>().ToArray()).PickRandom();
 		}

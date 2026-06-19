@@ -30,23 +30,23 @@ public partial class GameManager : Node {
 		StartRound();
 	}
 
-    private async Task StartRound() {
-        characterSpawner.SetNewCustomer(timeOfDay);
+	private async Task StartRound() {
+		characterSpawner.SetNewCustomer(timeOfDay);
 
-        if (characterSpawner.isUniqueCharacter) {
-            string[] greeting = characterSpawner.currentCustomer.info[timeOfDay].greeting;
+		if (characterSpawner.isUniqueCharacter) {
+			string[] greeting = characterSpawner.currentCustomer.info[timeOfDay].greeting;
 
-            // greeting will leave off with space for drink name
-            greeting[greeting.Count() - 1] += $" {characterSpawner.currentOrder.displayName}?";
-            await dm.DisplayText(greeting);
-        } else {
-            await dm.DisplayText($"Hey! I'm {characterSpawner.currentCustomer.displayName}");
-            await ToSignal(dm, "Finished");
-            await dm.DisplayText($"Can I get a {characterSpawner.currentOrder.displayName}?");
-            await ToSignal(dm, "Finished");
-        }
-        panelContainer.Show();
-    }
+			// greeting will leave off with space for drink name
+			greeting[greeting.Count() - 1] += $" {characterSpawner.currentOrder.displayName}?";
+			await dm.DisplayText(greeting);
+		} else {
+			await dm.DisplayText($"Hey! I'm {characterSpawner.currentCustomer.displayName}");
+			await ToSignal(dm, "Finished");
+			await dm.DisplayText($"Can I get a {characterSpawner.currentOrder.displayName}?");
+			await ToSignal(dm, "Finished");
+		}
+		panelContainer.Show();
+	}
 
 	public async void ServeDrink(Dictionary<Ingredient, int> drinkServed) {
 		panelContainer.Hide();
@@ -55,30 +55,30 @@ public partial class GameManager : Node {
 		Sprite2D drink = drinksContainer.GetChild<Sprite2D>(1);
 		drink.Texture = characterSpawner.currentOrder.texture;
 
-        AudioManager.I.PlaySFX(SFX.SHAKER);
-        shaker.Show();
-        await ToSignal(GetTree().CreateTimer(1f), "timeout");
-        shaker.Hide();
+		AudioManager.I.PlaySFX(SFX.SHAKER);
+		shaker.Show();
+		await ToSignal(GetTree().CreateTimer(1f), "timeout");
+		shaker.Hide();
 
-        AudioManager.I.PlaySFX(SFX.BOTTLE_PUT_DOWN);
-        drink.Show();
+		AudioManager.I.PlaySFX(SFX.BOTTLE_PUT_DOWN);
+		drink.Show();
 
-        bool correct = ValidateDrink(drinkServed);
-        if (correct) {
-            characterSpawner.CustomerSatisfied();
-            if (characterSpawner.isUniqueCharacter) {
-                await dm.DisplayText(characterSpawner.currentCustomer.info[timeOfDay].response);
-            } else {
-                await dm.DisplayText("Looks great!");
-            }
+		bool correct = ValidateDrink(drinkServed);
+		if (correct) {
+			characterSpawner.CustomerSatisfied();
+			if (characterSpawner.isUniqueCharacter) {
+				await dm.DisplayText(characterSpawner.currentCustomer.info[timeOfDay].response);
+			} else {
+				await dm.DisplayText("Looks great!");
+			}
 
-            drink.Hide();
+			drink.Hide();
 
-            await dm.DisplayText($"Thanks for the {characterSpawner.currentOrder.displayName}");
-        } else {
-            await dm.DisplayText("Looks...interesting...");
-            await ToSignal(dm, "Finished");
-            drink.Hide();
+			await dm.DisplayText($"Thanks for the {characterSpawner.currentOrder.displayName}");
+		} else {
+			await dm.DisplayText("Looks...interesting...");
+			await ToSignal(dm, "Finished");
+			drink.Hide();
 
 			await dm.DisplayText("This isn't right...");
 			// await ToSignal(dm, "Finished");
