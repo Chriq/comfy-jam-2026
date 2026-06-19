@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://2r4tauorfu2j" path="res://Data/Ingredients/Vodka.tres" id="4_603dm"]
 [ext_resource type="Resource" uid="uid://b81yrnfr0scwa" path="res://Data/Ingredients/Rum.tres" id="5_g68qy"]
 [ext_resource type="Resource" uid="uid://cnt3o6om3y60f" path="res://Data/Ingredients/Cherry.tres" id="6_4w5r0"]
+[ext_resource type="Resource" uid="uid://mubglnk30i48" path="res://Data/Ingredients/BlueCuracao.tres" id="7_58b4v"]
 [ext_resource type="Script" uid="uid://jmfp1x53ksts" path="res://Data/Drinks/Drink.cs" id="7_q1408"]
 [ext_resource type="Texture2D" uid="uid://dicwy2kedqffi" path="res://Data/Drinks/Textures/FunintheSun_Gin.png" id="8_ae8p1"]
 
@@ -20,6 +21,7 @@ ExtResource("2_58b4v"): 4,
 ExtResource("3_whehn"): 2,
 ExtResource("4_603dm"): 2,
 ExtResource("5_g68qy"): 2,
-ExtResource("6_4w5r0"): 1
+ExtResource("6_4w5r0"): 1,
+ExtResource("7_58b4v"): 1
 })
 metadata/_custom_type_script = "uid://jmfp1x53ksts"

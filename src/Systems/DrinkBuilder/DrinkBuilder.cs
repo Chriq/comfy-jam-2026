@@ -79,6 +79,8 @@ public partial class DrinkBuilder : Node {
 	}
 
 	private string GetCritique(Ingredient ingredient, int difference) {
+		if(ingredient == null) return "I don't even know what's wrong with it. Do you know how to make the drink I ordered?";
+		
 		string joke = rng.Randf() < 0.5f ? "Did you even try?" : "";
 
 		switch (ingredient.ingredientType) {
@@ -106,8 +108,8 @@ public partial class DrinkBuilder : Node {
 				} else {
 					return "I think you used the wrong garnish. " + joke;
 				}
-			default: //Empty Glass
-				return "Why did you hand me an empty glass?";
+			default:
+				return "I don't even know what's wrong with it. Do you know how to make the drink I ordered?";
 		}
 	}
 

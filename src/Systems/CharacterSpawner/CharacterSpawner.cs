@@ -4,8 +4,8 @@ using System;
 using System.Linq;
 
 public partial class CharacterSpawner : Node {
-	private const float INIT_CHAR_PROBABILITY = 0.4f;
-	[Export] float specialCharacterProbability = 0.4f;
+	private const float INIT_CHAR_PROBABILITY = 0.6f;
+	[Export] float specialCharacterProbability = 0.6f;
 	[Export] TextureRect characterRect;
 	[Export] Texture2D genericCharacterTexture;
 	[Export] float drinkTimeProbability;

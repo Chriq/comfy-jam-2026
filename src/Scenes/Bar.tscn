@@ -133,11 +133,15 @@ text = "Serve Drink"
 
 [node name="CurrentRequestPanel" type="PanelContainer" parent="." unique_id=723983098]
 visible = false
-layout_mode = 0
-offset_left = 38.0
-offset_top = 942.0
-offset_right = 351.0
-offset_bottom = 1046.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = -120.0
+offset_right = 330.0
+offset_bottom = -16.0
+grow_vertical = 0
 theme = SubResource("Theme_v6skf")
 
 [node name="MarginContainer" type="MarginContainer" parent="CurrentRequestPanel" unique_id=1016457694]
