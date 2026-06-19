@@ -4,6 +4,7 @@ using System;
 using System.Linq;
 
 public partial class CharacterSpawner : Node {
+	private const float INIT_CHAR_PROBABILITY = 0.4f;
 	[Export] float specialCharacterProbability = 0.4f;
 	[Export] TextureRect characterRect;
 	[Export] Texture2D genericCharacterTexture;
@@ -17,15 +18,16 @@ public partial class CharacterSpawner : Node {
 
 	private Dictionary<Character, bool> characterServedMap = new();
 
+	private bool oneDrinkServedCorrectly = false;
+
 	public override void _Ready() {
 		ResetCharacterMap();
 		rng.Randomize();
 	}
 
 	public void SetNewCustomer(TimeOfDay timeOfDay) {
-		// float val = rng.Randf();
-		float val = 0.8f;
-		if (val < specialCharacterProbability) {
+		float val = rng.Randf();
+		if (val < specialCharacterProbability && oneDrinkServedCorrectly) {
 			// get special character
 			isUniqueCharacter = true;
 			Array<Character> availableCharacters = [.. characterServedMap.Where(entry => !entry.Value).Select(entry => entry.Key)];
@@ -34,6 +36,8 @@ public partial class CharacterSpawner : Node {
 				currentOrder = currentCustomer.info[timeOfDay].drink;
 			}
 		} else {
+			// increase special prob more generics served;
+			if(oneDrinkServedCorrectly) specialCharacterProbability += 0.1f;
 			// use silhouette texture and generate random name
 			currentCustomer = new() {
 				displayName = GenerateRandomName(),
@@ -69,7 +73,7 @@ public partial class CharacterSpawner : Node {
 	}
 
 	public void CustomerSatisfied() {
-		// TODO: play success stinger, Calvin don't worry about this one
+		oneDrinkServedCorrectly = true;
 		characterServedMap[currentCustomer] = true;
 	}
 
@@ -78,6 +82,7 @@ public partial class CharacterSpawner : Node {
 			if (!served) return false;
 		}
 
+		specialCharacterProbability = INIT_CHAR_PROBABILITY;
 		return true;
 	}
 

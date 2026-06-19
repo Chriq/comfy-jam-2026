@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://c1xmk20n7x6yx" path="res://Scenes/MainMenu/MainMenu.cs" id="1_b37jj"]
 [ext_resource type="PackedScene" uid="uid://bk81258lvu14c" path="res://Scenes/Bar.tscn" id="2_flrug"]
-[ext_resource type="Texture2D" uid="uid://cif14s3cma5r3" path="res://Scenes/background_afternoon.png" id="3_ua038"]
+[ext_resource type="Texture2D" uid="uid://bym50qiefhq4o" path="res://Scenes/background_evening.png" id="3_0hjx5"]
 [ext_resource type="PackedScene" uid="uid://dsbblq2ww22ky" path="res://UI/Button/UIButton.tscn" id="4_ua038"]
 [ext_resource type="Script" uid="uid://degantb2ukxc6" path="res://UI/DialogManager/DialogManager.cs" id="6_0hjx5"]
 [ext_resource type="Texture2D" uid="uid://0wysc8xaxt3j" path="res://UI/NineSliceDefault.png" id="6_ng4bt"]
 [ext_resource type="PackedScene" uid="uid://bxxor0iw2cgmw" path="res://UI/OptionSelect/OptionSelect.tscn" id="7_fv0xt"]
 [ext_resource type="Script" uid="uid://de2q0n5ydpc1a" path="res://UI/OptionSelect/OptionSelect.cs" id="8_sng02"]
 
-[node name="MainMenu" type="Control" unique_id=376464063 node_paths=PackedStringArray("creditsContainer", "howContainer", "cutsceneContainer", "dm")]
+[node name="MainMenu" type="Control" unique_id=376464063 node_paths=PackedStringArray("creditsContainer", "howContainer", "cutsceneContainer", "dm", "test")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,6 +23,7 @@ creditsContainer = NodePath("Credits")
 howContainer = NodePath("HowToPlay")
 cutsceneContainer = NodePath("IntroCutscene")
 dm = NodePath("IntroCutscene/DialogManager")
+test = NodePath("")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1794612763]
 layout_mode = 1
@@ -31,7 +32,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_ua038")
+texture = ExtResource("3_0hjx5")
 expand_mode = 2
 
 [node name="Title" type="TextureRect" parent="." unique_id=2145748417]
@@ -55,7 +56,7 @@ offset_right = 485.0
 offset_bottom = -33.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/separation = 9
+theme_override_constants/separation = 24
 alignment = 1
 
 [node name="Start" parent="Buttons" unique_id=1643606357 instance=ExtResource("4_ua038")]

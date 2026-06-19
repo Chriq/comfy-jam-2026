@@ -94,6 +94,7 @@ public partial class GameManager : Node {
 			if (characterSpawner.isUniqueCharacter) {
 				await dm.DisplayText(characterSpawner.currentCustomer.info[timeOfDay].response);
 			} else {
+				AudioManager.I.PlayStinger();
 				await dm.DisplayText("Looks great!");
 				await ToSignal(dm, "Finished");
 			}

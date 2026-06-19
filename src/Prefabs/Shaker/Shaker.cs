@@ -66,11 +66,15 @@ public partial class Shaker : Sprite2D {
     }
 
     private void EndShaking() {
+        timer = 0f;
         isShaking = false;
         Hide();
 
         Position = startPosition;
         Rotation = startRotation;
+
+        cap.Position = capStartPosition;
+        cap.Rotation = capStartRotation;
 
         EmitSignal(SignalName.DoneShaking);
     }

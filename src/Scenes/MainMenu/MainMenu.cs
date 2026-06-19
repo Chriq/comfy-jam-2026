@@ -9,10 +9,11 @@ public partial class MainMenu : Control {
 	[Export] Control cutsceneContainer;
 	[Export] DialogManager dm;
 
+    [Export] Button test;
+
     public override void _Ready() {
         AudioManager.I.PlayMainMenu();
     }
-
 
     public void StartGame() {
         DoIntroCutscene();

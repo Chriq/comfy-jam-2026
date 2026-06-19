@@ -50,7 +50,8 @@ public partial class RecipePage : Control {
             Node item = listItemPrefab.Instantiate();
             SpinBox s = item.GetChild<SpinBox>(0);
             s.Suffix = i.units;
-            int val = Mathf.Clamp(drink.recipe[i] + GD.RandRange(-1, 1), 1, 8);
+            // int val = Mathf.Clamp(drink.recipe[i] + GD.RandRange(-1, 1), 1, 8);
+            int val = drink.recipe[i];
             s.Value = val;
 
             RichTextLabel l = item.GetChild<RichTextLabel>(1);

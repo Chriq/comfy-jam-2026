@@ -7,65 +7,77 @@ public partial class AudioManager : Node {
 
     public bool audioEnabled = true;
 
+    private FmodEvent musicEvent;
+    private FmodEvent beachAmbiance;
+
+    private FmodEvent crowdAmbiance;
+
     public override void _Ready() {
         I = this;
     }
 
     public void PlayMainMenu() {
         if(!audioEnabled) return;
-        FmodEvent e = FmodServer.CreateEventInstance("event:/MUSIC/main_menu");
+
+        if(musicEvent != null) musicEvent.Stop();
+        if(beachAmbiance != null) beachAmbiance.Stop();
+        if(crowdAmbiance != null) crowdAmbiance.Stop();
+
+        musicEvent = FmodServer.CreateEventInstance("event:/MUSIC/main_menu");
+        musicEvent.Start();
     }
 
     public void PlayStinger() {
         if(!audioEnabled) return;
         FmodEvent e = FmodServer.CreateEventInstance("event:/MUSIC/success_stinger");
+        e.Start();
     }
 
     public void PlayBartendingMusic(TimeOfDay timeOfDay) {
         if(!audioEnabled) return;
 
-        FmodEvent e;
+        if(musicEvent != null) musicEvent.Stop();
+
         switch(timeOfDay) {
             case TimeOfDay.MORNING:
-                e = FmodServer.CreateEventInstance("event:/MUSIC/bartending_music_01");
+                musicEvent = FmodServer.CreateEventInstance("event:/MUSIC/bartending_music_01");
                 break;
             case TimeOfDay.AFTERNOON:
-                e = FmodServer.CreateEventInstance("event:/MUSIC/bartending_music_02");
+                musicEvent = FmodServer.CreateEventInstance("event:/MUSIC/bartending_music_02");
                 break;
             case TimeOfDay.EVENING:
-                e = FmodServer.CreateEventInstance("event:/MUSIC/bartending_music_03");
+                musicEvent = FmodServer.CreateEventInstance("event:/MUSIC/bartending_music_03");
                 break;
             default:
-                e = FmodServer.CreateEventInstance("event:/MUSIC/main_menu");
+                musicEvent = FmodServer.CreateEventInstance("event:/MUSIC/main_menu");
                 break;
         }
         
-        e.Start();
+        musicEvent.Start();
     }
 
     public void PlayAmbience(TimeOfDay timeOfDay) {
         if(!audioEnabled) return;
 
-        FmodEvent e = FmodServer.CreateEventInstance("event:/AMBIENCE/beach_loop");
-        FmodEvent e2;
+        beachAmbiance = FmodServer.CreateEventInstance("event:/AMBIENCE/beach_loop");
 
         switch(timeOfDay) {
             case TimeOfDay.MORNING:
-                e2 = FmodServer.CreateEventInstance("event:/AMBIENCE/crowd_loop_morning_eve");
+                crowdAmbiance = FmodServer.CreateEventInstance("event:/AMBIENCE/crowd_loop_morning_eve");
                 break;
             case TimeOfDay.AFTERNOON:
-                e2 = FmodServer.CreateEventInstance("event:/AMBIENCE/crowd_loop_afternn");
+                crowdAmbiance = FmodServer.CreateEventInstance("event:/AMBIENCE/crowd_loop_afternn");
                 break;
             case TimeOfDay.EVENING:
-                e2 = FmodServer.CreateEventInstance("event:/AMBIENCE/crowd_loop_morning_eve");
+                crowdAmbiance = FmodServer.CreateEventInstance("event:/AMBIENCE/crowd_loop_morning_eve");
                 break;
             default:
-                e2 = FmodServer.CreateEventInstance("event:/AMBIENCE/crowd_loop_morning_eve");
+                crowdAmbiance = FmodServer.CreateEventInstance("event:/AMBIENCE/crowd_loop_morning_eve");
                 break;
         }
         
-        e.Start();
-        e2.Start();
+        beachAmbiance.Start();
+        crowdAmbiance.Start();
     }
 
     public void PlaySFX(SFX sfx) {

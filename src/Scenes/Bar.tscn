@@ -77,7 +77,7 @@ texture = ExtResource("5_awd8k")
 
 [node name="Drink" type="Sprite2D" parent="DrinkSprites" unique_id=1527803604]
 visible = false
-position = Vector2(935, 631)
+position = Vector2(899, 732)
 scale = Vector2(0.5, 0.5)
 
 [node name="RightPanel" type="VBoxContainer" parent="." unique_id=1766458687]
