@@ -7,7 +7,6 @@ public partial class CharacterSpawner : Node {
 	[Export] float specialCharacterProbability = 0.4f;
 	[Export] TextureRect characterRect;
 	[Export] Texture2D genericCharacterTexture;
-	[Export] RichTextLabel currentRequest;
 	[Export] float drinkTimeProbability;
 
 	public Character currentCustomer { get; private set; }
@@ -67,7 +66,6 @@ public partial class CharacterSpawner : Node {
 		}
 
 		characterRect.Texture = currentCustomer.texture;
-		currentRequest.Text = currentOrder.displayName;
 	}
 
 	public void CustomerSatisfied() {

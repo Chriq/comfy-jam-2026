@@ -5,21 +5,20 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l7c5k"]
 texture = ExtResource("1_00fns")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 20.0
-texture_margin_bottom = 20.0
+texture_margin_left = 40.0
+texture_margin_top = 40.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xcntn"]
 texture = ExtResource("1_dc534")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 20.0
-texture_margin_bottom = 20.0
+texture_margin_left = 40.0
+texture_margin_top = 40.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
 
 [resource]
-Button/colors/font_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
-Button/colors/font_hover_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+Button/colors/font_color = Color(0.9843137, 0.7176471, 0.6784314, 1)
 Button/styles/hover = SubResource("StyleBoxTexture_l7c5k")
 Button/styles/normal = SubResource("StyleBoxTexture_xcntn")
 Button/styles/pressed = SubResource("StyleBoxTexture_xcntn")

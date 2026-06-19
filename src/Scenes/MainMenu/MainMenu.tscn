@@ -49,10 +49,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -470.5
-offset_top = -200.0
-offset_right = 470.5
-offset_bottom = -59.0
+offset_left = -485.0
+offset_top = -195.0
+offset_right = 485.0
+offset_bottom = -33.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 9
@@ -91,9 +91,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -467.0
+offset_left = -483.0
 offset_top = -506.0
-offset_right = 469.0
+offset_right = 486.0
 offset_bottom = 317.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -123,7 +123,7 @@ layout_mode = 2
 
 [node name="Header" type="RichTextLabel" parent="Credits/MarginContainer/Hint display" unique_id=188779448]
 layout_mode = 2
-theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_colors/default_color = Color(0.9843137, 0.7176471, 0.6784314, 1)
 theme_override_font_sizes/normal_font_size = 80
 text = "Credits"
 fit_content = true
@@ -139,7 +139,7 @@ columns = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_colors/default_color = Color(0.9843137, 0.7176471, 0.6784314, 1)
 theme_override_font_sizes/normal_font_size = 40
 text = "Scaredy Cat
 (Christian Cook)"
@@ -151,7 +151,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_colors/default_color = Color(0.9843137, 0.7176471, 0.6784314, 1)
 theme_override_font_sizes/normal_font_size = 32
 text = "Project Lead,
 Programmer"
@@ -164,7 +164,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_colors/default_color = Color(0.9843137, 0.7176471, 0.6784314, 1)
 theme_override_font_sizes/normal_font_size = 40
 text = "theLazyDog
 (Calvin)"
@@ -176,7 +176,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_colors/default_color = Color(0.9843137, 0.7176471, 0.6784314, 1)
 theme_override_font_sizes/normal_font_size = 32
 text = "Programmer"
 fit_content = true
@@ -188,7 +188,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_colors/default_color = Color(0.9843137, 0.7176471, 0.6784314, 1)
 theme_override_font_sizes/normal_font_size = 40
 text = "Rocketfrank
 (Franco Reviglio)"
@@ -200,7 +200,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_colors/default_color = Color(0.9843137, 0.7176471, 0.6784314, 1)
 theme_override_font_sizes/normal_font_size = 32
 text = "Artist"
 fit_content = true
@@ -212,7 +212,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_colors/default_color = Color(0.9843137, 0.7176471, 0.6784314, 1)
 theme_override_font_sizes/normal_font_size = 40
 text = "The Rogue Composer
 (Jonathan Davies)"
@@ -224,7 +224,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_colors/default_color = Color(0.9843137, 0.7176471, 0.6784314, 1)
 theme_override_font_sizes/normal_font_size = 32
 text = "Composer,
 Sound Designer"
@@ -237,7 +237,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_colors/default_color = Color(0.9843137, 0.7176471, 0.6784314, 1)
 theme_override_font_sizes/normal_font_size = 40
 text = "JaimiePMusic
 (Jaimie Pangan)"
@@ -249,7 +249,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_colors/default_color = Color(0.9843137, 0.7176471, 0.6784314, 1)
 theme_override_font_sizes/normal_font_size = 32
 text = "Audio Engineer,
 FMOD Implementation"
@@ -262,7 +262,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_colors/default_color = Color(0.9843137, 0.7176471, 0.6784314, 1)
 theme_override_font_sizes/normal_font_size = 40
 text = "Kalibri"
 fit_content = true
@@ -273,7 +273,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_colors/default_color = Color(0.9843137, 0.7176471, 0.6784314, 1)
 theme_override_font_sizes/normal_font_size = 32
 text = "Writer, Mixologist"
 fit_content = true
@@ -282,6 +282,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HowToPlay" type="NinePatchRect" parent="." unique_id=1847051436]
+visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = 8
@@ -289,9 +290,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -467.0
+offset_left = -483.0
 offset_top = -506.0
-offset_right = 469.0
+offset_right = 486.0
 offset_bottom = 317.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -299,10 +300,10 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("6_ng4bt")
 region_rect = Rect2(0, 0, 315, 315)
-patch_margin_left = 20
-patch_margin_top = 20
-patch_margin_right = 20
-patch_margin_bottom = 20
+patch_margin_left = 40
+patch_margin_top = 40
+patch_margin_right = 40
+patch_margin_bottom = 40
 
 [node name="MarginContainer" type="MarginContainer" parent="HowToPlay" unique_id=547399020]
 layout_mode = 1
@@ -321,7 +322,7 @@ layout_mode = 2
 
 [node name="Header" type="RichTextLabel" parent="HowToPlay/MarginContainer/Hint display" unique_id=2142765483]
 layout_mode = 2
-theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
+theme_override_colors/default_color = Color(0.9843137, 0.7176471, 0.6784314, 1)
 theme_override_font_sizes/normal_font_size = 80
 text = "How To Play"
 fit_content = true
@@ -330,12 +331,16 @@ horizontal_alignment = 1
 
 [node name="Body" type="RichTextLabel" parent="HowToPlay/MarginContainer/Hint display" unique_id=685024698]
 layout_mode = 2
-theme_override_colors/default_color = Color(0.34117648, 0.16470589, 0.03529412, 0.7882353)
-theme_override_font_sizes/normal_font_size = 80
-text = "How To Play"
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.9843137, 0.7176471, 0.6784314, 1)
+theme_override_font_sizes/normal_font_size = 60
+text = "It's a chill day at the beach bar. All you gotta do is take customers' orders and make their drinks.
+
+The recipe book is 100% accurate. Idk why we made the fields editable..."
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="IntroCutscene" type="ColorRect" parent="." unique_id=1052778026]
 modulate = Color(1, 1, 1, 0)

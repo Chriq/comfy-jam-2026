@@ -13,6 +13,7 @@ public partial class GameManager : Node {
 	[Export] Node2D drinksContainer;
 	[Export] TextureRect background;
 	[Export] RecipeBook recipeBook;
+	[Export] Control currentRequestContainer;
 
 	private TimeOfDay timeOfDay = TimeOfDay.MORNING;
 
@@ -21,6 +22,7 @@ public partial class GameManager : Node {
 
 	public override async void _Ready() {
 		panelContainer.Hide();
+		currentRequestContainer.Hide();
 		rng.Randomize();
 		drinkBuilder.DrinkServed += ServeDrink;
 		AddChild(fade);
@@ -50,11 +52,15 @@ public partial class GameManager : Node {
 			await ToSignal(dm, "Finished");
 		}
 		panelContainer.Show();
+		// FIGHT ME
+		currentRequestContainer.GetChild(0).GetChild<RichTextLabel>(0).Text = $"{characterSpawner.currentCustomer.displayName} wants a {characterSpawner.currentOrder.displayName}";
+		currentRequestContainer.Show();
 	}
 
 	public async void ServeDrink(Dictionary<Ingredient, int> drinkServed) {
 		panelContainer.Hide();
 		recipeBook.Hide();
+		currentRequestContainer.Hide();
 
 		Shaker shaker = drinksContainer.GetChild<Shaker>(0);
 		Sprite2D drink = drinksContainer.GetChild<Sprite2D>(1);

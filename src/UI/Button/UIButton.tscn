@@ -11,7 +11,7 @@ theme_override_font_sizes/font_size = 64
 script = ExtResource("2_u1gs4")
 
 [node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=1424142650]
-event_name = "event:/UI/select_start"
+event_name = "event:/UI/click_select"
 event_guid = "{d658bded-3172-456f-8eb2-e9611b82db14}"
 
 [connection signal="pressed" from="." to="." method="Click"]

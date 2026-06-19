@@ -1,5 +1,7 @@
 using Godot;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 public partial class RecipePage : Control {
     [Export] RichTextLabel header;
@@ -39,7 +41,12 @@ public partial class RecipePage : Control {
             recipe.RemoveChild(n);
         }
         
-        foreach (Ingredient i in drink.recipe.Keys) {
+        List<Ingredient> sortedIngredients = drink.recipe.Keys.ToList();
+        sortedIngredients.Sort((a,b) => {
+            return a.ingredientType - b.ingredientType;
+        });
+
+        foreach (Ingredient i in sortedIngredients) {
             Node item = listItemPrefab.Instantiate();
             SpinBox s = item.GetChild<SpinBox>(0);
             s.Suffix = i.units;

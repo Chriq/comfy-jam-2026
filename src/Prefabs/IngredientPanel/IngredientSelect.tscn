@@ -19,6 +19,7 @@ ingredientDisplay = NodePath("Ingredient Display")
 amountInput = NodePath("Amt Input")
 
 [node name="Name" type="RichTextLabel" parent="." unique_id=1996179906]
+custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 40
 fit_content = true

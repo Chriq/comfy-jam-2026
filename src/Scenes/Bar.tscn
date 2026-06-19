@@ -11,9 +11,20 @@
 [ext_resource type="Texture2D" uid="uid://bhwukbdnocamg" path="res://Prefabs/Shaker/Shaker_Cup.png" id="5_awd8k"]
 [ext_resource type="Script" uid="uid://e5yewaqta57v" path="res://Systems/GameManager.cs" id="6_e3qa5"]
 [ext_resource type="Script" uid="uid://cpue5a5k26vhg" path="res://Systems/CharacterSpawner/CharacterSpawner.cs" id="7_n62g1"]
+[ext_resource type="Texture2D" uid="uid://dtmh0ny06olum" path="res://UI/NineSliceHover.png" id="7_wax5k"]
 [ext_resource type="Texture2D" uid="uid://bevieo1cfad58" path="res://Data/Characters/generic_character.png" id="9_2ibdx"]
 [ext_resource type="PackedScene" uid="uid://4okv8n1ovqgh" path="res://Prefabs/RecipeBook/RecipePage.tscn" id="9_awd8k"]
 [ext_resource type="PackedScene" uid="uid://c3anmntpmcur1" path="res://UI/DialogManager/DialogManager.tscn" id="9_dnf0m"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o0q3v"]
+texture = ExtResource("7_wax5k")
+texture_margin_left = 40.0
+texture_margin_top = 40.0
+texture_margin_right = 40.0
+texture_margin_bottom = 40.0
+
+[sub_resource type="Theme" id="Theme_v6skf"]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_o0q3v")
 
 [node name="Bar" type="Control" unique_id=1706286663]
 layout_mode = 3
@@ -41,6 +52,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="BarTexture" type="TextureRect" parent="." unique_id=851347825]
+visible = false
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -88,9 +100,21 @@ serveButton = NodePath("../Serve")
 [node name="CurrentOrderPanel" type="PanelContainer" parent="RightPanel" unique_id=996259946]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
+theme = SubResource("Theme_v6skf")
 
-[node name="CurrentOrder" type="RichTextLabel" parent="RightPanel/CurrentOrderPanel" unique_id=1655351886]
+[node name="MarginContainer" type="MarginContainer" parent="RightPanel/CurrentOrderPanel" unique_id=1171263276]
 layout_mode = 2
+theme_override_constants/margin_left = -20
+theme_override_constants/margin_top = -24
+theme_override_constants/margin_right = -20
+theme_override_constants/margin_bottom = -24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="RightPanel/CurrentOrderPanel/MarginContainer" unique_id=335859066]
+layout_mode = 2
+
+[node name="CurrentOrder" type="RichTextLabel" parent="RightPanel/CurrentOrderPanel/MarginContainer/ScrollContainer" unique_id=1655351886]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/bold_font_size = 32
 theme_override_font_sizes/bold_italics_font_size = 32
@@ -99,19 +123,37 @@ theme_override_font_sizes/mono_font_size = 32
 fit_content = true
 horizontal_alignment = 1
 
+[node name="Control" type="Control" parent="RightPanel" unique_id=215052075]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
 [node name="Serve" parent="RightPanel" unique_id=756673400 instance=ExtResource("4_xmicy")]
 layout_mode = 2
 text = "Serve Drink"
 
 [node name="CurrentRequestPanel" type="PanelContainer" parent="." unique_id=723983098]
+visible = false
 layout_mode = 0
-offset_left = 1.0
-offset_top = 637.0
-offset_right = 314.0
-offset_bottom = 741.0
+offset_left = 38.0
+offset_top = 942.0
+offset_right = 351.0
+offset_bottom = 1046.0
+theme = SubResource("Theme_v6skf")
 
-[node name="CurrentRequest" type="RichTextLabel" parent="CurrentRequestPanel" unique_id=949151330]
+[node name="MarginContainer" type="MarginContainer" parent="CurrentRequestPanel" unique_id=1016457694]
 layout_mode = 2
+theme_override_constants/margin_left = -20
+theme_override_constants/margin_top = -24
+theme_override_constants/margin_right = -20
+theme_override_constants/margin_bottom = -24
+
+[node name="CurrentRequest" type="RichTextLabel" parent="CurrentRequestPanel/MarginContainer" unique_id=949151330]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/bold_italics_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/mono_font_size = 32
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -130,8 +172,8 @@ recipePagePrefab = ExtResource("9_awd8k")
 layout_mode = 0
 offset_left = 19.0
 offset_top = 21.0
-offset_right = 177.0
-offset_bottom = 106.0
+offset_right = 216.0
+offset_bottom = 163.0
 theme_override_font_sizes/font_size = 48
 text = "Recipes"
 
@@ -148,7 +190,7 @@ offset_bottom = 1053.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="GameManager" type="Node" parent="." unique_id=1250725934 node_paths=PackedStringArray("drinkBuilder", "characterSpawner", "dm", "panelContainer", "drinksContainer", "background", "recipeBook")]
+[node name="GameManager" type="Node" parent="." unique_id=1250725934 node_paths=PackedStringArray("drinkBuilder", "characterSpawner", "dm", "panelContainer", "drinksContainer", "background", "recipeBook", "currentRequestContainer")]
 script = ExtResource("6_e3qa5")
 drinkBuilder = NodePath("DrinkBuilder")
 characterSpawner = NodePath("CharacterSpawner")
@@ -157,14 +199,14 @@ panelContainer = NodePath("../RightPanel")
 drinksContainer = NodePath("../DrinkSprites")
 background = NodePath("../Background")
 recipeBook = NodePath("../RecipeBook")
+currentRequestContainer = NodePath("../CurrentRequestPanel")
 
 [node name="DrinkBuilder" type="Node" parent="GameManager" unique_id=826935736 node_paths=PackedStringArray("ingredientPanel", "currentOrderDisplay")]
 script = ExtResource("2_2vt6c")
 ingredientPanel = NodePath("../../RightPanel/IngredientPanel")
-currentOrderDisplay = NodePath("../../RightPanel/CurrentOrderPanel/CurrentOrder")
+currentOrderDisplay = NodePath("../../RightPanel/CurrentOrderPanel/MarginContainer/ScrollContainer/CurrentOrder")
 
-[node name="CharacterSpawner" type="Node" parent="GameManager" unique_id=1175466338 node_paths=PackedStringArray("characterRect", "currentRequest")]
+[node name="CharacterSpawner" type="Node" parent="GameManager" unique_id=1175466338 node_paths=PackedStringArray("characterRect")]
 script = ExtResource("7_n62g1")
 characterRect = NodePath("../../CharacterTexture")
 genericCharacterTexture = ExtResource("9_2ibdx")
-currentRequest = NodePath("../../CurrentRequestPanel/CurrentRequest")
