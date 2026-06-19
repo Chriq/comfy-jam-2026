@@ -51,14 +51,12 @@ public partial class GameManager : Node {
 	public async void ServeDrink(Dictionary<Ingredient, int> drinkServed) {
 		panelContainer.Hide();
 
-		Sprite2D shaker = drinksContainer.GetChild<Sprite2D>(0);
+		Shaker shaker = drinksContainer.GetChild<Shaker>(0);
 		Sprite2D drink = drinksContainer.GetChild<Sprite2D>(1);
 		drink.Texture = characterSpawner.currentOrder.texture;
 
-		AudioManager.I.PlaySFX(SFX.SHAKER);
-		shaker.Show();
-		await ToSignal(GetTree().CreateTimer(1f), "timeout");
-		shaker.Hide();
+        shaker.StartShaking();
+		await ToSignal(shaker, "DoneShaking");
 
 		AudioManager.I.PlaySFX(SFX.BOTTLE_PUT_DOWN);
 		drink.Show();

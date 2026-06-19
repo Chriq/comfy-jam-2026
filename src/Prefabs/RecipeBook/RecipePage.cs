@@ -2,21 +2,12 @@ using Godot;
 using System;
 
 public partial class RecipePage : Control {
-    RichTextLabel header;
-    TextureRect img;
-    RichTextLabel description;
-    Control recipe;
+    [Export] RichTextLabel header;
+    [Export] TextureRect img;
+    [Export] RichTextLabel description;
+    [Export] Control recipe;
 
-    PackedScene listItemPrefab;
-
-    public override void _Ready() {
-        header = GetChild<RichTextLabel>(0);
-        img = GetChild<TextureRect>(1);
-        description = GetChild<RichTextLabel>(2);
-        recipe = GetChild<Control>(3);
-
-        listItemPrefab = GD.Load<PackedScene>("res://Prefabs/RecipeBook/RecipeListItem.tscn");
-    }
+    [Export] PackedScene listItemPrefab;
 
     public void InitPage(Drink drink) {
         if (drink != null) {
@@ -33,7 +24,6 @@ public partial class RecipePage : Control {
         }
     }
 
-    // TODO: refactor to make recipe amounts editable and start on random values. Let's cap at 8
     private string GetRecipeString(Drink drink) {
         string recipeStringBuilder = "Recipe:\n";
 
@@ -45,12 +35,16 @@ public partial class RecipePage : Control {
     }
 
     private void InitRecipeItems(Drink drink) {
+        foreach(Node n in recipe.GetChildren()) {
+            recipe.RemoveChild(n);
+        }
+        
         foreach (Ingredient i in drink.recipe.Keys) {
             Node item = listItemPrefab.Instantiate();
             SpinBox s = item.GetChild<SpinBox>(0);
             s.Suffix = i.units;
-            // TODO: make +/- 1 difference from correct version
-            s.Value = GD.RandRange(1, 8);
+            int val = Mathf.Clamp(drink.recipe[i] + GD.RandRange(-1, 1), 1, 8);
+            s.Value = val;
 
             RichTextLabel l = item.GetChild<RichTextLabel>(1);
             l.Text = i.displayName;

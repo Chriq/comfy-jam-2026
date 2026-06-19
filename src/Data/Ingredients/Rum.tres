@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://b81yrnfr0scwa"]
 
 [ext_resource type="Script" uid="uid://dkrnd7mu6ldif" path="res://Data/Ingredients/Ingredient.cs" id="1_dsq6m"]
-[ext_resource type="Texture2D" uid="uid://dlnprenqq0tgg" path="res://icon.svg" id="1_sdlka"]
+[ext_resource type="Texture2D" uid="uid://btnfuc74k2tvw" path="res://Data/Ingredients/Liquors/Rum.png" id="2_sdlka"]
 
 [resource]
 script = ExtResource("1_dsq6m")
 displayName = "Rum"
-texture = ExtResource("1_sdlka")
+texture = ExtResource("2_sdlka")
 metadata/_custom_type_script = "uid://dkrnd7mu6ldif"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5x24exooi8on"
-path="res://.godot/imported/test_drink.PNG-32f6d1f7ba4a79fab44efe05102aa806.ctex"
+uid="uid://bcv2028xxm2wb"
+path="res://.godot/imported/image.png-d0902ca5daef681fba6c7e98e11f9a49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Data/Drinks/test_drink.PNG"
-dest_files=["res://.godot/imported/test_drink.PNG-32f6d1f7ba4a79fab44efe05102aa806.ctex"]
+source_file="res://Data/Characters/image.png"
+dest_files=["res://.godot/imported/image.png-d0902ca5daef681fba6c7e98e11f9a49.ctex"]
 
 [params]
 

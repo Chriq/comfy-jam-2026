@@ -11,7 +11,17 @@ public partial class AudioManager : Node {
         I = this;
     }
 
-    public void PlayMusic(TimeOfDay timeOfDay) {
+    public void PlayMainMenu() {
+        if(!audioEnabled) return;
+        FmodEvent e = FmodServer.CreateEventInstance("event:/MUSIC/main_menu");
+    }
+
+    public void PlayStinger() {
+        if(!audioEnabled) return;
+        FmodEvent e = FmodServer.CreateEventInstance("event:/MUSIC/success_stinger");
+    }
+
+    public void PlayBartendingMusic(TimeOfDay timeOfDay) {
         if(!audioEnabled) return;
 
         FmodEvent e;
@@ -23,20 +33,38 @@ public partial class AudioManager : Node {
                 e = FmodServer.CreateEventInstance("event:/MUSIC/bartending_music_02");
                 break;
             case TimeOfDay.EVENING:
-                e = FmodServer.CreateEventInstance("event:/MUSIC/bartending_music_01");
+                e = FmodServer.CreateEventInstance("event:/MUSIC/bartending_music_03");
                 break;
             default:
-                e = FmodServer.CreateEventInstance("event:/MUSIC/bartending_music_01");
+                e = FmodServer.CreateEventInstance("event:/MUSIC/main_menu");
                 break;
         }
         
         e.Start();
     }
 
-    public void PlayAmbience() {
+    public void PlayAmbience(TimeOfDay timeOfDay) {
         if(!audioEnabled) return;
 
-        FmodEvent e2 = FmodServer.CreateEventInstance("event:/AMBIENCE/beach_loop");
+        FmodEvent e = FmodServer.CreateEventInstance("event:/AMBIENCE/beach_loop");
+        FmodEvent e2;
+
+        switch(timeOfDay) {
+            case TimeOfDay.MORNING:
+                e2 = FmodServer.CreateEventInstance("event:/AMBIENCE/crowd_loop_morning_eve");
+                break;
+            case TimeOfDay.AFTERNOON:
+                e2 = FmodServer.CreateEventInstance("event:/AMBIENCE/crowd_loop_afternn");
+                break;
+            case TimeOfDay.EVENING:
+                e2 = FmodServer.CreateEventInstance("event:/AMBIENCE/crowd_loop_morning_eve");
+                break;
+            default:
+                e2 = FmodServer.CreateEventInstance("event:/AMBIENCE/crowd_loop_morning_eve");
+                break;
+        }
+        
+        e.Start();
         e2.Start();
     }
 

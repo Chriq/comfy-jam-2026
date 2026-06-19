@@ -23,6 +23,7 @@ fit_content = true
 
 [node name="Ingredient Display" type="TextureRect" parent="." unique_id=2017558053]
 layout_mode = 2
+expand_mode = 4
 
 [node name="Amt Input" type="SpinBox" parent="." unique_id=1364022364]
 layout_mode = 2

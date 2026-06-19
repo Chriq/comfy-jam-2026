@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://b4uob12an5a1l"]
+
+[ext_resource type="Script" uid="uid://dkrnd7mu6ldif" path="res://Data/Ingredients/Ingredient.cs" id="1_cktbq"]
+
+[resource]
+script = ExtResource("1_cktbq")
+displayName = "Whipped Cream"
+ingredientType = 2
+metadata/_custom_type_script = "uid://dkrnd7mu6ldif"

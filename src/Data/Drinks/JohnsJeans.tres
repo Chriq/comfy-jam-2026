@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Drink" format=3 uid="uid://c84moods0pnst"]
+
+[ext_resource type="Script" uid="uid://jmfp1x53ksts" path="res://Data/Drinks/Drink.cs" id="1_6pgjk"]
+[ext_resource type="Texture2D" uid="uid://b0iiaiqhwob1c" path="res://Data/Drinks/Textures/JonsJeans_Empty.png" id="1_62t2e"]
+[ext_resource type="Resource" uid="uid://faafjg4oafof" path="res://Data/Ingredients/Gin.tres" id="2_lv5ma"]
+[ext_resource type="Resource" uid="uid://mubglnk30i48" path="res://Data/Ingredients/BlueCuracao.tres" id="3_22t33"]
+[ext_resource type="Resource" uid="uid://c87cwuoaf25fb" path="res://Data/Ingredients/Sass.tres" id="4_lv5ma"]
+[ext_resource type="Texture2D" uid="uid://bcayqv5qpyjet" path="res://Data/Drinks/Textures/JonsJeans_Gin.png" id="5_8k2c1"]
+
+[resource]
+script = ExtResource("1_6pgjk")
+displayName = "John's Jeans"
+description = "An exotic drink from the British Commonwealth that is totally not sarcastic dig at anyone!"
+emptyGlassTexture = ExtResource("1_62t2e")
+texture = ExtResource("5_8k2c1")
+recipe = Dictionary[Object, int]({
+ExtResource("2_lv5ma"): 4,
+ExtResource("3_22t33"): 2,
+ExtResource("4_lv5ma"): 9999
+})
+metadata/_custom_type_script = "uid://jmfp1x53ksts"

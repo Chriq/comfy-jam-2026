@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b37sh7ra5nlkx"
-path="res://.godot/imported/shaker.png-22dcc6a69ae7aa3c97ac492f3936934a.ctex"
+uid="uid://der3n2mpyyqro"
+path="res://.godot/imported/FunintheSun_Vodka.png-fd8ea2f9c9bd043027919cf17f3197d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Systems/DrinkBuilder/shaker.png"
-dest_files=["res://.godot/imported/shaker.png-22dcc6a69ae7aa3c97ac492f3936934a.ctex"]
+source_file="res://Data/Drinks/Textures/FunintheSun_Vodka.png"
+dest_files=["res://.godot/imported/FunintheSun_Vodka.png-fd8ea2f9c9bd043027919cf17f3197d4.ctex"]
 
 [params]
 

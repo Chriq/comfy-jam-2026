@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://faafjg4oafof"]
+
+[ext_resource type="Script" uid="uid://dkrnd7mu6ldif" path="res://Data/Ingredients/Ingredient.cs" id="1_dtmkl"]
+[ext_resource type="Texture2D" uid="uid://ck2sw84rj8vdg" path="res://Data/Ingredients/Liquors/Gin.png" id="2_rvxlu"]
+
+[resource]
+script = ExtResource("1_dtmkl")
+displayName = "Gin"
+texture = ExtResource("2_rvxlu")
+metadata/_custom_type_script = "uid://dkrnd7mu6ldif"

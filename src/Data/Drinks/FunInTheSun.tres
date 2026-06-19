@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Drink" format=3 uid="uid://dfhp1yyxin7qf"]
+
+[ext_resource type="Texture2D" uid="uid://t1bd4cgoi5yj" path="res://Data/Drinks/Textures/FunintheSun_Empty.png" id="1_fwbw3"]
+[ext_resource type="Script" uid="uid://jmfp1x53ksts" path="res://Data/Drinks/Drink.cs" id="1_gnrhe"]
+[ext_resource type="Resource" uid="uid://ccm2nsv83wcnr" path="res://Data/Ingredients/OrangeJuice.tres" id="1_qjg5h"]
+[ext_resource type="Resource" uid="uid://b8k0sjpk2mgxi" path="res://Data/Ingredients/PineappleJuice.tres" id="2_fwbw3"]
+[ext_resource type="Resource" uid="uid://2r4tauorfu2j" path="res://Data/Ingredients/Vodka.tres" id="3_bhiuh"]
+[ext_resource type="Resource" uid="uid://b81yrnfr0scwa" path="res://Data/Ingredients/Rum.tres" id="4_gtg11"]
+[ext_resource type="Resource" uid="uid://cnt3o6om3y60f" path="res://Data/Ingredients/Cherry.tres" id="5_p11rp"]
+[ext_resource type="Texture2D" uid="uid://cs8nyt04dnn12" path="res://Data/Drinks/Textures/FunintheSun_Whisky.png" id="7_0nvnn"]
+
+[resource]
+script = ExtResource("1_gnrhe")
+displayName = "Fun in the Sun"
+emptyGlassTexture = ExtResource("1_fwbw3")
+texture = ExtResource("7_0nvnn")
+recipe = Dictionary[Object, int]({
+ExtResource("1_qjg5h"): 4,
+ExtResource("2_fwbw3"): 2,
+ExtResource("3_bhiuh"): 2,
+ExtResource("4_gtg11"): 2,
+ExtResource("5_p11rp"): 1
+})
+metadata/_custom_type_script = "uid://jmfp1x53ksts"

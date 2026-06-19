@@ -4,13 +4,15 @@
 [ext_resource type="PackedScene" uid="uid://dqbyf0um01k76" path="res://Prefabs/IngredientPanel/IngredientPanel.tscn" id="1_op7jc"]
 [ext_resource type="Script" uid="uid://csq16ttdctm5i" path="res://Systems/DrinkBuilder/DrinkBuilder.cs" id="2_2vt6c"]
 [ext_resource type="Texture2D" uid="uid://cw08f2dsj76nc" path="res://Scenes/bar.png" id="2_juds8"]
-[ext_resource type="Texture2D" uid="uid://b37sh7ra5nlkx" path="res://Systems/DrinkBuilder/shaker.png" id="3_1bbd7"]
 [ext_resource type="PackedScene" uid="uid://baeaoxg5wln2m" path="res://Prefabs/RecipeBook/RecipeBook.tscn" id="3_24mt1"]
-[ext_resource type="Script" uid="uid://bxips6mw31lt8" path="res://Systems/DrinkBuilder/Shaker.cs" id="4_03u66"]
+[ext_resource type="Texture2D" uid="uid://cir62tg7a5px7" path="res://Prefabs/Shaker/Shaker_Glass.png" id="3_f7p3o"]
+[ext_resource type="Script" uid="uid://bxips6mw31lt8" path="res://Prefabs/Shaker/Shaker.cs" id="4_03u66"]
 [ext_resource type="PackedScene" uid="uid://dsbblq2ww22ky" path="res://UI/Button/UIButton.tscn" id="4_xmicy"]
+[ext_resource type="Texture2D" uid="uid://bhwukbdnocamg" path="res://Prefabs/Shaker/Shaker_Cup.png" id="5_awd8k"]
 [ext_resource type="Script" uid="uid://e5yewaqta57v" path="res://Systems/GameManager.cs" id="6_e3qa5"]
 [ext_resource type="Script" uid="uid://cpue5a5k26vhg" path="res://Systems/CharacterSpawner/CharacterSpawner.cs" id="7_n62g1"]
 [ext_resource type="Texture2D" uid="uid://bevieo1cfad58" path="res://Data/Characters/generic_character.png" id="9_2ibdx"]
+[ext_resource type="PackedScene" uid="uid://4okv8n1ovqgh" path="res://Prefabs/RecipeBook/RecipePage.tscn" id="9_awd8k"]
 [ext_resource type="PackedScene" uid="uid://c3anmntpmcur1" path="res://UI/DialogManager/DialogManager.tscn" id="9_dnf0m"]
 
 [node name="Bar" type="Control" unique_id=1706286663]
@@ -46,12 +48,18 @@ texture = ExtResource("2_juds8")
 
 [node name="DrinkSprites" type="Node2D" parent="." unique_id=1893011863]
 
-[node name="Shaker" type="Sprite2D" parent="DrinkSprites" unique_id=198226746]
+[node name="Shaker" type="Sprite2D" parent="DrinkSprites" unique_id=198226746 node_paths=PackedStringArray("cap")]
 visible = false
 position = Vector2(847, 622)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_1bbd7")
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_f7p3o")
 script = ExtResource("4_03u66")
+cap = NodePath("Cap")
+
+[node name="Cap" type="Sprite2D" parent="DrinkSprites/Shaker" unique_id=307371015]
+position = Vector2(-10, -232)
+rotation = 0.4834562
+texture = ExtResource("5_awd8k")
 
 [node name="Drink" type="Sprite2D" parent="DrinkSprites" unique_id=1527803604]
 visible = false
@@ -93,6 +101,19 @@ horizontal_alignment = 1
 layout_mode = 2
 text = "Serve Drink"
 
+[node name="CurrentRequestPanel" type="PanelContainer" parent="." unique_id=723983098]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 637.0
+offset_right = 314.0
+offset_bottom = 741.0
+
+[node name="CurrentRequest" type="RichTextLabel" parent="CurrentRequestPanel" unique_id=949151330]
+layout_mode = 2
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="RecipeBook" parent="." unique_id=1724478955 node_paths=PackedStringArray("toggle") instance=ExtResource("3_24mt1")]
 visible = false
 layout_mode = 1
@@ -101,6 +122,7 @@ offset_top = 144.0
 offset_right = -549.0
 offset_bottom = -173.0
 toggle = NodePath("../Open Recipes")
+recipePagePrefab = ExtResource("9_awd8k")
 
 [node name="Open Recipes" parent="." unique_id=1008873083 instance=ExtResource("4_xmicy")]
 layout_mode = 0

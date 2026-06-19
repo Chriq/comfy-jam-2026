@@ -5,11 +5,17 @@ using System.Linq;
 
 public partial class RecipeBook : Control {
 	[Export] Button toggle;
+
+	[Export] Control p1Container;
+	[Export] Control p2Container;
+
 	[Export] RecipePage p1;
 	[Export] RecipePage p2;
 
 	[Export] Button left;
 	[Export] Button right;
+
+	[Export] PackedScene recipePagePrefab;
 
 	private int totalPages => (int)Mathf.Ceil(allEntries.Count / 2f) - 1;
 
@@ -17,9 +23,19 @@ public partial class RecipeBook : Control {
 
 	private int currentPages = 0;
 
+	private Dictionary<Drink, RecipePage> pages = new();
+
 	public override void _Ready() {
 		InitList();
 		toggle.Pressed += ToggleCompendiumUI;
+
+		foreach(Drink d in allEntries) {
+			RecipePage p = recipePagePrefab.Instantiate<RecipePage>();
+			p.InitPage(d);
+
+			pages[d] = p;
+		}
+
 		InitPages();
 
 		left.Pressed += PageLeft;
@@ -47,13 +63,19 @@ public partial class RecipeBook : Control {
 	public void InitPages() {
 		int page = currentPages * 2;
 		Drink drink1 = allEntries[page];
-		p1.InitPage(drink1);
+
+		foreach(Node child in p1Container.GetChildren()) p1Container.RemoveChild(child);
+		p1Container.AddChild(pages[drink1]);
+		p1 = pages[drink1];
 
 		Drink drink2 = null;
+		foreach(Node child in p2Container.GetChildren()) p2Container.RemoveChild(child);
+
 		if (page + 1 < allEntries.Count) {
 			drink2 = allEntries[page + 1];
+			p2Container.AddChild(pages[drink2]);
+			p2 = pages[drink2];
 		}
-		p2.InitPage(drink2);
 
 		HandlePageButtons();
 	}

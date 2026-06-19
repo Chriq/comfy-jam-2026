@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://d1ay8pwgsa1gf"]
+
+[ext_resource type="Script" uid="uid://dkrnd7mu6ldif" path="res://Data/Ingredients/Ingredient.cs" id="1_ctf8p"]
+[ext_resource type="Texture2D" uid="uid://0jh708skvxnq" path="res://Data/Ingredients/Liquors/Whiskey.png" id="2_laiar"]
+
+[resource]
+script = ExtResource("1_ctf8p")
+displayName = "Whiskey"
+texture = ExtResource("2_laiar")
+metadata/_custom_type_script = "uid://dkrnd7mu6ldif"
