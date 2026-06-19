@@ -11,7 +11,7 @@
 
 [resource]
 script = ExtResource("7_raqfk")
-displayName = "Fun in the Forest, a Fun in the Sun with lime juice instead of pineapple?"
+displayName = "Fun in the Forest, a Fun in the Sun with lime juice instead of pineapple"
 description = "A fruity drink that tickles the taste buds on a hot summer day!"
 texture = ExtResource("8_8pi5v")
 emptyGlassTexture = ExtResource("1_8pi5v")

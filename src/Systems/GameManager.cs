@@ -40,7 +40,7 @@ public partial class GameManager : Node {
 		characterSpawner.SetNewCustomer(timeOfDay);
 
 		if (characterSpawner.isUniqueCharacter) {
-			string[] greeting = characterSpawner.currentCustomer.info[timeOfDay].greeting;
+			string[] greeting = characterSpawner.currentCustomer.info[timeOfDay].greeting.ToArray();
 
 			// greeting will leave off with space for drink name
 			greeting[greeting.Count() - 1] += $" {characterSpawner.currentOrder.displayName}?";
@@ -66,7 +66,7 @@ public partial class GameManager : Node {
 		Sprite2D drink = drinksContainer.GetChild<Sprite2D>(1);
 		drink.Texture = characterSpawner.currentOrder.emptyGlassTexture;
 
-        shaker.StartShaking();
+		shaker.StartShaking();
 		await ToSignal(shaker, "DoneShaking");
 		
 

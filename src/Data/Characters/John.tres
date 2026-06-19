@@ -17,7 +17,7 @@ metadata/_custom_type_script = "uid://dtt4jimifp0tg"
 [sub_resource type="Resource" id="Resource_m5lid"]
 script = ExtResource("2_e8vyf")
 greeting = PackedStringArray("This beach is going off like a frog in a sock! I could use a refresher in this sun.", "I\'ll have a")
-response = PackedStringArray("Noice! It’s a good midday pick-me-up.", "Been having a rough go at it, mate. The suits are rather stiff, aren’t they?", "You’d think they’d lighten up on the beach knocking back a couple of coldie’s, but it’s still pretty brutal.", "I dunno, I’ll keep at it, but I might just enjoy the sights for a while. Thanks for the drink, mate.")
+response = PackedStringArray("Noice! It’s a good mid-day pick-me-up.", "Been having a rough go at it, mate. The suits are rather stiff, aren’t they?", "You’d think they’d lighten up on the beach knocking back a couple of coldie’s, but it’s still pretty brutal.", "I dunno, I’ll keep at it, but I might just enjoy the sights for a while. Thanks for the drink, mate.")
 drink = ExtResource("3_21qcn")
 metadata/_custom_type_script = "uid://dtt4jimifp0tg"
 

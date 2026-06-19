@@ -94,7 +94,7 @@ public partial class DrinkBuilder : Node {
 				}
 			case IngredientType.JUICE:
 				if (difference > 0) {
-					return "Less Juice";
+					return "Maybe tone down the" + (ingredient != null ? ingredient.displayName : "mixer") + " next time."; 
 				}else if(difference < 0) {
 					return "I didn't ask for a shot... Needs a bit more " + (ingredient != null ? ingredient.displayName : "mixer");
 				} else {
