@@ -11,6 +11,7 @@ header = NodePath("Name")
 img = NodePath("TextureRect")
 description = NodePath("Hint")
 recipe = NodePath("Desc")
+mistakeChance = 0.75
 listItemPrefab = ExtResource("2_mj88q")
 
 [node name="Name" type="RichTextLabel" parent="." unique_id=888235670]
