@@ -4,15 +4,15 @@
 [ext_resource type="Resource" uid="uid://b81yrnfr0scwa" path="res://Data/Ingredients/Rum.tres" id="2_c6utl"]
 [ext_resource type="Script" uid="uid://jmfp1x53ksts" path="res://Data/Drinks/Drink.cs" id="2_pjnlg"]
 [ext_resource type="Resource" uid="uid://cs3nxpwnycf68" path="res://Data/Ingredients/Mint.tres" id="3_gqtrk"]
-[ext_resource type="Texture2D" uid="uid://der3n2mpyyqro" path="res://Data/Drinks/Textures/FunintheSun_Vodka.png" id="3_n6q21"]
 [ext_resource type="Resource" uid="uid://uef23w55ff8p" path="res://Data/Ingredients/LimeJuice.tres" id="4_1sqsm"]
 [ext_resource type="Resource" uid="uid://b8k0sjpk2mgxi" path="res://Data/Ingredients/PineappleJuice.tres" id="5_foocr"]
+[ext_resource type="Texture2D" uid="uid://8wh3t8l013jq" path="res://Data/Drinks/Textures/mohito.png" id="7_c6utl"]
 
 [resource]
 script = ExtResource("2_pjnlg")
 displayName = "Mo' Heato Sunrise"
 description = "A variation on a summertime classic that adds a bit of tang to complement its minty base."
-texture = ExtResource("3_n6q21")
+texture = ExtResource("7_c6utl")
 emptyGlassTexture = ExtResource("1_1g436")
 recipe = Dictionary[Object, int]({
 ExtResource("2_c6utl"): 2,

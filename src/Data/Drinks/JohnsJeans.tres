@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://c87cwuoaf25fb" path="res://Data/Ingredients/Sass.tres" id="4_lv5ma"]
 [ext_resource type="Texture2D" uid="uid://bcayqv5qpyjet" path="res://Data/Drinks/Textures/JonsJeans_Gin.png" id="5_8k2c1"]
 [ext_resource type="Resource" uid="uid://cnt3o6om3y60f" path="res://Data/Ingredients/Cherry.tres" id="5_22t33"]
+[ext_resource type="Resource" uid="uid://b4uob12an5a1l" path="res://Data/Ingredients/WhippedCream.tres" id="6_8k2c1"]
 
 [resource]
 script = ExtResource("1_6pgjk")
@@ -18,7 +19,8 @@ recipe = Dictionary[Object, int]({
 ExtResource("2_lv5ma"): 4,
 ExtResource("3_22t33"): 2,
 ExtResource("4_lv5ma"): 9999,
-ExtResource("5_22t33"): 2
+ExtResource("5_22t33"): 2,
+ExtResource("6_8k2c1"): 1
 })
 drinkTime = 2
 metadata/_custom_type_script = "uid://jmfp1x53ksts"

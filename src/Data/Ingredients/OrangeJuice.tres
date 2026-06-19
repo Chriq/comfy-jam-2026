@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://ccm2nsv83wcnr"]
 
 [ext_resource type="Script" uid="uid://dkrnd7mu6ldif" path="res://Data/Ingredients/Ingredient.cs" id="1_3860s"]
-[ext_resource type="Texture2D" uid="uid://dlnprenqq0tgg" path="res://icon.svg" id="1_eqkul"]
+[ext_resource type="Texture2D" uid="uid://cjh3j74ssgb0q" path="res://Data/Ingredients/Mixers/orange_juice.png" id="2_eqkul"]
 
 [resource]
 script = ExtResource("1_3860s")
 displayName = "Orange Juice"
-texture = ExtResource("1_eqkul")
+texture = ExtResource("2_eqkul")
 ingredientType = 1
 metadata/_custom_type_script = "uid://dkrnd7mu6ldif"

@@ -101,7 +101,7 @@ public partial class GameManager : Node {
 
 			drink.Hide();
 
-			await dm.DisplayText($"Thanks for the {characterSpawner.currentOrder.displayName}");
+			if (!characterSpawner.isUniqueCharacter) await dm.DisplayText($"Thanks for the {characterSpawner.currentOrder.displayName}");
 		} else {
 			await dm.DisplayText("Looks...interesting...");
 			await ToSignal(dm, "Finished");

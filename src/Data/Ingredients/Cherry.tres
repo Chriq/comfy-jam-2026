@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://cnt3o6om3y60f"]
 
 [ext_resource type="Script" uid="uid://dkrnd7mu6ldif" path="res://Data/Ingredients/Ingredient.cs" id="1_co4qf"]
-[ext_resource type="Texture2D" uid="uid://dlnprenqq0tgg" path="res://icon.svg" id="1_jsm5n"]
+[ext_resource type="Texture2D" uid="uid://cgen1gir0c2jd" path="res://Data/Ingredients/Garnishes/cherry.png" id="2_jsm5n"]
 
 [resource]
 script = ExtResource("1_co4qf")
 displayName = "Cherry"
-texture = ExtResource("1_jsm5n")
+texture = ExtResource("2_jsm5n")
 units = "cnt."
 ingredientType = 2
 metadata/_custom_type_script = "uid://dkrnd7mu6ldif"

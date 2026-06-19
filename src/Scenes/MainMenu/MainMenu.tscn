@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bxxor0iw2cgmw" path="res://UI/OptionSelect/OptionSelect.tscn" id="7_fv0xt"]
 [ext_resource type="Script" uid="uid://de2q0n5ydpc1a" path="res://UI/OptionSelect/OptionSelect.cs" id="8_sng02"]
 
-[node name="MainMenu" type="Control" unique_id=376464063 node_paths=PackedStringArray("creditsContainer", "howContainer", "cutsceneContainer", "dm", "test")]
+[node name="MainMenu" type="Control" unique_id=376464063 node_paths=PackedStringArray("creditsContainer", "howContainer", "cutsceneContainer", "dm")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,7 +23,6 @@ creditsContainer = NodePath("Credits")
 howContainer = NodePath("HowToPlay")
 cutsceneContainer = NodePath("IntroCutscene")
 dm = NodePath("IntroCutscene/DialogManager")
-test = NodePath("")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1794612763]
 layout_mode = 1

@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://2r4tauorfu2j" path="res://Data/Ingredients/Vodka.tres" id="6_yx418"]
 [ext_resource type="Resource" uid="uid://b81yrnfr0scwa" path="res://Data/Ingredients/Rum.tres" id="7_22qnd"]
 [ext_resource type="Resource" uid="uid://d1ay8pwgsa1gf" path="res://Data/Ingredients/Whiskey.tres" id="8_5851c"]
+[ext_resource type="Resource" uid="uid://b4uob12an5a1l" path="res://Data/Ingredients/WhippedCream.tres" id="9_8kpaf"]
 [ext_resource type="Script" uid="uid://jmfp1x53ksts" path="res://Data/Drinks/Drink.cs" id="9_sgdtl"]
 [ext_resource type="Texture2D" uid="uid://ddwjwxsdrgc6j" path="res://Data/Drinks/Textures/JonsJeans_Vodka.png" id="10_qa7nd"]
 
@@ -24,6 +25,7 @@ ExtResource("4_ta5ma"): 9999,
 ExtResource("5_g1wov"): 2,
 ExtResource("6_yx418"): 1,
 ExtResource("7_22qnd"): 1,
-ExtResource("8_5851c"): 1
+ExtResource("8_5851c"): 1,
+ExtResource("9_8kpaf"): 1
 })
 metadata/_custom_type_script = "uid://jmfp1x53ksts"

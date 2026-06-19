@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://b8k0sjpk2mgxi"]
 
 [ext_resource type="Script" uid="uid://dkrnd7mu6ldif" path="res://Data/Ingredients/Ingredient.cs" id="1_ifbby"]
-[ext_resource type="Texture2D" uid="uid://dlnprenqq0tgg" path="res://icon.svg" id="2_ujjbk"]
+[ext_resource type="Texture2D" uid="uid://bua0htg5qmtk8" path="res://Data/Ingredients/Mixers/pineapple_juice.png" id="2_ujjbk"]
 
 [resource]
 script = ExtResource("1_ifbby")

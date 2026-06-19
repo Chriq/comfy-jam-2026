@@ -8,10 +8,12 @@
 [ext_resource type="Resource" uid="uid://dophblbbi6pfa" path="res://Data/Ingredients/CoconutCream.tres" id="3_u1msj"]
 [ext_resource type="Resource" uid="uid://mubglnk30i48" path="res://Data/Ingredients/BlueCuracao.tres" id="4_p8iro"]
 [ext_resource type="Resource" uid="uid://cnt3o6om3y60f" path="res://Data/Ingredients/Cherry.tres" id="5_sbrpb"]
+[ext_resource type="Resource" uid="uid://b4uob12an5a1l" path="res://Data/Ingredients/WhippedCream.tres" id="7_u1msj"]
 
 [resource]
 script = ExtResource("1_mvtqe")
 displayName = "Blue Polynesian"
+description = "A popular vacation drink with fruity whimsy and a tropical flare."
 texture = ExtResource("2_yjp6e")
 emptyGlassTexture = ExtResource("1_jkric")
 recipe = Dictionary[Object, int]({
@@ -19,6 +21,7 @@ ExtResource("1_4686t"): 2,
 ExtResource("2_jkric"): 3,
 ExtResource("3_u1msj"): 2,
 ExtResource("4_p8iro"): 1,
-ExtResource("5_sbrpb"): 1
+ExtResource("5_sbrpb"): 1,
+ExtResource("7_u1msj"): 1
 })
 metadata/_custom_type_script = "uid://jmfp1x53ksts"
