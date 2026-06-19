@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cw23jtvlk82sa" path="res://Data/Characters/Character.cs" id="1_dk8pk"]
 [ext_resource type="Script" uid="uid://dtt4jimifp0tg" path="res://Data/Characters/CharacterTimeInfo.cs" id="2_e8vyf"]
-[ext_resource type="Texture2D" uid="uid://d0pc3a11k2tgm" path="res://Data/Characters/Unique Character.png" id="2_h8l2d"]
 [ext_resource type="Resource" uid="uid://dfhp1yyxin7qf" path="res://Data/Drinks/FunInTheSun.tres" id="2_m5lid"]
 [ext_resource type="Resource" uid="uid://brxm07psaqe1g" path="res://Data/Drinks/Custom Drinks/FunInTheWaves.tres" id="3_8rrkb"]
 [ext_resource type="Resource" uid="uid://ttmw6fpk727l" path="res://Data/Drinks/Custom Drinks/FunInTheForest.tres" id="4_25dnk"]
+[ext_resource type="Texture2D" uid="uid://bfaspmj2h5ssl" path="res://Data/Characters/Becka.png" id="6_8rrkb"]
 
 [sub_resource type="Resource" id="Resource_8rrkb"]
 script = ExtResource("2_e8vyf")
@@ -31,7 +31,7 @@ metadata/_custom_type_script = "uid://dtt4jimifp0tg"
 [resource]
 script = ExtResource("1_dk8pk")
 displayName = "Becka Brown"
-texture = ExtResource("2_h8l2d")
+texture = ExtResource("6_8rrkb")
 info = Dictionary[int, ExtResource("2_e8vyf")]({
 0: SubResource("Resource_8rrkb"),
 1: SubResource("Resource_m5lid"),

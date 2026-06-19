@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://dtt4jimifp0tg" path="res://Data/Characters/CharacterTimeInfo.cs" id="2_e8vyf"]
 [ext_resource type="Resource" uid="uid://do311xtsk8mna" path="res://Data/Drinks/Custom Drinks/JohnsAlcoholicJeans.tres" id="3_21qcn"]
 [ext_resource type="Script" uid="uid://cw23jtvlk82sa" path="res://Data/Characters/Character.cs" id="3_rqq2j"]
-[ext_resource type="Texture2D" uid="uid://d0pc3a11k2tgm" path="res://Data/Characters/Unique Character.png" id="4_21qcn"]
 [ext_resource type="Resource" uid="uid://c3m3gpl6yd2c2" path="res://Data/Drinks/Custom Drinks/JohnsCelebrationJeans.tres" id="4_kndpa"]
+[ext_resource type="Texture2D" uid="uid://bhms40qpw83hy" path="res://Data/Characters/John.png" id="6_rqq2j"]
 
 [sub_resource type="Resource" id="Resource_8rrkb"]
 script = ExtResource("2_e8vyf")
@@ -31,7 +31,7 @@ metadata/_custom_type_script = "uid://dtt4jimifp0tg"
 [resource]
 script = ExtResource("3_rqq2j")
 displayName = "Johnathan Davis"
-texture = ExtResource("4_21qcn")
+texture = ExtResource("6_rqq2j")
 info = Dictionary[int, ExtResource("2_e8vyf")]({
 0: SubResource("Resource_8rrkb"),
 1: SubResource("Resource_m5lid"),
