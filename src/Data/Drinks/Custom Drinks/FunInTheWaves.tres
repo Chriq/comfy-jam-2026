@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Drink" format=3 uid="uid://brxm07psaqe1g"]
+
+[ext_resource type="Texture2D" uid="uid://t1bd4cgoi5yj" path="res://Data/Drinks/Textures/FunintheSun_Empty.png" id="1_a150y"]
+[ext_resource type="Resource" uid="uid://ccm2nsv83wcnr" path="res://Data/Ingredients/OrangeJuice.tres" id="2_58b4v"]
+[ext_resource type="Resource" uid="uid://b8k0sjpk2mgxi" path="res://Data/Ingredients/PineappleJuice.tres" id="3_whehn"]
+[ext_resource type="Resource" uid="uid://2r4tauorfu2j" path="res://Data/Ingredients/Vodka.tres" id="4_603dm"]
+[ext_resource type="Resource" uid="uid://b81yrnfr0scwa" path="res://Data/Ingredients/Rum.tres" id="5_g68qy"]
+[ext_resource type="Resource" uid="uid://cnt3o6om3y60f" path="res://Data/Ingredients/Cherry.tres" id="6_4w5r0"]
+[ext_resource type="Script" uid="uid://jmfp1x53ksts" path="res://Data/Drinks/Drink.cs" id="7_q1408"]
+[ext_resource type="Texture2D" uid="uid://dicwy2kedqffi" path="res://Data/Drinks/Textures/FunintheSun_Gin.png" id="8_ae8p1"]
+
+[resource]
+script = ExtResource("7_q1408")
+displayName = "Fun in the Waves, a Fun in the Sun with a little Blue Curacao"
+description = "A fruity drink that tickles the taste buds on a hot summer day!"
+texture = ExtResource("8_ae8p1")
+emptyGlassTexture = ExtResource("1_a150y")
+recipe = Dictionary[Object, int]({
+ExtResource("2_58b4v"): 4,
+ExtResource("3_whehn"): 2,
+ExtResource("4_603dm"): 2,
+ExtResource("5_g68qy"): 2,
+ExtResource("6_4w5r0"): 1
+})
+metadata/_custom_type_script = "uid://jmfp1x53ksts"

@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://cfk7uckuuwaxr"]
 
+[sub_resource type="Theme" id="Theme_d7syn"]
+LineEdit/font_sizes/font_size = 32
+
 [node name="RecipeListItem" type="GridContainer" unique_id=2090808298]
 offset_right = 90.0
 offset_bottom = 35.0
@@ -8,6 +11,7 @@ columns = 2
 
 [node name="SpinBox" type="SpinBox" parent="." unique_id=514479280]
 layout_mode = 2
+theme = SubResource("Theme_d7syn")
 min_value = 1.0
 max_value = 8.0
 value = 1.0
@@ -17,5 +21,10 @@ prefix = "x"
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=880202454]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/bold_italics_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/mono_font_size = 32
 fit_content = true
 autowrap_mode = 0

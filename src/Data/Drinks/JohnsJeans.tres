@@ -6,16 +6,19 @@
 [ext_resource type="Resource" uid="uid://mubglnk30i48" path="res://Data/Ingredients/BlueCuracao.tres" id="3_22t33"]
 [ext_resource type="Resource" uid="uid://c87cwuoaf25fb" path="res://Data/Ingredients/Sass.tres" id="4_lv5ma"]
 [ext_resource type="Texture2D" uid="uid://bcayqv5qpyjet" path="res://Data/Drinks/Textures/JonsJeans_Gin.png" id="5_8k2c1"]
+[ext_resource type="Resource" uid="uid://cnt3o6om3y60f" path="res://Data/Ingredients/Cherry.tres" id="5_22t33"]
 
 [resource]
 script = ExtResource("1_6pgjk")
 displayName = "John's Jeans"
-description = "An exotic drink from the British Commonwealth that is totally not sarcastic dig at anyone!"
-emptyGlassTexture = ExtResource("1_62t2e")
+description = "An exotic drink from the British Commonwealth that is totally not a sarcastic dig at anyone!"
 texture = ExtResource("5_8k2c1")
+emptyGlassTexture = ExtResource("1_62t2e")
 recipe = Dictionary[Object, int]({
 ExtResource("2_lv5ma"): 4,
 ExtResource("3_22t33"): 2,
-ExtResource("4_lv5ma"): 9999
+ExtResource("4_lv5ma"): 9999,
+ExtResource("5_22t33"): 2
 })
+drinkTime = 2
 metadata/_custom_type_script = "uid://jmfp1x53ksts"

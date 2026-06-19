@@ -12,8 +12,9 @@
 [resource]
 script = ExtResource("1_gnrhe")
 displayName = "Fun in the Sun"
-emptyGlassTexture = ExtResource("1_fwbw3")
+description = "A fruity drink that tickles the taste buds on a hot summer day!"
 texture = ExtResource("7_0nvnn")
+emptyGlassTexture = ExtResource("1_fwbw3")
 recipe = Dictionary[Object, int]({
 ExtResource("1_qjg5h"): 4,
 ExtResource("2_fwbw3"): 2,
@@ -21,4 +22,5 @@ ExtResource("3_bhiuh"): 2,
 ExtResource("4_gtg11"): 2,
 ExtResource("5_p11rp"): 1
 })
+drinkTime = 1
 metadata/_custom_type_script = "uid://jmfp1x53ksts"

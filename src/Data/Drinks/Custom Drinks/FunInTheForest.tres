@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Drink" format=3 uid="uid://ttmw6fpk727l"]
+
+[ext_resource type="Texture2D" uid="uid://t1bd4cgoi5yj" path="res://Data/Drinks/Textures/FunintheSun_Empty.png" id="1_8pi5v"]
+[ext_resource type="Resource" uid="uid://ccm2nsv83wcnr" path="res://Data/Ingredients/OrangeJuice.tres" id="2_tulan"]
+[ext_resource type="Resource" uid="uid://2r4tauorfu2j" path="res://Data/Ingredients/Vodka.tres" id="3_s8mwy"]
+[ext_resource type="Resource" uid="uid://b81yrnfr0scwa" path="res://Data/Ingredients/Rum.tres" id="4_4te5i"]
+[ext_resource type="Resource" uid="uid://cnt3o6om3y60f" path="res://Data/Ingredients/Cherry.tres" id="5_ouyvx"]
+[ext_resource type="Resource" uid="uid://uef23w55ff8p" path="res://Data/Ingredients/LimeJuice.tres" id="6_nyqbm"]
+[ext_resource type="Script" uid="uid://jmfp1x53ksts" path="res://Data/Drinks/Drink.cs" id="7_raqfk"]
+[ext_resource type="Texture2D" uid="uid://der3n2mpyyqro" path="res://Data/Drinks/Textures/FunintheSun_Vodka.png" id="8_8pi5v"]
+
+[resource]
+script = ExtResource("7_raqfk")
+displayName = "Fun in the Forest, a Fun in the Sun with lime juice instead of pineapple?"
+description = "A fruity drink that tickles the taste buds on a hot summer day!"
+texture = ExtResource("8_8pi5v")
+emptyGlassTexture = ExtResource("1_8pi5v")
+recipe = Dictionary[Object, int]({
+ExtResource("2_tulan"): 4,
+ExtResource("3_s8mwy"): 2,
+ExtResource("4_4te5i"): 2,
+ExtResource("5_ouyvx"): 1,
+ExtResource("6_nyqbm"): 2
+})
+metadata/_custom_type_script = "uid://jmfp1x53ksts"

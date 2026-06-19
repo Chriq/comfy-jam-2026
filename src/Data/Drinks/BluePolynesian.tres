@@ -12,8 +12,8 @@
 [resource]
 script = ExtResource("1_mvtqe")
 displayName = "Blue Polynesian"
-emptyGlassTexture = ExtResource("1_jkric")
 texture = ExtResource("2_yjp6e")
+emptyGlassTexture = ExtResource("1_jkric")
 recipe = Dictionary[Object, int]({
 ExtResource("1_4686t"): 2,
 ExtResource("2_jkric"): 3,

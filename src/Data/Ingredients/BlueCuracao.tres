@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://mubglnk30i48"]
 
 [ext_resource type="Script" uid="uid://dkrnd7mu6ldif" path="res://Data/Ingredients/Ingredient.cs" id="1_lqufg"]
+[ext_resource type="Texture2D" uid="uid://dlnprenqq0tgg" path="res://icon.svg" id="2_efper"]
 
 [resource]
 script = ExtResource("1_lqufg")
 displayName = "Blue Curacao"
+texture = ExtResource("2_efper")
 ingredientType = 2
 metadata/_custom_type_script = "uid://dkrnd7mu6ldif"

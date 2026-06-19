@@ -3,27 +3,29 @@
 [ext_resource type="Script" uid="uid://cw23jtvlk82sa" path="res://Data/Characters/Character.cs" id="1_dk8pk"]
 [ext_resource type="Script" uid="uid://dtt4jimifp0tg" path="res://Data/Characters/CharacterTimeInfo.cs" id="2_e8vyf"]
 [ext_resource type="Texture2D" uid="uid://d0pc3a11k2tgm" path="res://Data/Characters/Unique Character.png" id="2_h8l2d"]
-[ext_resource type="Resource" uid="uid://cymu6ql6jx1lh" path="res://Data/Drinks/Custom Drinks/testDrink.tres" id="3_m5lid"]
+[ext_resource type="Resource" uid="uid://dfhp1yyxin7qf" path="res://Data/Drinks/FunInTheSun.tres" id="2_m5lid"]
+[ext_resource type="Resource" uid="uid://brxm07psaqe1g" path="res://Data/Drinks/Custom Drinks/FunInTheWaves.tres" id="3_8rrkb"]
+[ext_resource type="Resource" uid="uid://ttmw6fpk727l" path="res://Data/Drinks/Custom Drinks/FunInTheForest.tres" id="4_25dnk"]
 
 [sub_resource type="Resource" id="Resource_8rrkb"]
 script = ExtResource("2_e8vyf")
 greeting = PackedStringArray("Heyyyy! I hope you make good drinks! If you wanna drink all day, you have to start early, so that’s what I’m doing!", "My name’s Becka. What do you recommend?", "Oh, you want to know what I want? … well… I guess, can you make …?")
 response = PackedStringArray("OMG this is sooo gooood! This is my last Spring Break… ever… so I wanna do it right! Thanks!")
-drink = ExtResource("3_m5lid")
+drink = ExtResource("2_m5lid")
 metadata/_custom_type_script = "uid://dtt4jimifp0tg"
 
 [sub_resource type="Resource" id="Resource_m5lid"]
 script = ExtResource("2_e8vyf")
 greeting = PackedStringArray("I’m baaaack! You made it really good last time, can you make me another one? But this time…")
 response = PackedStringArray("Even better than last time, thanks!", "Am I excited to graduate?", "… I don’t know, I try not to think about it. I’m just doing what I have to and trying to have some fun while I can.", "Gotta make my parents proud though…")
-drink = ExtResource("3_m5lid")
+drink = ExtResource("3_8rrkb")
 metadata/_custom_type_script = "uid://dtt4jimifp0tg"
 
 [sub_resource type="Resource" id="Resource_25dnk"]
 script = ExtResource("2_e8vyf")
 greeting = PackedStringArray("Winding down? Who’s winding down!? The night is young! I want …")
 response = PackedStringArray("It’s funny, talking to you, I realized no one’s ever really asked what I wanted before.", "I always just kind of.. Went along with whatever everyone said was best.", "But I just can’t do that anymore.", " I’m gonna head in early, actually, think about some things.", "Thanks… for asking what I wanted. I know it’s your job but, it helped.")
-drink = ExtResource("3_m5lid")
+drink = ExtResource("4_25dnk")
 metadata/_custom_type_script = "uid://dtt4jimifp0tg"
 
 [resource]

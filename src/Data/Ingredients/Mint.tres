@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://cs3nxpwnycf68"]
+
+[ext_resource type="Script" uid="uid://dkrnd7mu6ldif" path="res://Data/Ingredients/Ingredient.cs" id="1_1k6xa"]
+[ext_resource type="Texture2D" uid="uid://dlnprenqq0tgg" path="res://icon.svg" id="2_eng5y"]
+
+[resource]
+script = ExtResource("1_1k6xa")
+displayName = "Mint Leaves"
+texture = ExtResource("2_eng5y")
+units = "cnt."
+ingredientType = 2
+metadata/_custom_type_script = "uid://dkrnd7mu6ldif"

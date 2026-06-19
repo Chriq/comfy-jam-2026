@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://b4uob12an5a1l"]
 
 [ext_resource type="Script" uid="uid://dkrnd7mu6ldif" path="res://Data/Ingredients/Ingredient.cs" id="1_cktbq"]
+[ext_resource type="Texture2D" uid="uid://dlnprenqq0tgg" path="res://icon.svg" id="2_k8xdj"]
 
 [resource]
 script = ExtResource("1_cktbq")
 displayName = "Whipped Cream"
+texture = ExtResource("2_k8xdj")
 ingredientType = 2
 metadata/_custom_type_script = "uid://dkrnd7mu6ldif"

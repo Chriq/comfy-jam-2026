@@ -45,7 +45,7 @@ metadata/_tab_index = 0
 layout_mode = 2
 theme_override_constants/h_separation = 16
 theme_override_constants/v_separation = 16
-columns = 2
+columns = 3
 
 [node name="Juices" type="MarginContainer" parent="IngredientPanel" unique_id=662310510]
 visible = false
@@ -60,6 +60,7 @@ metadata/_tab_index = 1
 layout_mode = 2
 theme_override_constants/h_separation = 16
 theme_override_constants/v_separation = 16
+columns = 3
 
 [node name="Garnishes" type="MarginContainer" parent="IngredientPanel" unique_id=1368851348]
 visible = false
@@ -74,3 +75,4 @@ metadata/_tab_index = 2
 layout_mode = 2
 theme_override_constants/h_separation = 16
 theme_override_constants/v_separation = 16
+columns = 3

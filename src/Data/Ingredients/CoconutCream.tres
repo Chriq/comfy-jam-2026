@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://dophblbbi6pfa"]
 
 [ext_resource type="Script" uid="uid://dkrnd7mu6ldif" path="res://Data/Ingredients/Ingredient.cs" id="1_3tm22"]
+[ext_resource type="Texture2D" uid="uid://dlnprenqq0tgg" path="res://icon.svg" id="2_5yi2q"]
 
 [resource]
 script = ExtResource("1_3tm22")
 displayName = "Coconut Cream"
+texture = ExtResource("2_5yi2q")
 ingredientType = 1
 metadata/_custom_type_script = "uid://dkrnd7mu6ldif"
