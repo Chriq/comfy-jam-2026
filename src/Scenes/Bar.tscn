@@ -161,10 +161,10 @@ vertical_alignment = 1
 [node name="RecipeBook" parent="." unique_id=1724478955 node_paths=PackedStringArray("toggle") instance=ExtResource("3_24mt1")]
 visible = false
 layout_mode = 1
-offset_left = 92.0
-offset_top = 140.0
-offset_right = -549.0
-offset_bottom = -26.0
+offset_left = 221.0
+offset_top = 23.0
+offset_right = -544.0
+offset_bottom = -151.0
 toggle = NodePath("../Open Recipes")
 recipePagePrefab = ExtResource("9_awd8k")
 
