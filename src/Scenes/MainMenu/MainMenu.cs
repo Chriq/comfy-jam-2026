@@ -41,7 +41,7 @@ public partial class MainMenu : Control {
 		AddChild(fade);
 
 		await fade.FadeIn(cutsceneContainer, 2f);
-		await dm.DisplayText("Hey, your first shift at the bar starts tomorrow morning!\n\nHere's a recipe book you can use for reference. The last guy wrote it though, so it may not be super reliable...\n\nOh well, you'll figure it out. Just update the book as you go along. I hope you're better than the last guy!\n\n\n\n\n\n[i](Click anywhere to continue)[/i]");
+		await dm.DisplayText("Hey, I guess you're the new beachside bartender at Castaway's. Your first shift starts tomorrow morning!\n\nHere's a recipe book you can use for reference. The last guy wrote it though, so it may not be super reliable...\n\nOh well, you'll figure it out. Just update the book as you figure stuff out. I hope you're better than the last guy!\n\n\n\n\n\n[i](Click anywhere to continue)[/i]");
 		await ToSignal(dm, "Finished");
 
 		GetTree().ChangeSceneToPacked(toScene);

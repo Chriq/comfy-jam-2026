@@ -34,6 +34,22 @@ grow_vertical = 2
 texture = ExtResource("3_0hjx5")
 expand_mode = 2
 
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=950346083]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 150
+theme_override_font_sizes/bold_font_size = 150
+theme_override_font_sizes/bold_italics_font_size = 150
+theme_override_font_sizes/italics_font_size = 150
+text = "Last Call at Castaway's"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Title" type="TextureRect" parent="." unique_id=2145748417]
 layout_mode = 1
 offset_left = 644.0
