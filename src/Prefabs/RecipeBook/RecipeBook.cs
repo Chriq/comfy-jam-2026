@@ -102,5 +102,8 @@ public partial class RecipeBook : Control {
 
 	private void InitList() {
 		allEntries = NodeUtil.LoadResourcesFromFolder("res://Data/Drinks/").OfType<Drink>().ToList();
+		allEntries.Sort((a, b) => {
+			return a.drinkTime - b.drinkTime;
+		});
 	}
 }

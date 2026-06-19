@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 public partial class Shaker : Sprite2D {
-    [Export] public float shakeDuration = 4f;
+    [Export] public float shakeDuration = 3f;
     [Export] public float shakeFrequency = 15f;
     [Export] public float shakeAmount = 50f;
     [Export] public float rotateFrequency = 5f;
@@ -30,6 +30,7 @@ public partial class Shaker : Sprite2D {
     }
 
     public async void StartShaking() {
+        Show();
         Tween tween = GetTree().CreateTween();
         tween.SetEase(Tween.EaseType.Out);
         tween.SetTrans(Tween.TransitionType.Spring);
@@ -37,12 +38,13 @@ public partial class Shaker : Sprite2D {
         tween.TweenProperty(cap, "position", Vector2.Zero, 0.5f);
         tween.Parallel().TweenProperty(cap, "rotation", 0f, 0.5f);
 
-        tween.TweenCallback(Callable.From(async () => {
-            Show();
-            await ToSignal(GetTree().CreateTimer(0.5f), "timeout");
-            AudioManager.I.PlaySFX(SFX.SHAKER);
-            isShaking = true;
-        }));
+        tween.TweenCallback(Callable.From(Shake));
+    }
+
+    private async void Shake() {
+        await ToSignal(GetTree().CreateTimer(0.5f), "timeout");
+        AudioManager.I.PlaySFX(SFX.SHAKER_SHAKE);
+        isShaking = true;
     }
 
     public override void _Process(double delta) {

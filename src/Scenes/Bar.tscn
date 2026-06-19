@@ -54,6 +54,8 @@ position = Vector2(847, 622)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_f7p3o")
 script = ExtResource("4_03u66")
+shakeFrequency = 30.0
+rotateAmount = 0.15
 cap = NodePath("Cap")
 
 [node name="Cap" type="Sprite2D" parent="DrinkSprites/Shaker" unique_id=307371015]
@@ -63,7 +65,7 @@ texture = ExtResource("5_awd8k")
 
 [node name="Drink" type="Sprite2D" parent="DrinkSprites" unique_id=1527803604]
 visible = false
-position = Vector2(871, 537)
+position = Vector2(935, 631)
 scale = Vector2(0.5, 0.5)
 
 [node name="RightPanel" type="VBoxContainer" parent="." unique_id=1766458687]
@@ -130,7 +132,7 @@ offset_left = 19.0
 offset_top = 21.0
 offset_right = 177.0
 offset_bottom = 106.0
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 48
 text = "Recipes"
 
 [node name="DialogManager" parent="." unique_id=2084443820 instance=ExtResource("9_dnf0m")]
@@ -146,7 +148,7 @@ offset_bottom = 1053.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="GameManager" type="Node" parent="." unique_id=1250725934 node_paths=PackedStringArray("drinkBuilder", "characterSpawner", "dm", "panelContainer", "drinksContainer", "background")]
+[node name="GameManager" type="Node" parent="." unique_id=1250725934 node_paths=PackedStringArray("drinkBuilder", "characterSpawner", "dm", "panelContainer", "drinksContainer", "background", "recipeBook")]
 script = ExtResource("6_e3qa5")
 drinkBuilder = NodePath("DrinkBuilder")
 characterSpawner = NodePath("CharacterSpawner")
@@ -154,6 +156,7 @@ dm = NodePath("../DialogManager")
 panelContainer = NodePath("../RightPanel")
 drinksContainer = NodePath("../DrinkSprites")
 background = NodePath("../Background")
+recipeBook = NodePath("../RecipeBook")
 
 [node name="DrinkBuilder" type="Node" parent="GameManager" unique_id=826935736 node_paths=PackedStringArray("ingredientPanel", "currentOrderDisplay")]
 script = ExtResource("2_2vt6c")

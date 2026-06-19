@@ -3,7 +3,6 @@ using Godot.Collections;
 using System;
 using System.Linq;
 
-// TODO: decide of Character structure and instantiation, how to store their dialog, what their special requests can look like
 public partial class CharacterSpawner : Node {
 	[Export] float specialCharacterProbability = 0.4f;
 	[Export] TextureRect characterRect;

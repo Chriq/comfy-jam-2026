@@ -13,7 +13,7 @@ theme_override_constants/separation = 16
 script = ExtResource("1_mjqdk")
 ingredientSelectPrefab = ExtResource("2_n0ojg")
 liquorsTab = NodePath("IngredientPanel/Liquors/Liquors")
-juicesTab = NodePath("IngredientPanel/Juices/Juices")
+juicesTab = NodePath("IngredientPanel/Mixers/Juices")
 garnishesTab = NodePath("IngredientPanel/Garnishes/Garnishes")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=874798392]
@@ -47,7 +47,7 @@ theme_override_constants/h_separation = 16
 theme_override_constants/v_separation = 16
 columns = 3
 
-[node name="Juices" type="MarginContainer" parent="IngredientPanel" unique_id=662310510]
+[node name="Mixers" type="MarginContainer" parent="IngredientPanel" unique_id=662310510]
 visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 16
@@ -56,7 +56,7 @@ theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 metadata/_tab_index = 1
 
-[node name="Juices" type="GridContainer" parent="IngredientPanel/Juices" unique_id=374977231]
+[node name="Juices" type="GridContainer" parent="IngredientPanel/Mixers" unique_id=374977231]
 layout_mode = 2
 theme_override_constants/h_separation = 16
 theme_override_constants/v_separation = 16

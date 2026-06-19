@@ -5,7 +5,7 @@ using System;
 public partial class AudioManager : Node {
     public static AudioManager I;
 
-    public bool audioEnabled = false;
+    public bool audioEnabled = true;
 
     public override void _Ready() {
         I = this;
@@ -80,7 +80,8 @@ public partial class AudioManager : Node {
 public enum SFX {
     POUR_LIQUID,
     ICE_DROP,
-    SHAKER,
+    SHAKER_SHAKE,
     STIR_COCKTAIL,
-    BOTTLE_PUT_DOWN
+    GLASS_CLINK,
+    DRINK_SERVE
 }

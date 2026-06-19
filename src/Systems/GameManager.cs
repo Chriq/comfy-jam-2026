@@ -12,6 +12,7 @@ public partial class GameManager : Node {
 	[Export] public Control panelContainer;
 	[Export] Node2D drinksContainer;
 	[Export] TextureRect background;
+	[Export] RecipeBook recipeBook;
 
 	private TimeOfDay timeOfDay = TimeOfDay.MORNING;
 
@@ -24,6 +25,9 @@ public partial class GameManager : Node {
 		drinkBuilder.DrinkServed += ServeDrink;
 		AddChild(fade);
 		SetBackground();
+
+		AudioManager.I.PlayBartendingMusic(timeOfDay);
+		AudioManager.I.PlayAmbience(timeOfDay);
  
 		await ToSignal(GetTree().CreateTimer(1f), "timeout");
 
@@ -50,16 +54,33 @@ public partial class GameManager : Node {
 
 	public async void ServeDrink(Dictionary<Ingredient, int> drinkServed) {
 		panelContainer.Hide();
+		recipeBook.Hide();
 
 		Shaker shaker = drinksContainer.GetChild<Shaker>(0);
 		Sprite2D drink = drinksContainer.GetChild<Sprite2D>(1);
-		drink.Texture = characterSpawner.currentOrder.texture;
+		drink.Texture = characterSpawner.currentOrder.emptyGlassTexture;
 
         shaker.StartShaking();
 		await ToSignal(shaker, "DoneShaking");
+		
 
-		AudioManager.I.PlaySFX(SFX.BOTTLE_PUT_DOWN);
+		await ToSignal(GetTree().CreateTimer(1f), "timeout");
+		AudioManager.I.PlaySFX(SFX.GLASS_CLINK);
 		drink.Show();
+
+		await ToSignal(GetTree().CreateTimer(1f), "timeout");
+
+		AudioManager.I.PlaySFX(SFX.ICE_DROP);
+		AudioManager.I.PlaySFX(SFX.POUR_LIQUID);
+
+		await ToSignal(GetTree().CreateTimer(1f), "timeout");
+		AudioManager.I.PlaySFX(SFX.DRINK_SERVE);
+
+		await ToSignal(GetTree().CreateTimer(0.5f), "timeout");
+		AudioManager.I.PlaySFX(SFX.STIR_COCKTAIL);
+		drink.Texture = characterSpawner.currentOrder.texture;
+		await ToSignal(GetTree().CreateTimer(2f), "timeout");
+		
 
 		bool correct = ValidateDrink(drinkServed);
 		if (correct) {
@@ -80,11 +101,11 @@ public partial class GameManager : Node {
 			drink.Hide();
 
 			await dm.DisplayText("This isn't right...");
-			// await ToSignal(dm, "Finished");
+			await ToSignal(dm, "Finished");
 
 			string feedback = drinkBuilder.GetDrinkFeedback(characterSpawner.currentOrder.recipe, drinkServed);
 			await dm.DisplayText(feedback);
-			await ToSignal(dm, "Finished");
+			// await ToSignal(dm, "Finished");
 		}
 
 		await ToSignal(dm, "Finished");
@@ -117,6 +138,10 @@ public partial class GameManager : Node {
 
 	private void AdvanceTimeOfDay() {
 		timeOfDay++;
+
+		AudioManager.I.PlayBartendingMusic(timeOfDay);
+		AudioManager.I.PlayAmbience(timeOfDay);
+
 		characterSpawner.ResetCharacterMap();
 
 		if (timeOfDay > Enum.GetValues<TimeOfDay>().Max()) {
