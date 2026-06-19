@@ -9,6 +9,7 @@ public partial class CharacterSpawner : Node {
 	[Export] TextureRect characterRect;
 	[Export] Texture2D genericCharacterTexture;
 	[Export] RichTextLabel currentRequest;
+	[Export] float drinkTimeProbability;
 
 	public Character currentCustomer { get; private set; }
 	public Drink currentOrder { get; private set; }
@@ -25,7 +26,7 @@ public partial class CharacterSpawner : Node {
 
 	public void SetNewCustomer(TimeOfDay timeOfDay) {
 		// float val = rng.Randf();
-		float val = 0.3f;
+		float val = 0.8f;
 		if (val < specialCharacterProbability) {
 			// get special character
 			isUniqueCharacter = true;
@@ -40,8 +41,30 @@ public partial class CharacterSpawner : Node {
 				displayName = GenerateRandomName(),
 				texture = genericCharacterTexture
 			};
-
-			currentOrder = new Array<Drink>(NodeUtil.LoadResourcesFromFolder("res://Data/Drinks/").OfType<Drink>().ToArray()).PickRandom();
+			
+			switch (timeOfDay) {
+				case TimeOfDay.MORNING:
+				currentOrder = PickDrink(TimeOfDay.MORNING);
+				break;
+				case TimeOfDay.AFTERNOON:
+					if (rng.Randf() < drinkTimeProbability) { // chance for Morning or Afternoon drink
+						currentOrder = PickDrink(TimeOfDay.MORNING);
+					} else {
+						currentOrder = PickDrink(TimeOfDay.AFTERNOON);
+					}
+				break;
+				case TimeOfDay.EVENING:
+				if (rng.Randf() < drinkTimeProbability) { //chance for current or previous time drink
+						if(rng.Randf() < 0.5) {//coin flip for morning or afternoon
+							currentOrder = PickDrink(TimeOfDay.MORNING);
+						} else {
+							currentOrder = PickDrink(TimeOfDay.AFTERNOON);
+						}
+					} else {
+						currentOrder = PickDrink(TimeOfDay.EVENING);
+					}
+				break;
+			}
 		}
 
 		characterRect.Texture = currentCustomer.texture;
@@ -84,4 +107,12 @@ public partial class CharacterSpawner : Node {
 
 	private static readonly Array<string> firstNames = new() { "Michael", "Christopher", "Matthew", "Joshua", "Daniel", "Jennifer", "Jessica", "Ashley", "Sarah", "Amanda" };
 	private static readonly Array<string> lastNames = new() { "Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Rodriguez", "Martinez" };
+	private Drink PickDrink(TimeOfDay drinkTime) {
+		System.Collections.Generic.List<Drink> orderOptions;
+		int index;
+		orderOptions = new System.Collections.Generic.List<Drink>(NodeUtil.LoadResourcesFromFolder("res://Data/Drinks/").OfType<Drink>()).Where(drk => drk.drinkTime == drinkTime).ToList<Drink>();
+		index = rng.RandiRange(0,orderOptions.Count-1);
+		GD.Print(index);
+		return orderOptions[index];
+	}
 }

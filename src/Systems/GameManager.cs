@@ -70,6 +70,7 @@ public partial class GameManager : Node {
 				await dm.DisplayText(characterSpawner.currentCustomer.info[timeOfDay].response);
 			} else {
 				await dm.DisplayText("Looks great!");
+				await ToSignal(dm, "Finished");
 			}
 
 			drink.Hide();

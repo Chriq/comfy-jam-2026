@@ -84,8 +84,8 @@ public partial class DrinkBuilder : Node {
 				} else {
 					return "Wrong type of garnish";
 				}
-			case 3:
-				return "No Issues";
+			case 3: //Empty Glass
+				return "Why did you hand me an empty glass?";
 		}
 		
 		return "ERROR";

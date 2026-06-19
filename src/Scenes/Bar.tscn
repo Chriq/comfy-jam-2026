@@ -143,6 +143,7 @@ script = ExtResource("7_n62g1")
 characterRect = NodePath("../../CharacterTexture")
 genericCharacterTexture = ExtResource("9_2ibdx")
 currentRequest = NodePath("../../CurrentRequestPanel/CurrentRequest")
+drinkTimeProbability = 0.3
 
 [node name="CurrentRequestPanel" type="PanelContainer" parent="." unique_id=723983098]
 layout_mode = 0
