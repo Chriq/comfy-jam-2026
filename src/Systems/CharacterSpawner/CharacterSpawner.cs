@@ -26,7 +26,9 @@ public partial class CharacterSpawner : Node {
 	}
 
 	public void SetNewCustomer(TimeOfDay timeOfDay) {
-		float val = rng.Randf();
+		// float val = rng.Randf();
+		float val = 0.1f;
+		oneDrinkServedCorrectly = true;
 		if (val < specialCharacterProbability && oneDrinkServedCorrectly) {
 			// get special character
 			isUniqueCharacter = true;

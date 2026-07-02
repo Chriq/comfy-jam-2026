@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://jmfp1x53ksts" path="res://Data/Drinks/Drink.cs" id="1_mvtqe"]
 [ext_resource type="Resource" uid="uid://b8k0sjpk2mgxi" path="res://Data/Ingredients/PineappleJuice.tres" id="2_jkric"]
 [ext_resource type="Texture2D" uid="uid://dlv1grqbbm2aq" path="res://Data/Drinks/Textures/BluePolynesian_Gin.png" id="2_yjp6e"]
-[ext_resource type="Resource" uid="uid://dophblbbi6pfa" path="res://Data/Ingredients/CoconutCream.tres" id="3_u1msj"]
 [ext_resource type="Resource" uid="uid://mubglnk30i48" path="res://Data/Ingredients/BlueCuracao.tres" id="4_p8iro"]
 [ext_resource type="Resource" uid="uid://cnt3o6om3y60f" path="res://Data/Ingredients/Cherry.tres" id="5_sbrpb"]
 [ext_resource type="Resource" uid="uid://b4uob12an5a1l" path="res://Data/Ingredients/WhippedCream.tres" id="7_u1msj"]
@@ -19,7 +18,6 @@ emptyGlassTexture = ExtResource("1_jkric")
 recipe = Dictionary[Object, int]({
 ExtResource("1_4686t"): 2,
 ExtResource("2_jkric"): 3,
-ExtResource("3_u1msj"): 2,
 ExtResource("4_p8iro"): 1,
 ExtResource("5_sbrpb"): 1,
 ExtResource("7_u1msj"): 1
